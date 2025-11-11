@@ -1,0 +1,16 @@
+name: Kristin Mutzig
+title: Senior Associate
+specialization: Family Law & Domestic Relations
+image: images/attorneys/Mutzig-Kristin-095.png
+email: kmutzig@swartzcampbell.com
+phone: (555) 123-4578
+office: Philadelphia
+
+credentials:
+- J.D., Dickinson Law, 2011
+- B.A., Psychology, Franklin & Marshall College, 2008
+- Licensed in Pennsylvania
+- Certified Family Law Mediator
+- Member, Pennsylvania Bar Association Family Law Section
+
+bio: Kristin Mutzig is a dedicated family law attorney who provides compassionate and skilled representation to clients navigating the emotional and complex challenges of divorce, custody disputes, and other family law matters. With a background in psychology, Kristin brings a deep understanding of family dynamics and child development to her legal practice, enabling her to advocate effectively for her clients while prioritizing the best interests of children involved in family proceedings. As a certified family law mediator, Kristin is skilled in alternative dispute resolution and often helps families reach amicable agreements outside of court, reducing both emotional trauma and legal costs. Her practice encompasses divorce and separation proceedings, child custody and support matters, adoption services, and domestic violence protection. Kristin has particular experience with high-conflict custody cases and complex property division matters involving businesses and professional practices. She is known for her thorough preparation, strategic approach, and ability to communicate clearly with clients during emotionally difficult times. Kristin regularly participates in continuing education programs to stay current with evolving family law statutes and best practices.

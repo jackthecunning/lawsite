@@ -1,0 +1,16 @@
+name: Stephen R. Mlinac
+title: Senior Partner
+specialization: Trial Advocacy & Complex Litigation
+image: images/attorneys/Stephen-R.Mlinac.jpg
+email: smlinac@swartzcampbell.com
+phone: (555) 123-4586
+office: Philadelphia
+
+credentials:
+- J.D., University of Pittsburgh School of Law, 1988
+- B.A., Political Science, University of Pittsburgh, 1985
+- Licensed in Pennsylvania, West Virginia, and Ohio
+- Board Certified Trial Advocate
+- Fellow, American College of Trial Lawyers
+
+bio: Stephen R. Mlinac is a preeminent trial attorney with over 35 years of experience in complex commercial litigation, personal injury, and criminal defense matters. As a Fellow of the prestigious American College of Trial Lawyers and a Board Certified Trial Advocate, Mlinac has established himself as one of the region's most accomplished courtroom advocates. His extensive trial experience includes high-stakes commercial disputes, products liability cases, medical malpractice defense, and white-collar criminal defense. Mlinac has successfully tried over 200 jury trials to verdict and has obtained numerous multi-million dollar verdicts for his clients. He is known for his meticulous case preparation, compelling courtroom presentations, and ability to simplify complex legal issues for juries. Mlinac regularly handles appeals in state and federal courts and has argued cases before the Pennsylvania Supreme Court. His practice includes representing corporations in bet-the-company litigation, defending professionals in licensing matters, and handling catastrophic personal injury cases. Mlinac is frequently called upon by other attorneys to serve as co-counsel in high-exposure cases requiring exceptional trial skills. He has been recognized by numerous legal publications as one of the top trial lawyers in Pennsylvania and regularly lectures on trial advocacy techniques.

@@ -1,0 +1,16 @@
+name: Bryan Smith
+title: Associate Attorney
+specialization: Contract Law & Business Transactions
+image: images/attorneys/Smith-Bryan.png
+email: bsmith@swartzcampbell.com
+phone: (555) 123-4584
+office: Philadelphia
+
+credentials:
+- J.D., Penn State Dickinson Law, 2018
+- B.S., Business Administration, Penn State University, 2015
+- Licensed in Pennsylvania
+- Member, American Bar Association Business Law Section
+- Certified in Contract Management
+
+bio: Bryan Smith is a business attorney who focuses on contract law, commercial transactions, and general business counsel for small to mid-sized companies and entrepreneurs. With a solid foundation in business administration and specialized certification in contract management, Smith provides practical and cost-effective legal solutions for businesses at all stages of development. His practice encompasses contract drafting and negotiation, business formation, commercial leasing, and vendor agreements. Smith regularly assists clients with purchase and sale agreements, licensing deals, employment contracts, and joint venture arrangements. He has particular expertise in technology contracts, including software licensing, service agreements, and data privacy compliance. Smith's business background enables him to understand his clients' commercial objectives and structure transactions that achieve both legal protection and business goals. He provides ongoing general counsel services to several growing companies, advising on corporate governance, compliance matters, and strategic business decisions. Smith is known for his responsive service, clear communication, and ability to explain complex legal concepts in business terms. He stays current with emerging business law trends, particularly in the areas of e-commerce, cryptocurrency, and remote work arrangements.

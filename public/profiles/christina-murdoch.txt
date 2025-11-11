@@ -1,0 +1,23 @@
+name: Christina Murdoch
+title: Associate Attorney
+specialization: Healthcare Law & Regulatory Compliance
+image: images/attorneys/Christina-Murdoch-3282-683x1024.jpg
+email: cmurdoch@swartzcampbell.com
+phone: (555) 123-4566
+office: Philadelphia
+
+credentials:
+- J.D., University of Pittsburgh School of Law, 2013
+- M.H.A., Healthcare Administration, University of Pennsylvania, 2010
+- B.S., Biology, Bucknell University, 2008
+- Licensed in Pennsylvania
+- Member, American Health Lawyers Association
+- Certified in Healthcare Compliance (CHC)
+
+bio: Christina Murdoch represents healthcare providers, medical practices, and healthcare organizations in regulatory compliance, privacy matters, and business transactions. Her unique combination of legal expertise and healthcare administration background allows her to provide practical, business-oriented counsel to healthcare clients.
+
+Christina's practice focuses on HIPAA compliance, medical staff credentialing, healthcare contracts, and regulatory investigations. She regularly advises hospitals, physician practices, and healthcare technology companies on complex regulatory issues and helps them navigate the evolving healthcare landscape.
+
+Before attending law school, Christina worked as a healthcare administrator, giving her firsthand experience with the operational challenges facing healthcare providers. This background enables her to provide legal advice that is both legally sound and operationally feasible.
+
+She is a frequent speaker at healthcare conferences and has written extensively on healthcare privacy and compliance issues. Christina is committed to helping healthcare providers deliver quality care while maintaining strict compliance with applicable laws and regulations.

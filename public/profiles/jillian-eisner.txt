@@ -1,0 +1,16 @@
+name: Jillian Eisner
+title: Associate Attorney
+specialization: Elder Law & Estate Administration
+image: images/attorneys/Eisner-Jillian-07-e1717099262710.jpg
+email: jeisner@swartzcampbell.com
+phone: (555) 123-4571
+office: New York
+
+credentials:
+- J.D., Widener University Delaware Law School, 2016
+- B.A., Social Work, Temple University, 2013
+- Licensed in Pennsylvania and Delaware
+- Certified Elder Law Attorney (CELA)
+- Member, National Academy of Elder Law Attorneys
+
+bio: Jillian Eisner is a compassionate elder law attorney who helps seniors and their families navigate the complex legal challenges that arise with aging. As a Certified Elder Law Attorney and member of the National Academy of Elder Law Attorneys, Jillian provides comprehensive legal services including Medicaid planning, guardianship proceedings, and estate administration. Her background in social work informs her client-centered approach, ensuring that legal solutions address both the practical and emotional needs of elderly clients and their families. Jillian's practice encompasses long-term care planning, disability planning, and special needs trusts. She regularly assists families with nursing home advocacy, veterans' benefits applications, and elder abuse protection. Her experience includes representing clients in probate court proceedings and working with healthcare providers to ensure proper care coordination. Jillian is known for her patient, empathetic approach to complex family situations and her ability to explain legal concepts clearly to clients and their loved ones.

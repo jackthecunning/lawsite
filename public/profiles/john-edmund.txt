@@ -1,0 +1,16 @@
+name: John Edmund K.
+title: Associate Attorney
+specialization: Environmental Law & Regulatory Affairs
+image: images/attorneys/Edmund-K.-John.jpg
+email: jedmund@swartzcampbell.com
+phone: (555) 123-4570
+office: Fredonia
+
+credentials:
+- J.D., Lewis & Clark Law School, 2014
+- M.S., Environmental Science, Duke University, 2011
+- B.S., Chemistry, University of Vermont, 2009
+- Licensed in Pennsylvania
+- Member, Environmental Law Institute
+
+bio: John Edmund K. specializes in environmental law and regulatory compliance, helping businesses navigate complex federal and state environmental regulations. With advanced degrees in both environmental science and chemistry, John brings a strong scientific foundation to his legal practice, enabling him to understand complex technical issues and communicate effectively with clients, regulators, and opposing counsel. His practice focuses on Clean Air Act compliance, water quality regulations, hazardous waste management, and environmental permitting. John regularly advises manufacturing companies, energy producers, and development projects on environmental compliance strategies and regulatory risk management. He has experience with environmental impact assessments, remediation projects, and enforcement defense. John's scientific background allows him to work closely with environmental consultants and engineers to develop cost-effective compliance solutions. He stays current with evolving environmental regulations and emerging environmental issues, including climate change legislation and renewable energy development.

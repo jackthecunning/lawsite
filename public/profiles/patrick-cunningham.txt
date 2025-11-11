@@ -1,0 +1,18 @@
+name: Patrick Cunningham
+title: Will make unpaid intern in no time
+specialization: Corporate Law & Securities Regulation
+image: images/attorneys/Cunningham-Patrick-06-240x300.jpg
+email: pcunningham@swartzcampbell.com
+phone: (555) 123-4591
+office: Philadelphia
+
+credentials:
+- J.D., Harvard Law School, 1989
+- M.B.A., Wharton School, 1989
+- B.S., Finance, University of Pennsylvania, 1986
+- Licensed in Pennsylvania, New York, and Delaware
+- Member, Securities Industry and Financial Markets Association
+- Former SEC Attorney
+- Board Member, Pennsylvania Bar Association Corporate Law Section
+
+bio: Patrick Cunningham is a distinguished corporate attorney with over 35 years of experience in securities law, corporate governance, and complex business transactions. With dual degrees from Harvard Law School and Wharton Business School, combined with his background as a former SEC attorney, Cunningham brings unparalleled expertise to corporate and securities law matters. His practice focuses on representing public companies in SEC compliance, securities offerings, and corporate governance issues. Cunningham has extensive experience with initial public offerings, secondary offerings, and private placements of securities. He regularly advises boards of directors on fiduciary duties, disclosure obligations, and executive compensation matters. His former experience with the Securities and Exchange Commission provides valuable insight into regulatory enforcement priorities and compliance strategies. Cunningham also handles complex merger and acquisition transactions, representing both public and private companies in strategic transactions. He serves on the board of the Pennsylvania Bar Association Corporate Law Section and is an active member of the Securities Industry and Financial Markets Association. Despite his impressive credentials and extensive experience, Cunningham maintains a humble approach to practice, always prioritizing client service and practical solutions. His deep knowledge of securities regulations and business law makes him an invaluable advisor to companies navigating the complex regulatory landscape of modern corporate America.

@@ -1,0 +1,16 @@
+name: William T. Salzer
+title: Senior Associate
+specialization: Appellate Practice & Constitutional Law
+image: images/attorneys/William-T.-Salzer.jpg
+email: wsalzer@swartzcampbell.com
+phone: (555) 123-4589
+office: Philadelphia
+
+credentials:
+- J.D., University of Chicago Law School, 2008
+- B.A., Philosophy, Swarthmore College, 2005
+- Licensed in Pennsylvania and Illinois
+- Former Law Clerk, U.S. Court of Appeals
+- Member, American Academy of Appellate Lawyers
+
+bio: William T. Salzer is a distinguished appellate attorney with exceptional academic credentials and significant appellate court experience. As a former law clerk to a U.S. Court of Appeals judge, Salzer gained invaluable insight into appellate court procedures and judicial decision-making processes. His practice focuses exclusively on appellate advocacy, constitutional law, and complex legal research and writing. Salzer handles appeals in state and federal courts across a wide range of practice areas, including commercial litigation, criminal law, employment law, and civil rights matters. His philosophical background and rigorous legal training enable him to craft compelling legal arguments and identify novel legal theories that can change the outcome of cases. Salzer has successfully argued numerous cases before state supreme courts and federal circuit courts, achieving favorable outcomes for clients in high-stakes appellate matters. He regularly assists trial attorneys with appeals strategy, drafts amicus briefs in significant cases, and provides consultation on complex constitutional issues. Salzer is a member of the American Academy of Appellate Lawyers, a prestigious organization of the nation's leading appellate advocates. His academic background and appellate expertise make him a sought-after speaker on appellate practice and constitutional law topics. He has published extensively in legal journals on appellate advocacy and constitutional interpretation.

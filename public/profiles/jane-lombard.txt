@@ -1,0 +1,16 @@
+name: Jane Lombard
+title: Partner
+specialization: Medical Malpractice Defense
+image: images/attorneys/Lombard-Jane-78-683x1024.jpg
+email: jlombard@swartzcampbell.com
+phone: (555) 123-4576
+office: Philadelphia
+
+credentials:
+- J.D., University of Pittsburgh School of Law, 1999
+- B.S., Nursing, University of Pennsylvania, 1994
+- Licensed in Pennsylvania, Ohio, and West Virginia
+- Former Registered Nurse
+- Member, International Association of Defense Counsel
+
+bio: Jane Lombard brings a unique perspective to medical malpractice defense, combining her background as a registered nurse with over 25 years of legal experience. As a former healthcare provider, Jane understands medical procedures, standards of care, and the healthcare environment, making her an exceptionally effective advocate for physicians, hospitals, and other healthcare providers facing malpractice claims. Her nursing background allows her to quickly grasp complex medical issues, communicate effectively with healthcare professionals, and identify key defense strategies. Jane's practice focuses exclusively on medical malpractice defense, representing healthcare providers in cases involving surgical complications, diagnostic errors, medication mistakes, and birth injuries. She has successfully defended numerous high-exposure cases and has extensive trial experience in medical malpractice matters. Jane works closely with medical experts to develop compelling defense strategies and is known for her thorough case preparation and persuasive courtroom presentations. Her dual healthcare and legal background makes her a trusted advisor to healthcare institutions on risk management and liability prevention strategies.

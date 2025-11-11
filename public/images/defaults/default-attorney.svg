@@ -1,0 +1,57 @@
+<svg width="320" height="400" viewBox="0 0 320 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="backgroundGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4d4d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c0c0c0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="320" height="400" fill="url(#backgroundGrad)"/>
+
+  <!-- Attorney Silhouette -->
+  <g fill="#b0b0b0">
+    <!-- Head -->
+    <ellipse cx="160" cy="120" rx="45" ry="50"/>
+
+    <!-- Shoulders/Suit -->
+    <path d="M 85 180
+             Q 85 170 95 170
+             L 105 170
+             Q 115 160 130 160
+             Q 140 150 160 150
+             Q 180 150 190 160
+             Q 205 160 215 170
+             L 225 170
+             Q 235 170 235 180
+             L 235 400
+             L 85 400
+             Z"/>
+
+    <!-- Suit Collar -->
+    <path d="M 130 170
+             Q 140 160 160 160
+             Q 180 160 190 170
+             L 185 180
+             Q 172.5 175 160 175
+             Q 147.5 175 135 180
+             Z" fill="#a0a0a0"/>
+
+    <!-- Tie -->
+    <path d="M 155 175
+             L 165 175
+             L 168 220
+             L 162 230
+             L 158 230
+             L 152 220
+             Z" fill="#909090"/>
+  </g>
+
+  <!-- Professional Badge/Watermark -->
+  <text x="160" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#c0c0c0">
+    Attorney Photo
+  </text>
+  <text x="160" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#c0c0c0">
+    Not Available
+  </text>
+</svg>

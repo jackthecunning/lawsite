@@ -1,0 +1,16 @@
+name: William F. Conway
+title: Partner
+specialization: Municipal Law & Government Relations
+image: images/attorneys/William-F.-Conway.jpg
+email: wconway@swartzcampbell.com
+phone: (555) 123-4588
+office: New York
+
+credentials:
+- J.D., University of Pittsburgh School of Law, 1992
+- M.P.A., Public Administration, University of Pittsburgh, 1992
+- B.A., Political Science, Allegheny College, 1989
+- Licensed in Pennsylvania
+- Former Municipal Solicitor
+
+bio: William F. Conway is a seasoned municipal attorney with extensive experience in local government law, public finance, and government relations. With dual degrees in law and public administration and experience as a municipal solicitor, Conway brings deep understanding of municipal operations and legal requirements to his practice. He represents municipalities, municipal authorities, and local government officials in a wide range of legal matters including municipal finance, public works projects, zoning and land use regulation, and employment law. Conway has particular expertise in municipal bond transactions, having served as bond counsel and disclosure counsel for numerous municipal financing transactions totaling hundreds of millions of dollars. His practice includes advising on the Sunshine Act, Right-to-Know Law, and other transparency requirements affecting local governments. Conway regularly represents municipalities in litigation matters, including civil rights claims, employment disputes, and contract disputes. He also provides ongoing counsel to municipal officials on governance issues, ethics compliance, and risk management. Conway's public administration background enables him to understand the practical challenges facing local governments and provide legal advice that supports effective municipal operations while ensuring legal compliance. He frequently speaks at conferences for municipal officials and contributes to publications on municipal law topics.
