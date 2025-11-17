@@ -431,6 +431,147 @@ body {
     gap: 40px;
 }
 
+.attorneys-scroll-container {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding: 20px 0;
+    scrollbar-width: thin;
+    scrollbar-color: #c5a572 #f1f1f1;
+}
+
+.attorneys-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.attorneys-scroll-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.attorneys-scroll-container::-webkit-scrollbar-thumb {
+    background: #c5a572;
+    border-radius: 4px;
+}
+
+.attorneys-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #a08659;
+}
+
+.attorneys-scroll-container .team-card {
+    flex: 0 0 320px;
+    min-width: 320px;
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+}
+
+.attorneys-scroll-container .team-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Attorneys Section Expansion Animation */
+.attorneys.expanding {
+    animation: expandAndFadeSection 0.5s ease-in-out forwards;
+    position: relative;
+    z-index: 1000;
+}
+
+.attorneys.expanding .attorneys-scroll-container {
+    animation: fadeOutCards 0.4s ease-out forwards;
+    animation-delay: 0.1s;
+}
+
+.attorneys.expanding .team-expand-btn {
+    animation: fadeOutButton 0.3s ease-out forwards;
+}
+
+.attorneys.expanding .section-header {
+    animation: fadeOutHeader 0.4s ease-out forwards;
+    animation-delay: 0.05s;
+}
+
+@keyframes expandAndFadeSection {
+    0% {
+        transform: translateY(0) scale(1);
+        background-color: #f8f9fa;
+        opacity: 1;
+    }
+    60% {
+        transform: translateY(-20px) scale(1.03);
+        background-color: #ffffff;
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-60px) scale(1.06);
+        background-color: #ffffff;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutCards {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    60% {
+        opacity: 0.3;
+        transform: translateY(-15px) scale(0.96);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-25px) scale(0.92);
+    }
+}
+
+@keyframes fadeOutButton {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+        pointer-events: none;
+    }
+}
+
+@keyframes fadeOutHeader {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* Page Transition Animations */
+.page-container {
+    transition: all 0.5s ease-out;
+}
+
+.page-container.page-transitioning {
+    animation: fadeOutPage 0.5s ease-out forwards;
+}
+
+@keyframes fadeOutPage {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.97);
+    }
+}
+
 .attorney-card {
     background: white;
     border-radius: 10px;
@@ -780,6 +921,11 @@ body {
     color: #c5a572;
 }
 
+.footer-section p i {
+    margin-right: 2px;
+    width: 20px;
+}
+
 .social-links {
     display: flex;
     gap: 15px;
@@ -955,7 +1101,7 @@ html {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px) scale(0.95);
+        transform: translateY(30px) scale(0.9);
     }
     to {
         opacity: 1;
@@ -982,166 +1128,77 @@ html {
     opacity: 1;
 }
 
-.team-cards-grid.fade-in .team-card {
+/* Default state: cards are hidden during transitions (only on Team page) */
+.team-overview .team-cards-grid .team-card {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show cards when not transitioning (only on Team page) */
+.team-overview .team-cards-grid:not(.fade-out):not(.fade-in):not(.entering-from-home) .team-card {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Animate cards during fade-in (only on Team page) */
+.team-overview .team-cards-grid.fade-in .team-card {
     animation: slideInStagger 0.6s ease forwards;
-}
-
-/* Row 1: Cards 1-4 (assuming 4 cards per row on desktop) */
-.team-cards-grid.fade-in .team-card:nth-child(1),
-.team-cards-grid.fade-in .team-card:nth-child(2),
-.team-cards-grid.fade-in .team-card:nth-child(3),
-.team-cards-grid.fade-in .team-card:nth-child(4) { animation-delay: 0s; }
-
-/* Row 2: Cards 5-8 */
-.team-cards-grid.fade-in .team-card:nth-child(5),
-.team-cards-grid.fade-in .team-card:nth-child(6),
-.team-cards-grid.fade-in .team-card:nth-child(7),
-.team-cards-grid.fade-in .team-card:nth-child(8) { animation-delay: 0.2s; }
-
-/* Row 3: Cards 9-12 */
-.team-cards-grid.fade-in .team-card:nth-child(9),
-.team-cards-grid.fade-in .team-card:nth-child(10),
-.team-cards-grid.fade-in .team-card:nth-child(11),
-.team-cards-grid.fade-in .team-card:nth-child(12) { animation-delay: 0.4s; }
-
-/* Row 4: Cards 13-16 */
-.team-cards-grid.fade-in .team-card:nth-child(13),
-.team-cards-grid.fade-in .team-card:nth-child(14),
-.team-cards-grid.fade-in .team-card:nth-child(15),
-.team-cards-grid.fade-in .team-card:nth-child(16) { animation-delay: 0.6s; }
-
-/* Row 5: Cards 17-20 */
-.team-cards-grid.fade-in .team-card:nth-child(17),
-.team-cards-grid.fade-in .team-card:nth-child(18),
-.team-cards-grid.fade-in .team-card:nth-child(19),
-.team-cards-grid.fade-in .team-card:nth-child(20) { animation-delay: 0.8s; }
-
-/* Row 6: Cards 21-24 */
-.team-cards-grid.fade-in .team-card:nth-child(21),
-.team-cards-grid.fade-in .team-card:nth-child(22),
-.team-cards-grid.fade-in .team-card:nth-child(23),
-.team-cards-grid.fade-in .team-card:nth-child(24) { animation-delay: 1s; }
-
-/* Row 7: Cards 25-28 */
-.team-cards-grid.fade-in .team-card:nth-child(25),
-.team-cards-grid.fade-in .team-card:nth-child(26),
-.team-cards-grid.fade-in .team-card:nth-child(27),
-.team-cards-grid.fade-in .team-card:nth-child(28) { animation-delay: 1.2s; }
-
-/* Row 8: Cards 29-32 */
-.team-cards-grid.fade-in .team-card:nth-child(29),
-.team-cards-grid.fade-in .team-card:nth-child(30),
-.team-cards-grid.fade-in .team-card:nth-child(31),
-.team-cards-grid.fade-in .team-card:nth-child(32) { animation-delay: 1.4s; }
-
-/* Tablet/Medium screens: 3 cards per row */
-@media (max-width: 1200px) and (min-width: 769px) {
-    /* Row 1: Cards 1-3 */
-    .team-cards-grid.fade-in .team-card:nth-child(1),
-    .team-cards-grid.fade-in .team-card:nth-child(2),
-    .team-cards-grid.fade-in .team-card:nth-child(3) { animation-delay: 0s; }
-
-    /* Row 2: Cards 4-6 */
-    .team-cards-grid.fade-in .team-card:nth-child(4),
-    .team-cards-grid.fade-in .team-card:nth-child(5),
-    .team-cards-grid.fade-in .team-card:nth-child(6) { animation-delay: 0.2s; }
-
-    /* Row 3: Cards 7-9 */
-    .team-cards-grid.fade-in .team-card:nth-child(7),
-    .team-cards-grid.fade-in .team-card:nth-child(8),
-    .team-cards-grid.fade-in .team-card:nth-child(9) { animation-delay: 0.4s; }
-
-    /* Continue pattern for remaining rows */
-    .team-cards-grid.fade-in .team-card:nth-child(10),
-    .team-cards-grid.fade-in .team-card:nth-child(11),
-    .team-cards-grid.fade-in .team-card:nth-child(12) { animation-delay: 0.6s; }
-
-    .team-cards-grid.fade-in .team-card:nth-child(13),
-    .team-cards-grid.fade-in .team-card:nth-child(14),
-    .team-cards-grid.fade-in .team-card:nth-child(15) { animation-delay: 0.8s; }
-
-    .team-cards-grid.fade-in .team-card:nth-child(16),
-    .team-cards-grid.fade-in .team-card:nth-child(17),
-    .team-cards-grid.fade-in .team-card:nth-child(18) { animation-delay: 1s; }
-
-    .team-cards-grid.fade-in .team-card:nth-child(19),
-    .team-cards-grid.fade-in .team-card:nth-child(20),
-    .team-cards-grid.fade-in .team-card:nth-child(21) { animation-delay: 1.2s; }
-
-    .team-cards-grid.fade-in .team-card:nth-child(22),
-    .team-cards-grid.fade-in .team-card:nth-child(23),
-    .team-cards-grid.fade-in .team-card:nth-child(24) { animation-delay: 1.4s; }
-
-    .team-cards-grid.fade-in .team-card:nth-child(25),
-    .team-cards-grid.fade-in .team-card:nth-child(26),
-    .team-cards-grid.fade-in .team-card:nth-child(27) { animation-delay: 1.6s; }
-
-    .team-cards-grid.fade-in .team-card:nth-child(28),
-    .team-cards-grid.fade-in .team-card:nth-child(29),
-    .team-cards-grid.fade-in .team-card:nth-child(30) { animation-delay: 1.8s; }
-
-    .team-cards-grid.fade-in .team-card:nth-child(31),
-    .team-cards-grid.fade-in .team-card:nth-child(32) { animation-delay: 2s; }
-}
-
-/* Mobile screens: 2 cards per row */
-@media (max-width: 768px) {
-    /* Row 1: Cards 1-2 */
-    .team-cards-grid.fade-in .team-card:nth-child(1),
-    .team-cards-grid.fade-in .team-card:nth-child(2) { animation-delay: 0s; }
-
-    /* Row 2: Cards 3-4 */
-    .team-cards-grid.fade-in .team-card:nth-child(3),
-    .team-cards-grid.fade-in .team-card:nth-child(4) { animation-delay: 0.2s; }
-
-    /* Continue pattern for remaining rows */
-    .team-cards-grid.fade-in .team-card:nth-child(5),
-    .team-cards-grid.fade-in .team-card:nth-child(6) { animation-delay: 0.4s; }
-
-    .team-cards-grid.fade-in .team-card:nth-child(7),
-    .team-cards-grid.fade-in .team-card:nth-child(8) { animation-delay: 0.6s; }
-
-    .team-cards-grid.fade-in .team-card:nth-child(9),
-    .team-cards-grid.fade-in .team-card:nth-child(10) { animation-delay: 0.8s; }
-
-    .team-cards-grid.fade-in .team-card:nth-child(11),
-    .team-cards-grid.fade-in .team-card:nth-child(12) { animation-delay: 1s; }
-
-    .team-cards-grid.fade-in .team-card:nth-child(13),
-    .team-cards-grid.fade-in .team-card:nth-child(14) { animation-delay: 1.2s; }
-
-    .team-cards-grid.fade-in .team-card:nth-child(15),
-    .team-cards-grid.fade-in .team-card:nth-child(16) { animation-delay: 1.4s; }
-
-    .team-cards-grid.fade-in .team-card:nth-child(17),
-    .team-cards-grid.fade-in .team-card:nth-child(18) { animation-delay: 1.6s; }
-
-    .team-cards-grid.fade-in .team-card:nth-child(19),
-    .team-cards-grid.fade-in .team-card:nth-child(20) { animation-delay: 1.8s; }
-
-    .team-cards-grid.fade-in .team-card:nth-child(21),
-    .team-cards-grid.fade-in .team-card:nth-child(22) { animation-delay: 2s; }
-
-    .team-cards-grid.fade-in .team-card:nth-child(23),
-    .team-cards-grid.fade-in .team-card:nth-child(24) { animation-delay: 2.2s; }
-
-    .team-cards-grid.fade-in .team-card:nth-child(25),
-    .team-cards-grid.fade-in .team-card:nth-child(26) { animation-delay: 2.4s; }
-
-    .team-cards-grid.fade-in .team-card:nth-child(27),
-    .team-cards-grid.fade-in .team-card:nth-child(28) { animation-delay: 2.6s; }
-
-    .team-cards-grid.fade-in .team-card:nth-child(29),
-    .team-cards-grid.fade-in .team-card:nth-child(30) { animation-delay: 2.8s; }
-
-    .team-cards-grid.fade-in .team-card:nth-child(31),
-    .team-cards-grid.fade-in .team-card:nth-child(32) { animation-delay: 3s; }
 }
 
 /* Team Overview Styles */
 .team-overview {
     padding: 100px 0;
     background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.team-overview.entering-from-home {
+    animation: fadeInFromExpansion 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.team-overview.entering-from-home .section-header {
+    animation: fadeInElements 0.4s ease-out forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.team-overview.entering-from-home .search-section {
+    animation: fadeInElements 0.4s ease-out forwards;
+    animation-delay: 0.35s;
+    opacity: 0;
+}
+
+.team-overview.entering-from-home .location-filter {
+    animation: fadeInElements 0.4s ease-out forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+@keyframes fadeInFromExpansion {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+        background-color: #ffffff;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        background-color: #f8f9fa;
+    }
+}
+
+@keyframes fadeInElements {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .team-cards-grid {
@@ -1151,6 +1208,63 @@ html {
     column-gap: 30px;
     margin-top: 40px;
     justify-items: center;
+}
+
+.team-overview.entering-from-home .team-cards-grid {
+    animation: fadeInGrid 0.5s ease-out forwards;
+    animation-delay: 0.65s;
+    opacity: 0 !important;
+}
+
+/* All cards fade in with dynamic JavaScript-based stagger effect */
+.team-overview.entering-from-home .team-cards-grid .team-card {
+    animation: fadeInFromBottom 0.4s ease-out forwards;
+    animation-delay: var(--stagger-delay, 0.8s);
+    opacity: 0 !important;
+    transform: translateY(25px);
+}
+
+/* Responsive breakpoints handled by JavaScript - no hardcoded delays needed */
+
+/* CTA Section fade in after all attorneys */
+.team-cta.cta-entering-from-page {
+    animation: fadeInCTA 0.5s ease-out forwards;
+    animation-delay: 2.2s; /* After all attorneys have appeared */
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInGrid {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInCTA {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .team-card-link {
@@ -1169,6 +1283,8 @@ html {
     height: 450px;
     display: flex;
     flex-direction: column;
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
 }
 
 .team-card:hover {
@@ -1187,6 +1303,7 @@ html {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
     transition: transform 0.3s ease;
 }
 
@@ -1401,6 +1518,350 @@ html {
     font-size: 1.1rem;
     margin-bottom: 30px;
     opacity: 0.9;
+}
+
+/* Attorney Personal Section Styles */
+.attorney-personal-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.personal-section-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.personal-section-wrapper .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.personal-section-wrapper .section-header h2 {
+    font-family: 'Crimson Text', serif;
+    color: #1a365d;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.personal-section-wrapper .section-header h2 i {
+    color: #e74c3c;
+    margin-right: 15px;
+}
+
+.personal-content-with-photo {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.personal-bio {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.personal-bio p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.personal-photo {
+    position: relative;
+}
+
+.personal-photo-image {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 4/5;
+}
+
+.personal-photo-image .attorney-image-container {
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.personal-content-no-photo {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.personal-content-no-photo p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive for Personal Section */
+@media (max-width: 768px) {
+    .personal-content-with-photo {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .personal-bio {
+        padding: 30px;
+    }
+
+    .personal-content-no-photo p {
+        padding: 30px;
+    }
+
+    .personal-section-wrapper .section-header h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Attorney Credentials Section Styles */
+.attorney-credentials-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.attorney-credentials-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.attorney-credentials-section .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.attorney-credentials-section .section-header h2 {
+    font-family: 'Crimson Text', serif;
+    color: #1a365d;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.attorney-credentials-section .section-header h2 i {
+    color: #c5a572;
+    margin-right: 15px;
+}
+
+.attorney-credentials-section .section-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.credentials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.credential-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #c5a572;
+}
+
+.credential-item i {
+    color: #c5a572;
+    margin-right: 15px;
+    font-size: 1.1rem;
+}
+
+.credential-item span {
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Attorney Practice Section Styles */
+.attorney-practice-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.attorney-practice-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.attorney-practice-section .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.attorney-practice-section .section-header h2 {
+    font-family: 'Crimson Text', serif;
+    color: #1a365d;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.attorney-practice-section .section-header h2 i {
+    color: #c5a572;
+    margin-right: 15px;
+}
+
+.attorney-practice-section .section-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.practice-area-title {
+    font-family: 'Crimson Text', serif;
+    color: #1a365d;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #c5a572;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.attorney-practice-section .section-content p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+/* Attorney Contact Section Styles */
+.attorney-contact-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.attorney-contact-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.attorney-contact-section .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.attorney-contact-section .section-header h2 {
+    font-family: 'Crimson Text', serif;
+    color: #1a365d;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.attorney-contact-section .section-header p {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.attorney-contact-section .section-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.contact-method {
+    text-align: center;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.contact-method:hover {
+    transform: translateY(-5px);
+}
+
+.contact-method i {
+    font-size: 2.5rem;
+    color: #c5a572;
+    margin-bottom: 20px;
+}
+
+.contact-method h4 {
+    font-family: 'Crimson Text', serif;
+    color: #1a365d;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.contact-method .btn {
+    margin-top: 10px;
+}
+
+/* Responsive for Attorney Sections */
+@media (max-width: 768px) {
+    .credentials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+
+    .attorney-credentials-section .section-content,
+    .attorney-practice-section .section-content,
+    .attorney-contact-section .section-content {
+        padding: 30px;
+    }
+
+    .attorney-credentials-section .section-header h2,
+    .attorney-practice-section .section-header h2,
+    .attorney-contact-section .section-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-method {
+        padding: 20px;
+    }
+}
+
+/* Attorney Navigation Section Styles */
+.attorney-navigation-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.attorney-navigation-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.attorney-navigation-section .btn {
+    font-size: 1.1rem;
+    padding: 15px 30px;
+}
+
+.attorney-navigation-section .btn i {
+    margin-right: 10px;
 }
 
 /* Responsive Design for New Team Layout */
@@ -1711,6 +2172,96 @@ html {
     font-size: 1.1rem;
     margin-bottom: 30px;
     opacity: 0.9;
+}
+
+/* Home News Section */
+.home-news {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.home-news .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.home-news .section-header h2 {
+    font-family: 'Crimson Text', serif;
+    font-size: 2.5rem;
+    color: #1a365d;
+    margin-bottom: 15px;
+}
+
+.home-news .section-header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.home-news .news-grid {
+    margin-bottom: 40px;
+}
+
+.home-news .news-card {
+    height: 100%;
+}
+
+.home-news .news-card-header {
+    padding: 20px 20px 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.home-news .news-card-content {
+    padding: 0 20px 20px 20px;
+}
+
+.home-news .news-card-content h3 {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.3rem;
+    color: #1a365d;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.home-news .news-excerpt {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.home-news .news-card-footer {
+    padding: 0 20px 20px 20px;
+    border-top: 1px solid #eee;
+    margin-top: auto;
+}
+
+.home-news .read-more {
+    color: #c5a572;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 15px;
+    transition: color 0.3s ease;
+}
+
+.home-news .news-card:hover .read-more {
+    color: #1a365d;
+}
+
+.home-news .news-cta {
+    text-align: center;
+}
+
+.home-news .no-news-message {
+    text-align: center;
+    padding: 40px 20px;
+    color: #666;
+    font-style: italic;
 }
 
 /* News Detail Styles */

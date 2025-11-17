@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { getBannerImageUrl } from '../utils/imageUtils';
 
 const BannerImage = ({
   src,
@@ -21,7 +22,7 @@ const BannerImage = ({
   // Use default banner if there's an error or no src provided
   const imageSrc = imageError || !src
     ? '/images/defaults/default-banner.svg'
-    : src;
+    : getBannerImageUrl(src);
 
   return (
     <div className={`banner-image-container ${className}`} style={style}>

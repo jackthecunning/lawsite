@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { loadAllAttorneyProfiles } from '../utils/attorneyLoader';
 import AttorneyImage from './AttorneyImage';
@@ -6,6 +6,8 @@ import AttorneyImage from './AttorneyImage';
 const Attorneys = () => {
   const [attorneys, setAttorneys] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isExpanding, setIsExpanding] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadAttorneys = async () => {
@@ -22,8 +24,19 @@ const Attorneys = () => {
     loadAttorneys();
   }, []);
 
-  // Show only first 4 attorneys on home page
-  const featuredAttorneys = attorneys.slice(0, 4);
+  // Show only partners on home page
+  const featuredAttorneys = attorneys.filter(attorney =>
+    attorney.title && attorney.title.toLowerCase().includes('partner')
+  );
+
+  const handleExpandToTeam = (e) => {
+    e.preventDefault();
+    setIsExpanding(true);
+
+    // Navigate immediately without waiting for animation or scrolling
+    // The Team page will handle scrolling to top
+    navigate('/team', { state: { fromHomepage: true } });
+  };
 
   if (loading) {
     return (
@@ -42,47 +55,43 @@ const Attorneys = () => {
   }
 
   return (
-    <section id="attorneys" className="attorneys">
+    <section id="attorneys" className={`attorneys ${isExpanding ? 'expanding' : ''}`}>
       <div className="container">
         <div className="section-header">
           <h2>Our Legal Team</h2>
           <p>Experienced Professionals Dedicated to Your Success</p>
         </div>
-        <div className="attorneys-grid">
+        <div className="attorneys-scroll-container">
           {featuredAttorneys.map((attorney) => (
-            <div key={attorney.id} className="attorney-card">
-              <AttorneyImage src={attorney.image} alt={attorney.name} />
-              <div className="attorney-info">
-                <h3>{attorney.name}</h3>
-                <p className="title">{attorney.title}</p>
-                <p className="specialization">{attorney.specialization}</p>
-                {/* <p className="bio">{attorney.bio.about[0].substring(0, 150)}...</p> */}
-                <div className="attorney-contact">
-                  <p>
-                    <i className="fas fa-envelope"></i>
-                    <a href={`mailto:${attorney.email}`}>
-                      {attorney.email}
-                    </a>
-                  </p>
-                  <p>
-                    <i className="fas fa-phone"></i>
-                    <a href={`tel:${attorney.phone}`}>
-                      {attorney.phone}
-                    </a>
-                  </p>
-                  <p>
+            <Link
+              key={attorney.id}
+              to={`/attorney/${attorney.slug}`}
+              className="team-card-link"
+            >
+              <div className="team-card">
+                <div className="team-card-image">
+                  <AttorneyImage
+                    src={attorney.image}
+                    alt={attorney.name}
+                  />
+                </div>
+                <div className="team-card-info">
+                  <h3>{attorney.name}</h3>
+                  <p className="title">{attorney.title}</p>
+                  <p className="specialization">{attorney.specialization}</p>
+                  <p className="office">
                     <i className="fas fa-map-marker-alt"></i>
                     {attorney.office} Office
                   </p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         <div style={{ textAlign: 'center', marginTop: '40px' }}>
-          <Link to="/team" className="btn btn-primary">
+          <button onClick={handleExpandToTeam} className="btn btn-primary team-expand-btn">
             Meet Our Full Team
-          </Link>
+          </button>
         </div>
       </div>
     </section>

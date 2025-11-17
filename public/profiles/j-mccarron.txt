@@ -2,6 +2,7 @@ name: J. McCarron
 title: Associate Attorney
 specialization: Bankruptcy & Debt Resolution
 image: images/attorneys/J.McCarron.png
+personal photo: images/attorneys/J.McCarron.png
 email: jmccarron@swartzcampbell.com
 phone: (555) 123-4574
 office: Philadelphia
@@ -14,3 +15,5 @@ credentials:
 - Certified in Consumer Bankruptcy Law
 
 bio: J. McCarron is a skilled bankruptcy attorney who helps individuals and businesses find relief from overwhelming debt through various bankruptcy and debt resolution options. With a strong foundation in finance and extensive experience in bankruptcy law, McCarron provides compassionate and effective representation to clients facing financial distress. His practice includes Chapter 7 and Chapter 13 consumer bankruptcies, small business reorganizations under Chapter 11, and debt negotiation and workout arrangements outside of bankruptcy. McCarron is certified in consumer bankruptcy law and maintains active membership in the American Bankruptcy Institute, where he stays current with evolving bankruptcy practices and procedures. He takes a comprehensive approach to debt relief, analyzing each client's unique financial situation to recommend the most appropriate solution. McCarron also represents creditors in bankruptcy proceedings and has experience with asset recovery, preference actions, and creditor rights enforcement. His finance background enables him to understand complex financial structures and provide strategic advice on debt restructuring and business reorganization.
+
+personal bio: When not helping clients navigate financial challenges, J. McCarron is an avid runner who has completed three marathons, including Boston and New York. He volunteers as a financial literacy instructor at local community centers, teaching budgeting and debt management skills to families in underserved communities. McCarron is also a passionate home cook who enjoys experimenting with international cuisines and hosts monthly dinner parties for friends and colleagues. He spends his weekends hiking the trails around Philadelphia with his rescue dog, Max, and is working on visiting all the national parks in the United States - he's currently at 23 and counting!

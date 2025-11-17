@@ -1,9 +1,19 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { loadAllAttorneyProfiles } from '../utils/attorneyLoader';
 import AttorneyImage from '../components/AttorneyImage';
 
 const Team = () => {
+  // Animation timing constants
+  const ANIMATION_TIMINGS = {
+    fadeOutDuration: 300,
+    fadeInDelay: 50,
+    homepageTransition: 1000,
+    staggerCalculationDelay: 100,
+    baseStaggerDelay: 0.35,
+    rowStaggerIncrement: 0.2
+  };
+
   const [selectedLocation, setSelectedLocation] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [isAnimating, setIsAnimating] = useState(false);
@@ -12,6 +22,63 @@ const Team = () => {
   const [loading, setLoading] = useState(true);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [animationClass, setAnimationClass] = useState('fade-in');
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const location = useLocation();
+
+  // Handle homepage transition
+  useEffect(() => {
+    const isFromHomepage = location.state?.fromHomepage;
+
+    if (isFromHomepage) {
+      // Immediately scroll to top
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+      // Set transition state
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, ANIMATION_TIMINGS.homepageTransition);
+    }
+  }, [location]);
+
+  // Calculate dynamic stagger delays for team cards
+  useEffect(() => {
+    const calculateStaggerDelays = () => {
+      const cards = document.querySelectorAll('.team-overview.entering-from-home .team-cards-grid .team-card');
+
+      if (cards.length === 0) return;
+
+      // Determine cards per row based on responsive breakpoints
+      const getCardsPerRow = () => {
+        const screenWidth = window.innerWidth;
+        if (screenWidth <= 768) return 2; // Mobile
+        if (screenWidth <= 1200) return 3; // Tablet
+        return 4; // Desktop
+      };
+
+      const cardsPerRow = getCardsPerRow();
+      const baseDelay = ANIMATION_TIMINGS.baseStaggerDelay;
+      const rowIncrement = ANIMATION_TIMINGS.rowStaggerIncrement;
+
+      cards.forEach((card, index) => {
+        const rowIndex = Math.floor(index / cardsPerRow);
+        const delay = baseDelay + (rowIndex * rowIncrement);
+        card.style.setProperty('--stagger-delay', `${delay}s`);
+      });
+    };
+
+    // Calculate delays when transitioning from homepage
+    if (isTransitioning) {
+      // Small delay to ensure DOM is ready
+      setTimeout(calculateStaggerDelays, ANIMATION_TIMINGS.staggerCalculationDelay);
+
+      // Recalculate on window resize
+      const handleResize = () => calculateStaggerDelays();
+      window.addEventListener('resize', handleResize);
+
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, [isTransitioning, displayedAttorneys]);
 
   // Load attorneys on component mount
   useEffect(() => {
@@ -33,24 +100,23 @@ const Team = () => {
   // Get unique office locations
   const locations = ['All', ...new Set(attorneys.map(attorney => attorney.office))];
 
-  // Filter attorneys based on selected location and search query
-  const getFilteredAttorneys = () => {
-    let filtered = selectedLocation === 'All'
+  // Unified attorney filtering function
+  const getFilteredAttorneys = (location = selectedLocation, query = searchQuery) => {
+    let filtered = location === 'All'
       ? attorneys
-      : attorneys.filter(attorney => attorney.office === selectedLocation);
+      : attorneys.filter(attorney => attorney.office === location);
 
-    if (searchQuery.trim()) {
+    if (query.trim()) {
+      const searchTerm = query.toLowerCase();
       filtered = filtered.filter(attorney =>
-        attorney.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        attorney.specialization.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        attorney.title.toLowerCase().includes(searchQuery.toLowerCase())
+        attorney.name.toLowerCase().includes(searchTerm) ||
+        attorney.specialization.toLowerCase().includes(searchTerm) ||
+        attorney.title.toLowerCase().includes(searchTerm)
       );
     }
 
     return filtered;
   };
-
-  const filteredAttorneys = getFilteredAttorneys();
 
   // Get search suggestions
   const getSearchSuggestions = () => {
@@ -79,38 +145,33 @@ const Team = () => {
 
   const searchSuggestions = getSearchSuggestions();
 
-  const handleLocationChange = (location) => {
-    if (location === selectedLocation) return;
+  // Unified function for handling filter transitions
+  const handleFilterTransition = (updateCallback) => {
+    // Clear any existing stagger delays from cards
+    const allCards = document.querySelectorAll('.team-cards-grid .team-card');
+    allCards.forEach(card => {
+      card.style.removeProperty('--stagger-delay');
+    });
 
-    // Start fade out animation
     setIsAnimating(true);
     setAnimationClass('fade-out');
 
-    // After fade out completes, update content and start fade in
     setTimeout(() => {
-      setSelectedLocation(location);
-
-      // Calculate new filtered attorneys based on updated location and current search
-      let newFilteredAttorneys = location === 'All'
-        ? attorneys
-        : attorneys.filter(attorney => attorney.office === location);
-
-      if (searchQuery.trim()) {
-        newFilteredAttorneys = newFilteredAttorneys.filter(attorney =>
-          attorney.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          attorney.specialization.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          attorney.title.toLowerCase().includes(searchQuery.toLowerCase())
-        );
-      }
-
-      setDisplayedAttorneys(newFilteredAttorneys);
-
-      // Start fade in with stagger effect
+      updateCallback();
       setTimeout(() => {
         setAnimationClass('fade-in');
         setIsAnimating(false);
-      }, 50);
-    }, 300);
+      }, ANIMATION_TIMINGS.fadeInDelay);
+    }, ANIMATION_TIMINGS.fadeOutDuration);
+  };
+
+  const handleLocationChange = (location) => {
+    if (location === selectedLocation) return;
+
+    handleFilterTransition(() => {
+      setSelectedLocation(location);
+      setDisplayedAttorneys(getFilteredAttorneys(location, searchQuery));
+    });
   };
 
   const handleSearchChange = (e) => {
@@ -118,86 +179,28 @@ const Team = () => {
     setSearchQuery(query);
     setShowSuggestions(query.trim().length > 0);
 
-    setIsAnimating(true);
-    setAnimationClass('fade-out');
-
-    setTimeout(() => {
-      // Calculate filtered attorneys based on current location and new search query
-      let newFilteredAttorneys = selectedLocation === 'All'
-        ? attorneys
-        : attorneys.filter(attorney => attorney.office === selectedLocation);
-
-      if (query.trim()) {
-        newFilteredAttorneys = newFilteredAttorneys.filter(attorney =>
-          attorney.name.toLowerCase().includes(query.toLowerCase()) ||
-          attorney.specialization.toLowerCase().includes(query.toLowerCase()) ||
-          attorney.title.toLowerCase().includes(query.toLowerCase())
-        );
-      }
-
-      setDisplayedAttorneys(newFilteredAttorneys);
-
-      setTimeout(() => {
-        setAnimationClass('fade-in');
-        setIsAnimating(false);
-      }, 50);
-    }, 300);
+    handleFilterTransition(() => {
+      setDisplayedAttorneys(getFilteredAttorneys(selectedLocation, query));
+    });
   };
 
   const handleSuggestionClick = (suggestion) => {
     setSearchQuery(suggestion);
     setShowSuggestions(false);
 
-    setIsAnimating(true);
-    setAnimationClass('fade-out');
-
-    setTimeout(() => {
-      // Calculate filtered attorneys based on current location and selected suggestion
-      let newFilteredAttorneys = selectedLocation === 'All'
-        ? attorneys
-        : attorneys.filter(attorney => attorney.office === selectedLocation);
-
-      newFilteredAttorneys = newFilteredAttorneys.filter(attorney =>
-        attorney.name.toLowerCase().includes(suggestion.toLowerCase()) ||
-        attorney.specialization.toLowerCase().includes(suggestion.toLowerCase()) ||
-        attorney.title.toLowerCase().includes(suggestion.toLowerCase())
-      );
-
-      setDisplayedAttorneys(newFilteredAttorneys);
-
-      setTimeout(() => {
-        setAnimationClass('fade-in');
-        setIsAnimating(false);
-      }, 50);
-    }, 300);
+    handleFilterTransition(() => {
+      setDisplayedAttorneys(getFilteredAttorneys(selectedLocation, suggestion));
+    });
   };
 
   const clearSearch = () => {
     setSearchQuery('');
     setShowSuggestions(false);
 
-    setIsAnimating(true);
-    setAnimationClass('fade-out');
-
-    setTimeout(() => {
-      // Show all attorneys for current location when clearing search
-      const newFilteredAttorneys = selectedLocation === 'All'
-        ? attorneys
-        : attorneys.filter(attorney => attorney.office === selectedLocation);
-
-      setDisplayedAttorneys(newFilteredAttorneys);
-
-      setTimeout(() => {
-        setAnimationClass('fade-in');
-        setIsAnimating(false);
-      }, 50);
-    }, 300);
+    handleFilterTransition(() => {
+      setDisplayedAttorneys(getFilteredAttorneys(selectedLocation, ''));
+    });
   };
-
-  // Initialize displayed attorneys and update when filters change
-  useEffect(() => {
-    setDisplayedAttorneys(filteredAttorneys);
-  }, []);
 
   // Close suggestions when clicking outside
   useEffect(() => {
@@ -209,7 +212,7 @@ const Team = () => {
     window.location.href = '/#contact';
   };
 
-  if (loading) {
+  if (loading && !isTransitioning) {
     return (
       <section className="team-overview">
         <div className="container">
@@ -228,7 +231,7 @@ const Team = () => {
   return (
     <>
       {/* Team Section */}
-      <section className="team-overview">
+      <section className={`team-overview ${isTransitioning ? 'entering-from-home' : ''}`}>
         <div className="container">
           <div className="section-header">
             <h2>Our Attorneys</h2>
@@ -294,13 +297,16 @@ const Team = () => {
 
           {/* Attorney Cards Grid */}
           <div className={`team-cards-grid ${animationClass}`}>
-            {displayedAttorneys.map((attorney) => (
+            {displayedAttorneys.map((attorney, index) => (
               <Link
                 key={attorney.id}
                 to={`/attorney/${attorney.slug}`}
                 className="team-card-link"
               >
-                <div className="team-card">
+                <div
+                  className="team-card"
+                  style={{ '--card-index': index }}
+                >
                   <div className="team-card-image">
                     <AttorneyImage
                       src={attorney.image}
@@ -324,7 +330,7 @@ const Team = () => {
       </section>
 
       {/* Contact CTA Section */}
-      <section className="team-cta">
+      <section className={`team-cta ${isTransitioning ? 'cta-entering-from-page' : ''}`}>
         <div className="container">
           <div className="cta-content">
             <h2>Ready to Work with Our Team?</h2>

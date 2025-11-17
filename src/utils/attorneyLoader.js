@@ -8,6 +8,7 @@ export const parseAttorneyProfile = (profileText) => {
 
   let currentSection = null;
   let bioLines = [];
+  let personalBioLines = [];
 
   for (let line of lines) {
     line = line.trim();
@@ -22,6 +23,8 @@ export const parseAttorneyProfile = (profileText) => {
       attorney.specialization = line.substring(15).trim();
     } else if (line.startsWith('image:')) {
       attorney.image = line.substring(6).trim();
+    } else if (line.startsWith('personal photo:')) {
+      attorney.personalPhoto = line.substring(15).trim();
     } else if (line.startsWith('email:')) {
       attorney.email = line.substring(6).trim();
     } else if (line.startsWith('phone:')) {
@@ -33,15 +36,26 @@ export const parseAttorneyProfile = (profileText) => {
     } else if (line.startsWith('bio:')) {
       currentSection = 'bio';
       bioLines.push(line.substring(4).trim());
+    } else if (line.startsWith('personal bio:') || line === 'personal bio:') {
+      currentSection = 'personal bio';
+      if (line.startsWith('personal bio:')) {
+        personalBioLines.push(line.substring(13).trim());
+      }
     } else if (line.startsWith('- ') && currentSection === 'credentials') {
       attorney.credentials.push(line.substring(2).trim());
     } else if (currentSection === 'bio') {
       bioLines.push(line);
+    } else if (currentSection === 'personal bio') {
+      personalBioLines.push(line);
     }
   }
 
   if (bioLines.length > 0) {
     attorney.bio = bioLines.join(' ').trim();
+  }
+
+  if (personalBioLines.length > 0) {
+    attorney.personalBio = personalBioLines.join(' ').trim();
   }
 
   return attorney;

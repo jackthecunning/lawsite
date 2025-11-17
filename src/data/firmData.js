@@ -34,43 +34,44 @@ export const services = [
       "Adoption services",
       "Prenuptial agreements"
     ]
-  },
-  {
-    id: 4,
-    icon: "fas fa-car",
-    title: "Personal Injury",
-    description: "Aggressive representation to help you recover maximum compensation for your injuries.",
-    features: [
-      "Auto accidents",
-      "Slip and fall",
-      "Medical malpractice",
-      "Workers compensation"
-    ]
-  },
-  {
-    id: 5,
-    icon: "fas fa-gavel",
-    title: "Criminal Defense",
-    description: "Experienced criminal defense representation protecting your rights and freedom.",
-    features: [
-      "DUI/DWI defense",
-      "Drug charges",
-      "White collar crimes",
-      "Assault charges"
-    ]
-  },
-  {
-    id: 6,
-    icon: "fas fa-file-alt",
-    title: "Estate Planning",
-    description: "Comprehensive estate planning services to protect your assets and secure your family's future.",
-    features: [
-      "Will drafting",
-      "Trust creation",
-      "Estate administration",
-      "Probate services"
-    ]
   }
+  // ,
+  // {
+  //   id: 4,
+  //   icon: "fas fa-car",
+  //   title: "Personal Injury",
+  //   description: "Aggressive representation to help you recover maximum compensation for your injuries.",
+  //   features: [
+  //     "Auto accidents",
+  //     "Slip and fall",
+  //     "Medical malpractice",
+  //     "Workers compensation"
+  //   ]
+  // },
+  // {
+  //   id: 5,
+  //   icon: "fas fa-gavel",
+  //   title: "Criminal Defense",
+  //   description: "Experienced criminal defense representation protecting your rights and freedom.",
+  //   features: [
+  //     "DUI/DWI defense",
+  //     "Drug charges",
+  //     "White collar crimes",
+  //     "Assault charges"
+  //   ]
+  // },
+  // {
+  //   id: 6,
+  //   icon: "fas fa-file-alt",
+  //   title: "Estate Planning",
+  //   description: "Comprehensive estate planning services to protect your assets and secure your family's future.",
+  //   features: [
+  //     "Will drafting",
+  //     "Trust creation",
+  //     "Estate administration",
+  //     "Probate services"
+  //   ]
+  // }
 ];
 
 export const firmInfo = {

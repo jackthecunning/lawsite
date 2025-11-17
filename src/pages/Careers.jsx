@@ -1,6 +1,9 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const Careers = () => {
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const navigate = useNavigate();
   const openPositions = [
     {
       id: 1,
@@ -44,8 +47,17 @@ const Careers = () => {
     window.location.href = '/#contact';
   };
 
-  return (
-    <>
+  const handleTeamTransition = (e) => {
+    e.preventDefault();
+    setIsTransitioning(true);
+
+    // Wait for fade out animation to complete, then navigate
+    setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      navigate('/team', { state: { fromHomepage: true } });
+    }, 500);
+  };  return (
+    <div className={`page-container ${isTransitioning ? 'page-transitioning' : ''}`}>
       {/* Careers Hero Section */}
       <section className="careers-hero">
         <div className="hero-background">
@@ -219,14 +231,14 @@ const Careers = () => {
               <button onClick={scrollToContact} className="btn btn-primary">
                 Contact Our HR Team
               </button>
-              <Link to="/team" className="btn btn-secondary">
+              <button onClick={handleTeamTransition} className="btn btn-secondary">
                 Meet Our Team
-              </Link>
+              </button>
             </div>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

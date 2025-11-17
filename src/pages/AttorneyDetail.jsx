@@ -1,12 +1,19 @@
 import { useParams, Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { loadAllAttorneyProfiles } from '../utils/attorneyLoader';
-import AttorneyImage from '../components/AttorneyImage';
+import AttorneyHeroSection from '../components/attorney/AttorneyHeroSection';
+import AttorneyPersonalSection from '../components/attorney/AttorneyPersonalSection';
+import AttorneyCredentialsSection from '../components/attorney/AttorneyCredentialsSection';
+import AttorneyPracticeSection from '../components/attorney/AttorneyPracticeSection';
+import AttorneyContactSection from '../components/attorney/AttorneyContactSection';
+import AttorneyNavigationSection from '../components/attorney/AttorneyNavigationSection';
 
 const AttorneyDetail = () => {
   const { id } = useParams(); // This is now the slug
   const [attorney, setAttorney] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const sectionRefs = useRef([]);
 
   // Load attorney data on component mount
   useEffect(() => {
@@ -25,6 +32,45 @@ const AttorneyDetail = () => {
     loadAttorney();
     window.scrollTo(0, 0);
   }, [id]);
+
+  // Scroll animation and progress tracking
+  useEffect(() => {
+    const handleScroll = () => {
+      // Update scroll progress
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      setScrollProgress(progress);
+    };
+
+    // Intersection Observer for section animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -10% 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    const sections = document.querySelectorAll('.attorney-section');
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial call
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
+  }, [attorney]); // Re-run when attorney data loads
 
   const scrollToContact = () => {
     window.location.href = '/#contact';
@@ -51,93 +97,41 @@ const AttorneyDetail = () => {
 
   return (
     <>
-      {/* Attorney Details Section */}
-      <section className="attorney-detailed">
-        <div className="container">
-          <div className="attorney-detail-content">
-            <div className="attorney-detail-image">
-              <AttorneyImage
-                src={attorney.image}
-                alt={attorney.name}
-              />
+      {/* Scroll progress indicator */}
+      <div 
+        className="scroll-indicator" 
+        style={{ width: `${scrollProgress}%` }}
+      ></div>
 
-              {/* Quick Contact Card */}
-              <div className="attorney-quick-contact">
-                <h4>Contact {attorney.name.split(' ')[0]}</h4>
-                <p>
-                  <i className="fas fa-envelope"></i>
-                  <a href={`mailto:${attorney.email}`}>
-                    {attorney.email}
-                  </a>
-                </p>
-                <p>
-                  <i className="fas fa-phone"></i>
-                  <a href={`tel:${attorney.phone}`}>
-                    {attorney.phone}
-                  </a>
-                </p>
-                <p>
-                  <i className="fas fa-map-marker-alt"></i>
-                  {attorney.office} Office
-                </p>
-                <button onClick={scrollToContact} className="btn btn-primary btn-full-width">
-                  Schedule a Consultation
-                </button>
-              </div>
-            </div>
+      <div className="attorney-hero attorney-section">
+        <AttorneyHeroSection
+          attorney={attorney}
+          onScheduleConsultation={scrollToContact}
+        />
+      </div>
 
-            <div className="attorney-detail-info">
-              <div className="attorney-bio">
-                <h3>About {attorney.name.split(' ')[0]}</h3>
-                <p>{attorney.bio}</p>
-              </div>
+      <div className="attorney-section">
+        <AttorneyPersonalSection attorney={attorney} />
+      </div>
 
-              <div className="attorney-credentials">
-                <h3>Education & Credentials</h3>
-                <ul>
-                  {attorney.credentials.map((credential, index) => (
-                    <li key={index}>{credential}</li>
-                  ))}
-                </ul>
-              </div>
+      <div className="attorney-section">
+        <AttorneyCredentialsSection attorney={attorney} />
+      </div>
 
-              <div className="attorney-practice-areas">
-                <h3>Practice Areas</h3>
-                <p>
-                  <strong>{attorney.specialization}</strong> - {attorney.name.split(' ')[0]} focuses on
-                  providing comprehensive legal services in this area, bringing years of experience
-                  and a deep understanding of the legal complexities involved.
-                </p>
-              </div>
-            </div>
-          </div>
+      <div className="attorney-section">
+        <AttorneyPracticeSection attorney={attorney} />
+      </div>
 
-          {/* Back to Team Button */}
-          <div className="back-to-team">
-            <Link to="/team" className="btn btn-secondary">
-              <i className="fas fa-arrow-left"></i> Back to Our Team
-            </Link>
-          </div>
-        </div>
-      </section>
+      <div className="attorney-section">
+        <AttorneyContactSection
+          attorney={attorney}
+          onScheduleConsultation={scrollToContact}
+        />
+      </div>
 
-      {/* Contact CTA Section */}
-      <section className="attorney-cta">
-        <div className="container">
-          <div className="cta-content">
-            <h2>Ready to Work with {attorney.name.split(' ')[0]}?</h2>
-            <p>Contact {attorney.name.split(' ')[0]} directly for a consultation about your legal matter.</p>
-            <div className="cta-buttons">
-              <button onClick={scrollToContact} className="btn btn-primary">
-                Free Consultation
-              </button>
-              <a href={`tel:${attorney.phone}`} className="btn btn-secondary">
-                Call {attorney.name.split(' ')[0]}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div className="attorney-section">
+        <AttorneyNavigationSection />
+      </div>
     </>
   );
 };
