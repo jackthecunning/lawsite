@@ -21,7 +21,7 @@ For production, configure environment variables to use S3 or CDN:
 
 Create `.env.production.local` (not tracked in git):
 ```bash
-VITE_IMAGE_BASE_URL=https://your-bucket-name.s3.amazonaws.com
+VITE_IMAGE_BASE_URL=https://swartz-campbell.s3.amazonaws.com
 VITE_ENVIRONMENT=production
 ```
 
