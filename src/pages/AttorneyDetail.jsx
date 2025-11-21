@@ -1,5 +1,5 @@
-import { useParams, Link } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { loadAllAttorneyProfiles } from '../utils/attorneyLoader';
 import AttorneyHeroSection from '../components/attorney/AttorneyHeroSection';
 import AttorneyPersonalSection from '../components/attorney/AttorneyPersonalSection';
@@ -12,8 +12,6 @@ const AttorneyDetail = () => {
   const { id } = useParams(); // This is now the slug
   const [attorney, setAttorney] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const sectionRefs = useRef([]);
 
   // Load attorney data on component mount
   useEffect(() => {
@@ -32,45 +30,6 @@ const AttorneyDetail = () => {
     loadAttorney();
     window.scrollTo(0, 0);
   }, [id]);
-
-  // Scroll animation and progress tracking
-  useEffect(() => {
-    const handleScroll = () => {
-      // Update scroll progress
-      const scrollTop = window.pageYOffset;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (scrollTop / docHeight) * 100;
-      setScrollProgress(progress);
-    };
-
-    // Intersection Observer for section animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -10% 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in');
-        }
-      });
-    }, observerOptions);
-
-    // Observe all sections
-    const sections = document.querySelectorAll('.attorney-section');
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial call
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      observer.disconnect();
-    };
-  }, [attorney]); // Re-run when attorney data loads
 
   const scrollToContact = () => {
     window.location.href = '/#contact';
@@ -97,41 +56,23 @@ const AttorneyDetail = () => {
 
   return (
     <>
-      {/* Scroll progress indicator */}
-      <div 
-        className="scroll-indicator" 
-        style={{ width: `${scrollProgress}%` }}
-      ></div>
+      <AttorneyHeroSection
+        attorney={attorney}
+        onScheduleConsultation={scrollToContact}
+      />
 
-      <div className="attorney-hero attorney-section">
-        <AttorneyHeroSection
-          attorney={attorney}
-          onScheduleConsultation={scrollToContact}
-        />
-      </div>
+      <AttorneyPersonalSection attorney={attorney} />
 
-      <div className="attorney-section">
-        <AttorneyPersonalSection attorney={attorney} />
-      </div>
+      <AttorneyCredentialsSection attorney={attorney} />
 
-      <div className="attorney-section">
-        <AttorneyCredentialsSection attorney={attorney} />
-      </div>
+      <AttorneyPracticeSection attorney={attorney} />
 
-      <div className="attorney-section">
-        <AttorneyPracticeSection attorney={attorney} />
-      </div>
+      <AttorneyContactSection
+        attorney={attorney}
+        onScheduleConsultation={scrollToContact}
+      />
 
-      <div className="attorney-section">
-        <AttorneyContactSection
-          attorney={attorney}
-          onScheduleConsultation={scrollToContact}
-        />
-      </div>
-
-      <div className="attorney-section">
-        <AttorneyNavigationSection />
-      </div>
+      <AttorneyNavigationSection />
     </>
   );
 };

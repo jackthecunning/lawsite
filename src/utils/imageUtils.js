@@ -14,11 +14,23 @@ export const getImageUrl = (imagePath) => {
 };
 
 export const getAttorneyImageUrl = (attorneyImage) => {
-  return getImageUrl(attorneyImage);
+  // If the path already includes the folder structure, use as-is
+  if (attorneyImage.startsWith('images/')) {
+    return getImageUrl(attorneyImage);
+  }
+
+  // Otherwise, prepend the attorneys folder path
+  return getImageUrl(`images/attorneys/${attorneyImage}`);
 };
 
 export const getBannerImageUrl = (bannerImage) => {
-  return getImageUrl(bannerImage);
+  // If the path already includes the folder structure, use as-is
+  if (bannerImage.startsWith('images/')) {
+    return getImageUrl(bannerImage);
+  }
+
+  // Otherwise, prepend the banner folder path
+  return getImageUrl(`images/banner/${bannerImage}`);
 };
 
 // For cases where you need to check if we're using local images
