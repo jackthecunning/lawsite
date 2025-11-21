@@ -1,10 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { newsArticles } from '../data/newsData';
 
 const HomeNews = () => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
+  const [animateCards, setAnimateCards] = useState(false);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     try {
@@ -18,6 +21,33 @@ const HomeNews = () => {
     } finally {
       setLoading(false);
     }
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            setTimeout(() => setAnimateCards(true), 350);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: '-40px 0px'
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
   }, []);
 
   if (loading) {
@@ -53,14 +83,14 @@ const HomeNews = () => {
   }
 
   return (
-    <section className="home-news">
+    <section ref={sectionRef} className={`home-news ${isVisible ? 'animate-in' : ''}`}>
       <div className="container">
-        <div className="section-header">
+        <div className={`section-header ${isVisible ? 'header-animate' : ''}`}>
           <h2>Latest News & Updates</h2>
           <p>Stay informed about our latest case results, firm news, and legal insights</p>
         </div>
 
-        <div className="news-grid">
+        <div className={`news-grid ${animateCards ? 'cards-animate' : ''}`}>
           {news.map((article) => (
             <Link
               key={article.id}
@@ -103,7 +133,10 @@ const HomeNews = () => {
           ))}
         </div>
 
-        <div className="news-cta">
+      </div>
+
+      <div className="news-cta">
+        <div className="container">
           <Link to="/news" className="btn btn-primary">
             View All News & Updates
           </Link>

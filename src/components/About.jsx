@@ -1,12 +1,49 @@
+import { useState, useEffect, useRef } from 'react';
+
 const About = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [animateContent, setAnimateContent] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            setTimeout(() => setAnimateContent(true), 300);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: '-50px 0px'
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section id="about" className="about">
+    <section
+      id="about"
+      ref={sectionRef}
+      className={`about ${isVisible ? 'animate-in' : ''}`}
+    >
       <div className="container">
-        <div className="section-header">
+        <div className={`section-header ${isVisible ? 'header-animate' : ''}`}>
           <h2>About Our Firm</h2>
           <p>Committed to Excellence in Legal Service</p>
         </div>
-        <div className="about-content">
+        <div className={`about-content ${animateContent ? 'content-animate' : ''}`}>
           <div className="about-text">
             <h3>Your Trusted Legal Partners</h3>
             <p>

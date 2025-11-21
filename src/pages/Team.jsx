@@ -217,7 +217,7 @@ const Team = () => {
       <section className="team-overview">
         <div className="container">
           <div className="section-header">
-            <h2>Our Attorneys</h2>
+            <h2 className="team-title-underlined">Our Attorneys</h2>
             <p>Loading attorney profiles...</p>
           </div>
           <div className="loading-spinner-container">
@@ -234,7 +234,7 @@ const Team = () => {
       <section className={`team-overview ${isTransitioning ? 'entering-from-home' : ''}`}>
         <div className="container">
           <div className="section-header">
-            <h2>Our Attorneys</h2>
+            <h2 className="team-title-underlined">Our Attorneys</h2>
             <p>Click on any attorney to learn more about their background and expertise</p>
           </div>
 

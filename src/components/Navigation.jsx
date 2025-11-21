@@ -106,13 +106,13 @@ const Navigation = () => {
           >
             About
           </a>
-          <a
-            href="/#services"
-            className="nav-link"
+          <Link
+            to="/practice-areas"
+            className={`nav-link ${isActive('/practice-areas') ? 'active' : ''}`}
             onClick={closeMenu}
           >
             Practice Areas
-          </a>
+          </Link>
           <Link
             to="/team"
             className={`nav-link ${isActive('/team') ? 'active' : ''}`}

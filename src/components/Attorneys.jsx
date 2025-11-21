@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { loadAllAttorneyProfiles } from '../utils/attorneyLoader';
 import AttorneyImage from './AttorneyImage';
 
@@ -7,6 +7,9 @@ const Attorneys = () => {
   const [attorneys, setAttorneys] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isExpanding, setIsExpanding] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [animateCards, setAnimateCards] = useState(false);
+  const sectionRef = useRef(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,6 +25,33 @@ const Attorneys = () => {
     };
 
     loadAttorneys();
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            setTimeout(() => setAnimateCards(true), 400);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: '-60px 0px'
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
   }, []);
 
   // Show only partners on home page
@@ -55,13 +85,17 @@ const Attorneys = () => {
   }
 
   return (
-    <section id="attorneys" className={`attorneys ${isExpanding ? 'expanding' : ''}`}>
+    <section
+      id="attorneys"
+      ref={sectionRef}
+      className={`attorneys ${isExpanding ? 'expanding' : ''} ${isVisible ? 'animate-in' : ''}`}
+    >
       <div className="container">
-        <div className="section-header">
+        <div className={`section-header ${isVisible ? 'header-animate' : ''}`}>
           <h2>Our Legal Team</h2>
           <p>Experienced Professionals Dedicated to Your Success</p>
         </div>
-        <div className="attorneys-scroll-container">
+        <div className={`attorneys-scroll-container ${animateCards ? 'cards-animate' : ''}`}>
           {featuredAttorneys.map((attorney) => (
             <Link
               key={attorney.id}
@@ -88,7 +122,7 @@ const Attorneys = () => {
             </Link>
           ))}
         </div>
-        <div style={{ textAlign: 'center', marginTop: '40px' }}>
+        <div className={`attorneys-cta ${isVisible ? 'cta-animate' : ''}`}>
           <button onClick={handleExpandToTeam} className="btn btn-primary team-expand-btn">
             Meet Our Full Team
           </button>

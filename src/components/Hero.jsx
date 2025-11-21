@@ -51,25 +51,26 @@ const Hero = () => {
       </div>
       <div className="hero-overlay"></div>
       <div className="hero-content">
-        <h1>Experienced Legal Representation You Can Trust</h1>
-        <p>Providing exceptional legal services with integrity, dedication, and results for over 25 years</p>
+        <div className="hero-text-wrapper">
+          <h1 className="firm-name">
+            <span className="firm-name-main">Swartz Campbell</span>
+          </h1>
+          <div className="anniversary-wrapper">
+            <p className="anniversary-text">
+              <span className="celebrating">Celebrating</span>
+              <span className="years-number">104</span>
+              <span className="years-label">Years</span>
+            </p>
+          </div>
+        </div>
         <div className="hero-buttons">
-          <button onClick={scrollToContact} className="btn btn-primary">
-            Free Consultation
-          </button>
           <button onClick={scrollToServices} className="btn btn-secondary">
             Our Services
           </button>
         </div>
+
       </div>
-      <div className="hero-stats">
-        {firmInfo.stats.map((stat, index) => (
-          <div key={index} className="stat">
-            <h3>{stat.number}</h3>
-            <p>{stat.label}</p>
-          </div>
-        ))}
-      </div>
+
     </section>
   );
 };

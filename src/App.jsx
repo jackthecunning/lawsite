@@ -4,6 +4,8 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Team from './pages/Team';
 import AttorneyDetail from './pages/AttorneyDetail';
+import PracticeAreas from './pages/PracticeAreas';
+import PracticeAreaDetail from './pages/PracticeAreaDetail';
 import Careers from './pages/Careers';
 import News from './pages/News';
 import NewsDetail from './pages/NewsDetail';
@@ -18,6 +20,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/team" element={<Team />} />
           <Route path="/attorney/:id" element={<AttorneyDetail />} />
+          <Route path="/practice-areas" element={<PracticeAreas />} />
+          <Route path="/practice-areas/:area" element={<PracticeAreaDetail />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/news" element={<News />} />
           <Route path="/news/:id" element={<NewsDetail />} />
