@@ -1,0 +1,193 @@
+/* Practice Areas Page Styles */
+.practice-areas-hero {
+    background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
+    color: white;
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+}
+
+.practice-areas-hero .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.practice-areas-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.practice-areas-hero h1 {
+    font-family: 'Crimson Text', serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.practice-areas-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.practice-areas-overview {
+    padding: 100px 0;
+    background-color: #f8f9fa;
+}
+
+.practice-areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.practice-area-card {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.practice-area-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    color: inherit;
+}
+
+.practice-area-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #c5a572 0%, #1a365d 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.practice-area-card:hover::before {
+    transform: scaleX(1);
+}
+
+.practice-area-icon {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.practice-area-icon i {
+    font-size: 3rem;
+    color: #c5a572;
+    transition: transform 0.3s ease;
+}
+
+.practice-area-card:hover .practice-area-icon i {
+    transform: scale(1.1);
+}
+
+.practice-area-content h3 {
+    font-family: 'Crimson Text', serif;
+    color: #1a365d;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.practice-area-content > p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.practice-area-features {
+    flex-grow: 1;
+}
+
+.practice-area-features h4 {
+    color: #1a365d;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.practice-area-features ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.practice-area-features li {
+    padding: 8px 0;
+    color: #555;
+    position: relative;
+    padding-left: 25px;
+}
+
+.practice-area-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #c5a572;
+    font-weight: bold;
+}
+
+.learn-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #c5a572;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    margin-top: 25px;
+    padding-top: 20px;
+}
+
+.practice-area-card:hover .learn-more {
+    color: #1a365d;
+}
+
+.learn-more i {
+    transition: transform 0.3s ease;
+}
+
+.practice-area-card:hover .learn-more i {
+    transform: translateX(5px);
+}
+
+.practice-areas-cta {
+    background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.practice-areas-cta .cta-content h2 {
+    font-family: 'Crimson Text', serif;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.practice-areas-cta .cta-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -4,9 +4,11 @@ import { services } from '../data/firmData';
 
 const Services = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [animateCards, setAnimateCards] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const sectionRef = useRef(null);
-  const cardsRef = useRef(null);
+  const contentRef = useRef(null);
+  const isScrollingRef = useRef(false);
+  const scrollTimeoutRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -14,8 +16,6 @@ const Services = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true);
-            // Stagger the card animations
-            setTimeout(() => setAnimateCards(true), 300);
           }
         });
       },
@@ -36,6 +36,69 @@ const Services = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleWheel = (e) => {
+      if (!contentRef.current) return;
+
+      const rect = contentRef.current.getBoundingClientRect();
+      const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+
+      if (!isInView) return;
+
+      // Prevent default scroll behavior when in the practice areas section
+      if (isScrollingRef.current) {
+        e.preventDefault();
+        return;
+      }
+
+      const deltaY = e.deltaY;
+
+      // Clear existing timeout
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+
+      // Set timeout to allow scroll change
+      scrollTimeoutRef.current = setTimeout(() => {
+        if (Math.abs(deltaY) > 5) { // Threshold to prevent tiny scrolls
+          if (deltaY > 0 && currentIndex < services.length - 1) {
+            // Scroll down
+            e.preventDefault();
+            isScrollingRef.current = true;
+            setCurrentIndex(prev => prev + 1);
+            setTimeout(() => { isScrollingRef.current = false; }, 800);
+          } else if (deltaY < 0 && currentIndex > 0) {
+            // Scroll up
+            e.preventDefault();
+            isScrollingRef.current = true;
+            setCurrentIndex(prev => prev - 1);
+            setTimeout(() => { isScrollingRef.current = false; }, 800);
+          }
+        }
+      }, 50);
+    };
+
+    const contentElement = contentRef.current;
+    if (contentElement) {
+      contentElement.addEventListener('wheel', handleWheel, { passive: false });
+    }
+
+    return () => {
+      if (contentElement) {
+        contentElement.removeEventListener('wheel', handleWheel);
+      }
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
+  }, [currentIndex]);
+
+  const handleItemClick = (index) => {
+    setCurrentIndex(index);
+  };
+
+  const currentService = services[currentIndex];
+
   return (
     <section
       id="services"
@@ -47,36 +110,44 @@ const Services = () => {
           <h2>Practice Areas</h2>
           <p>Comprehensive Legal Services</p>
         </div>
-        <div
-          ref={cardsRef}
-          className={`services-grid ${animateCards ? 'cards-animate' : ''}`}
-        >
-          {services.map((service) => (
-            <Link
-              key={service.id}
-              to={`/practice-areas/${service.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
-              className="service-card"
-            >
-              <i className={service.icon}></i>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-              <ul>
-                {service.features.map((feature, index) => (
-                  <li key={index}>{feature}</li>
+        <div className="services-sidebar-layout" ref={contentRef}>
+          <div className="practice-areas-sidebar">
+            <div className="sidebar-list">
+              {services.map((service, index) => (
+                <div
+                  key={service.id}
+                  className={`sidebar-item ${index === currentIndex ? 'active' : ''}`}
+                  onClick={() => handleItemClick(index)}
+                >
+                  <i className={service.icon}></i>
+                  <span>{service.title}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="practice-areas-content">
+            <div className="content-icon">
+              <i className={currentService.icon}></i>
+            </div>
+            <h3>{currentService.title}</h3>
+            <p className="content-description">{currentService.description}</p>
+            {currentService.features && (
+              <ul className="content-features">
+                {currentService.features.map((feature, idx) => (
+                  <li key={idx}>
+                    <i className="fas fa-check-circle"></i>
+                    {feature}
+                  </li>
                 ))}
               </ul>
-              <div className="service-card-footer">
-                <span className="learn-more-link">
-                  Learn More <i className="fas fa-arrow-right"></i>
-                </span>
-              </div>
+            )}
+            <Link
+              to={`/practice-areas/${currentService.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
+              className="btn btn-primary learn-more-btn"
+            >
+              Learn More <i className="fas fa-arrow-right"></i>
             </Link>
-          ))}
-        </div>
-        <div className="services-cta">
-          <Link to="/practice-areas" className="btn btn-primary">
-            View All Practice Areas
-          </Link>
+          </div>
         </div>
       </div>
     </section>

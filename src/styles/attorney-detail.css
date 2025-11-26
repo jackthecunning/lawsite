@@ -1,0 +1,537 @@
+/* Attorney Detail Page Styles */
+.attorney-hero {
+    color: white;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.attorney-detailed {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.attorney-detail-content {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+    padding-top: 40px;
+}
+
+.attorney-detail-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.attorney-image-wrapper.uncropped {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.attorney-image-wrapper.uncropped img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.attorney-quick-contact {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.attorney-quick-contact h4 {
+    font-family: 'Crimson Text', serif;
+    color: #1a365d;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #c5a572;
+    padding-bottom: 10px;
+}
+
+.attorney-quick-contact p {
+    color: #666;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.attorney-quick-contact i {
+    color: #c5a572;
+    width: 20px;
+}
+
+.attorney-quick-contact a {
+    color: #666;
+    text-decoration: none;
+}
+
+.attorney-quick-contact a:hover {
+    color: #c5a572;
+}
+
+.btn-full-width {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.attorney-detail-info {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.attorney-detail-info h1 {
+    font-family: 'Crimson Text', serif;
+    color: #1a365d;
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+
+.attorney-title {
+    color: #666;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+}
+
+.attorney-specialization {
+    color: #c5a572;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 0 30px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.attorney-specialization i {
+    font-size: 0.95rem;
+}
+
+.attorney-detail-info h3 {
+    font-family: 'Crimson Text', serif;
+    color: #1a365d;
+    font-size: 1.8rem;
+    margin: 30px 0 20px 0;
+    border-bottom: 2px solid #c5a572;
+    padding-bottom: 10px;
+}
+
+.attorney-detail-info h3:first-child {
+    margin-top: 0;
+}
+
+.attorney-detail-info p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.attorney-detail-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.attorney-detail-info li {
+    color: #555;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.attorney-detail-info li::before {
+    content: '•';
+    color: #c5a572;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.back-to-team {
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid #ddd;
+}
+
+.attorney-cta {
+    background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.attorney-cta .cta-content h2 {
+    font-family: 'Crimson Text', serif;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.attorney-cta .cta-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Attorney Personal Section Styles */
+.attorney-personal-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.personal-section-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.personal-section-wrapper .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.personal-section-wrapper .section-header h2 {
+    font-family: 'Crimson Text', serif;
+    color: #1a365d;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.personal-section-wrapper .section-header h2 i {
+    color: #e74c3c;
+    margin-right: 15px;
+}
+
+.personal-content-with-photo {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.personal-bio {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.personal-bio p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.personal-photo {
+    position: relative;
+}
+
+.personal-photo-image {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 4/5;
+}
+
+.personal-photo-image .attorney-image-container {
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.personal-content-no-photo {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.personal-content-no-photo p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive for Personal Section */
+@media (max-width: 768px) {
+    .personal-content-with-photo {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .personal-bio {
+        padding: 30px;
+    }
+
+    .personal-content-no-photo p {
+        padding: 30px;
+    }
+
+    .personal-section-wrapper .section-header h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Attorney Credentials Section Styles */
+.attorney-credentials-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.attorney-credentials-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.attorney-credentials-section .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.attorney-credentials-section .section-header h2 {
+    font-family: 'Crimson Text', serif;
+    color: #1a365d;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.attorney-credentials-section .section-header h2 i {
+    color: #c5a572;
+    margin-right: 15px;
+}
+
+.attorney-credentials-section .section-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.credentials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.credential-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #c5a572;
+}
+
+.credential-item i {
+    color: #c5a572;
+    margin-right: 15px;
+    font-size: 1.1rem;
+}
+
+.credential-item span {
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Attorney Practice Section Styles */
+.attorney-practice-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.attorney-practice-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.attorney-practice-section .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.attorney-practice-section .section-header h2 {
+    font-family: 'Crimson Text', serif;
+    color: #1a365d;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.attorney-practice-section .section-header h2 i {
+    color: #c5a572;
+    margin-right: 15px;
+}
+
+.attorney-practice-section .section-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.practice-area-title {
+    font-family: 'Crimson Text', serif;
+    color: #1a365d;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #c5a572;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.attorney-practice-section .section-content p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+/* Attorney Contact Section Styles */
+.attorney-contact-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.attorney-contact-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.attorney-contact-section .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.attorney-contact-section .section-header h2 {
+    font-family: 'Crimson Text', serif;
+    color: #1a365d;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.attorney-contact-section .section-header p {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.attorney-contact-section .section-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.contact-method {
+    text-align: center;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.contact-method:hover {
+    transform: translateY(-5px);
+}
+
+.contact-method i {
+    font-size: 2.5rem;
+    color: #c5a572;
+    margin-bottom: 20px;
+}
+
+.contact-method h4 {
+    font-family: 'Crimson Text', serif;
+    color: #1a365d;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.contact-method .btn {
+    margin-top: 10px;
+}
+
+/* Responsive for Attorney Sections */
+@media (max-width: 768px) {
+    .credentials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+
+    .attorney-credentials-section .section-content,
+    .attorney-practice-section .section-content,
+    .attorney-contact-section .section-content {
+        padding: 30px;
+    }
+
+    .attorney-credentials-section .section-header h2,
+    .attorney-practice-section .section-header h2,
+    .attorney-contact-section .section-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-method {
+        padding: 20px;
+    }
+}
+
+/* Attorney Navigation Section Styles */
+.attorney-navigation-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.attorney-navigation-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.attorney-navigation-section .btn {
+    font-size: 1.1rem;
+    padding: 15px 30px;
+}
+
+.attorney-navigation-section .btn i {
+    margin-right: 10px;
+}

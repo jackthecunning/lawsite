@@ -11,6 +11,13 @@ const Hero = () => {
     'images/banner/philly_3.png'
   ];
 
+  // Calculate years since founding (1921)
+  const getYearsSinceFounding = () => {
+    const foundingYear = 1921;
+    const currentYear = new Date().getFullYear();
+    return currentYear - foundingYear;
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -58,7 +65,7 @@ const Hero = () => {
           <div className="anniversary-wrapper">
             <p className="anniversary-text">
               <span className="celebrating">Celebrating</span>
-              <span className="years-number">104</span>
+              <span className="years-number">{getYearsSinceFounding()}</span>
               <span className="years-label">Years</span>
             </p>
           </div>

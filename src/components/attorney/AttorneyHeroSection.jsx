@@ -40,8 +40,7 @@ const AttorneyHeroSection = ({ attorney, onScheduleConsultation }) => {
               <h1>{attorney.name}</h1>
               <h2 className="attorney-title">{attorney.title}</h2>
               <p className="attorney-specialization">
-                <i className="fas fa-gavel"></i>
-                {attorney.specialization}
+                <i className="fas fa-gavel"></i> {attorney.specialization}
               </p>
               <h3>About {getFirstName(attorney.name)}</h3>
               <p>{attorney.bio}</p>

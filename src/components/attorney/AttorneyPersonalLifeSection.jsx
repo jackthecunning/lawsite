@@ -1,6 +1,6 @@
 import AttorneyImage from '../AttorneyImage';
 
-const AttorneyPersonalSection = ({ attorney }) => {
+const AttorneyPersonalLifeSection = ({ attorney }) => {
   const getFirstName = (fullName) => {
     return fullName.split(' ')[0];
   };
@@ -50,4 +50,4 @@ const AttorneyPersonalSection = ({ attorney }) => {
   );
 };
 
-export default AttorneyPersonalSection;
+export default AttorneyPersonalLifeSection;

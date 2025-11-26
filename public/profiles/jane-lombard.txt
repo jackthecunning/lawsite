@@ -1,5 +1,5 @@
 name: Jane Lombard
-title: Partner
+title: Associate
 specialization: Medical Malpractice Defense
 image: images/attorneys/Lombard-Jane-78-683x1024.jpg
 email: jlombard@swartzcampbell.com

@@ -1,5 +1,5 @@
 name: Christina Murdoch
-title: Associate Attorney
+title: Senior Partner
 specialization: Healthcare Law & Regulatory Compliance
 image: images/attorneys/Christina-Murdoch-3282-683x1024.jpg
 email: cmurdoch@swartzcampbell.com
