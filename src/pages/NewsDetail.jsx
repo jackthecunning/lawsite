@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { newsArticles } from '../data/newsData';
 import { loadNewsArticle, formatDate } from '../utils/newsLoader';
+import '../styles/news-detail.css';
 
 const NewsDetail = () => {
   const { id } = useParams();

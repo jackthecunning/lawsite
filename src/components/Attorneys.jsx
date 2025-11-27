@@ -190,11 +190,6 @@ const Attorneys = () => {
                     <div className="team-card-info">
                       <h3>{attorney.name}</h3>
                       <p className="title">{attorney.title}</p>
-                      <p className="specialization">{attorney.specialization}</p>
-                      <p className="office">
-                        <i className="fas fa-map-marker-alt"></i>
-                        {attorney.office} Office
-                      </p>
                     </div>
                   </div>
                 </Link>

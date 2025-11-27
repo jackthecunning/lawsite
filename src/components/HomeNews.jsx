@@ -4,17 +4,19 @@ import { newsArticles } from '../data/newsData';
 
 const HomeNews = () => {
   const [news, setNews] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
   const [animateCards, setAnimateCards] = useState(false);
+  const [slideDirection, setSlideDirection] = useState('');
   const sectionRef = useRef(null);
 
   useEffect(() => {
     try {
-      // Sort articles by date (newest first) and take first 3
+      // Sort articles by date (newest first) and take first 10
       const sortedNews = [...newsArticles]
         .sort((a, b) => new Date(b.date) - new Date(a.date))
-        .slice(0, 3);
+        .slice(0, 10);
       setNews(sortedNews);
     } catch (error) {
       console.error('Error loading news:', error);
@@ -50,6 +52,33 @@ const HomeNews = () => {
     };
   }, []);
 
+  const handlePrevious = () => {
+    setSlideDirection('slide-right');
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? news.length - 1 : prevIndex - 1
+    );
+    setTimeout(() => setSlideDirection(''), 800);
+  };
+
+  const handleNext = () => {
+    setSlideDirection('slide-left');
+    setCurrentIndex((prevIndex) =>
+      prevIndex === news.length - 1 ? 0 : prevIndex + 1
+    );
+    setTimeout(() => setSlideDirection(''), 800);
+  };
+
+  const getVisibleArticles = () => {
+    if (news.length === 0) return [];
+    if (news.length === 1) return [null, news[0], null];
+    if (news.length === 2) return [news[1], news[0], news[1]];
+
+    const prevIndex = currentIndex === 0 ? news.length - 1 : currentIndex - 1;
+    const nextIndex = currentIndex === news.length - 1 ? 0 : currentIndex + 1;
+
+    return [news[prevIndex], news[currentIndex], news[nextIndex]];
+  };
+
   if (loading) {
     return (
       <section className="home-news">
@@ -82,6 +111,8 @@ const HomeNews = () => {
     );
   }
 
+  const visibleArticles = getVisibleArticles();
+
   return (
     <section ref={sectionRef} className={`home-news ${isVisible ? 'animate-in' : ''}`}>
       <div className="container">
@@ -90,46 +121,103 @@ const HomeNews = () => {
           <p>Stay informed about our latest case results, firm news, and legal insights</p>
         </div>
 
-        <div className={`news-grid ${animateCards ? 'cards-animate' : ''}`}>
-          {news.map((article) => (
-            <Link
-              key={article.id}
-              to={`/news/${article.id}`}
-              className="news-card-link"
-            >
-              <article className="news-card">
-                <div className="news-card-header">
-                  <div className="news-category">
-                    <span className={`category-badge ${article.category.toLowerCase().replace(/\s+/g, '-')}`}>
-                      {article.category}
-                    </span>
-                  </div>
-                  <time className="news-date">
-                    {new Date(article.date).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    })}
-                  </time>
-                </div>
+        <div className="news-carousel-container">
+          <button
+            className="carousel-arrow carousel-arrow-left"
+            onClick={handlePrevious}
+            aria-label="Previous news article"
+          >
+            <i className="fas fa-chevron-left"></i>
+          </button>
 
-                <div className="news-card-content">
-                  <h3>{article.title}</h3>
-                  <p className="news-excerpt">
-                    {article.excerpt.length > 150
-                      ? `${article.excerpt.substring(0, 150)}...`
-                      : article.excerpt
+          <div className={`news-carousel-track ${animateCards ? 'cards-animate' : ''} ${slideDirection}`}>
+            {visibleArticles.map((article, index) => {
+              if (!article) return <div key={`empty-${index}`} className="news-card-spacer" />;
+
+              const position = index === 0 ? 'left' : index === 1 ? 'center' : 'right';
+              const isCenter = index === 1;
+
+              return (
+                <Link
+                  key={`${article.id}-${index}`}
+                  to={`/news/${article.id}`}
+                  className={`news-card-link ${position}`}
+                  onClick={(e) => {
+                    if (!isCenter) {
+                      e.preventDefault();
+                      if (position === 'left') {
+                        handlePrevious();
+                      } else {
+                        handleNext();
+                      }
                     }
-                  </p>
-                </div>
+                  }}
+                >
+                  <article className={`news-card ${isCenter ? 'featured-news' : 'side-news'}`}>
+                    <div className="news-card-header">
+                      <div className="news-category">
+                        <span className={`category-badge ${article.category.toLowerCase().replace(/\s+/g, '-')}`}>
+                          {article.category}
+                        </span>
+                      </div>
+                      <time className="news-date">
+                        {new Date(article.date).toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric'
+                        })}
+                      </time>
+                    </div>
 
-                <div className="news-card-footer">
-                  <span className="read-more">
-                    Read More <i className="fas fa-arrow-right"></i>
-                  </span>
-                </div>
-              </article>
-            </Link>
+                    <div className="news-card-content">
+                      <h3>{article.title}</h3>
+                      <p className="news-excerpt">
+                        {isCenter
+                          ? article.excerpt
+                          : article.excerpt.length > 80
+                            ? `${article.excerpt.substring(0, 80)}...`
+                            : article.excerpt
+                        }
+                      </p>
+                      {isCenter && article.author && (
+                        <p className="news-author">
+                          <i className="fas fa-user"></i> {article.author}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="news-card-footer">
+                      <span className="read-more">
+                        {isCenter ? 'Read Full Story' : 'View Story'} <i className="fas fa-arrow-right"></i>
+                      </span>
+                    </div>
+                  </article>
+                </Link>
+              );
+            })}
+          </div>
+
+          <button
+            className="carousel-arrow carousel-arrow-right"
+            onClick={handleNext}
+            aria-label="Next news article"
+          >
+            <i className="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <div className="news-indicators">
+          {news.map((_, index) => (
+            <button
+              key={index}
+              className={`indicator-dot ${index === currentIndex ? 'active' : ''}`}
+              onClick={() => {
+                setSlideDirection(index > currentIndex ? 'slide-left' : 'slide-right');
+                setCurrentIndex(index);
+                setTimeout(() => setSlideDirection(''), 300);
+              }}
+              aria-label={`Go to news article ${index + 1}`}
+            />
           ))}
         </div>
 

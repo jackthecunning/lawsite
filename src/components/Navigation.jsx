@@ -99,13 +99,16 @@ const Navigation = () => {
           >
             Home
           </Link>
-          <a
-            href="/#about"
-            className="nav-link"
-            onClick={closeMenu}
-          >
-            About
-          </a>
+          <div className="nav-dropdown">
+            <a href="/#about" className="nav-link" onClick={closeMenu}>
+              About <i className="fas fa-chevron-down"></i>
+            </a>
+            <div className="dropdown-content">
+              <Link to="/history" onClick={closeMenu}>History</Link>
+              <Link to="/offices" onClick={closeMenu}>Offices</Link>
+              <Link to="/diversity" onClick={closeMenu}>Diversity</Link>
+            </div>
+          </div>
           <Link
             to="/practice-areas"
             className={`nav-link ${isActive('/practice-areas') ? 'active' : ''}`}

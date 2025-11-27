@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { loadAllAttorneyProfiles } from '../utils/attorneyLoader';
 import AttorneyImage from '../components/AttorneyImage';
+import { getFirstName } from '../utils/nameUtils';
 
 const AttorneyDetail = () => {
   const { id } = useParams(); // This is now the slug
@@ -30,15 +31,11 @@ const AttorneyDetail = () => {
     window.location.href = '/#contact';
   };
 
-  const getFirstName = (fullName) => {
-    return fullName.split(' ')[0];
-  };
-
   const getPersonalBio = () => {
     if (attorney.personalBio && attorney.personalBio.trim()) {
       return attorney.personalBio;
     }
-    return `${attorney.name} lives a private life, which we respect and support.`;
+    return `${getFirstName(attorney.name)} lives a private life, which we respect and support.`;
   };
 
   if (loading) {

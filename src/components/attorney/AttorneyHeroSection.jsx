@@ -1,10 +1,7 @@
 import AttorneyImage from '../AttorneyImage';
+import { getFirstName } from '../../utils/nameUtils';
 
 const AttorneyHeroSection = ({ attorney, onScheduleConsultation }) => {
-  const getFirstName = (fullName) => {
-    return fullName.split(' ')[0];
-  };
-
   return (
     <section className="attorney-detailed section-light">
       <div className="container">
