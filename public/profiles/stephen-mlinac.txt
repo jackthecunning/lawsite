@@ -1,6 +1,6 @@
 name: Stephen R. Mlinac
 title: Senior Partner
-specialization: Trial Advocacy & Complex Litigation
+practice areas: Trial Advocacy & Complex Litigation
 image: images/attorneys/Stephen-R.Mlinac.jpg
 email: smlinac@swartzcampbell.com
 phone: (555) 123-4586

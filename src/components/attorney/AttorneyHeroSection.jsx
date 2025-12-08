@@ -36,11 +36,15 @@ const AttorneyHeroSection = ({ attorney, onScheduleConsultation }) => {
             <div className="attorney-bio">
               <h1>{attorney.name}</h1>
               <h2 className="attorney-title">{attorney.title}</h2>
-              <p className="attorney-specialization">
-                <i className="fas fa-gavel"></i> {attorney.specialization}
-              </p>
+              {attorney.practiceAreas && (
+                <p className="attorney-specialization">
+                  <i className="fas fa-gavel"></i> {attorney.practiceAreas}
+                </p>
+              )}
               <h3>About {getFirstName(attorney.name)}</h3>
-              <p>{attorney.bio}</p>
+              {attorney.bio && attorney.bio.split('\n').map((paragraph, index) => (
+                paragraph.trim() && <p key={index}>{paragraph}</p>
+              ))}
             </div>
           </div>
         </div>

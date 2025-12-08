@@ -1,6 +1,6 @@
 name: Brian Ahern
 title: Senior Associate
-specialization: Insurance Defense & Litigation
+practice areas: Insurance Defense & Litigation
 image: images/attorneys/Ahern-Brian.jpg
 email: bahern@swartzcampbell.com
 phone: (555) 123-4568

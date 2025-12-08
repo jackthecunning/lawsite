@@ -1,6 +1,6 @@
 name: Kathleen M. Carson
 title: Senior Partner
-specialization: Family Law & Estate Planning
+practice areas: Family Law & Estate Planning
 image: images/attorneys/Kathleen-M.-Carson.jpg
 email: kcarson@swartzcampbell.com
 phone: (555) 123-4561

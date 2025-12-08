@@ -60,7 +60,7 @@ const Hero = () => {
       <div className="hero-content">
         <div className="hero-text-wrapper">
           <h1 className="firm-name">
-            <span className="firm-name-main">Swartz Campbell</span>
+            <span className="firm-name-main"><span className="capital-letter">S</span>wartz <span className="capital-letter">C</span>ampbell</span>
           </h1>
           <div className="anniversary-wrapper">
             <p className="anniversary-text">
@@ -71,9 +71,9 @@ const Hero = () => {
           </div>
         </div>
         <div className="hero-buttons">
-          <button onClick={scrollToServices} className="btn btn-secondary">
+          {/* <button onClick={scrollToServices} className="btn btn-secondary">
             Our Services
-          </button>
+          </button> */}
         </div>
 
       </div>

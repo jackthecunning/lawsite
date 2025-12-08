@@ -334,10 +334,10 @@ const Team = () => {
         <div className="container">
           <div className="cta-content">
             <h2>Ready to Work with Our Team?</h2>
-            <p>Contact us today for a free consultation and let us put our experience to work for you.</p>
+            <p>Contact us today and let us put our experience to work for you.</p>
             <div className="cta-buttons">
               <button onClick={scrollToContact} className="btn btn-primary">
-                Free Consultation
+                Contact Us
               </button>
               <a href="tel:555-123-4567" className="btn btn-secondary">
                 Call Now

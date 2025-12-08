@@ -1,6 +1,6 @@
 name: Pamela Maginnis
 title: Associate Attorney
-specialization: Intellectual Property & Patent Law
+practice areas: Intellectual Property & Patent Law
 image: images/attorneys/Maginnis-Pamela-0589-731x1024.jpg
 email: pmaginnis@swartzcampbell.com
 phone: (555) 123-4577

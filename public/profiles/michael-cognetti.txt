@@ -1,6 +1,6 @@
 name: Michael Cognetti
 title: Partner
-specialization: Construction Law & Commercial Litigation
+practice areas: Construction Law & Commercial Litigation
 image: images/attorneys/Cognetti-Michael-013-683x1024.jpg
 email: mcognetti@swartzcampbell.com
 phone: (555) 123-4569

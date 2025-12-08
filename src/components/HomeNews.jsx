@@ -160,6 +160,10 @@ const HomeNews = () => {
                           {article.category}
                         </span>
                       </div>
+                    </div>
+
+                    <div className="news-card-content">
+                      <h3>{article.title}</h3>
                       <time className="news-date">
                         {new Date(article.date).toLocaleDateString('en-US', {
                           year: 'numeric',
@@ -167,10 +171,6 @@ const HomeNews = () => {
                           day: 'numeric'
                         })}
                       </time>
-                    </div>
-
-                    <div className="news-card-content">
-                      <h3>{article.title}</h3>
                       <p className="news-excerpt">
                         {isCenter
                           ? article.excerpt

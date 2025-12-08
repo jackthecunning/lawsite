@@ -1,6 +1,6 @@
 name: Paige Fuchion
 title: Senior Associate
-specialization: Immigration Law & International Business
+practice areas: Immigration Law & International Business
 image: images/attorneys/Fuchion-Paige-559-731x1024.jpg
 email: pfuchion@swartzcampbell.com
 phone: (555) 123-4572

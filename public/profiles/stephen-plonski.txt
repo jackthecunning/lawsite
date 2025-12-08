@@ -1,6 +1,6 @@
 name: Stephen Plonski
 title: Associate Attorney
-specialization: Employment Litigation & HR Compliance
+practice areas: Employment Litigation & HR Compliance
 image: images/attorneys/Plonski_Stephen-43728-300x300.jpg
 email: splonski@swartzcampbell.com
 phone: (555) 123-4582

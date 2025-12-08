@@ -86,20 +86,21 @@ const AttorneyDetail = () => {
                   <i className="fas fa-map-marker-alt"></i>
                   {attorney.office} Office
                 </p>
-                <button onClick={scrollToContact} className="btn btn-primary btn-full-width">
-                  Schedule Consultation
-                </button>
               </div>
             </div>
             <div className="attorney-detail-info">
               <div className="attorney-bio">
                 <h1>{attorney.name}</h1>
                 <h2 className="attorney-title">{attorney.title}</h2>
-                <p className="attorney-specialization">
-                  <i className="fas fa-gavel"></i> {attorney.specialization}
-                </p>
+                {attorney.practiceAreas && (
+                  <p className="attorney-specialization">
+                    <i className="fas fa-gavel"></i> {attorney.practiceAreas}
+                  </p>
+                )}
                 <h3>About {getFirstName(attorney.name)}</h3>
-                <p>{attorney.bio}</p>
+                {attorney.bio && attorney.bio.split('\n').map((paragraph, index) => (
+                  paragraph.trim() && <p key={index}>{paragraph}</p>
+                ))}
               </div>
             </div>
           </div>
@@ -191,10 +192,10 @@ const AttorneyDetail = () => {
           <div className="section-content">
             <div className="contact-methods">
               <div className="contact-method">
-                <i className="fas fa-calendar-alt"></i>
-                <h4>Schedule Consultation</h4>
+                <i className="fas fa-envelope"></i>
+                <h4>Get in Touch</h4>
                 <button onClick={scrollToContact} className="btn btn-primary">
-                  Free Consultation
+                  Contact Us
                 </button>
               </div>
               <div className="contact-method">

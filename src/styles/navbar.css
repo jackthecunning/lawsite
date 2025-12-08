@@ -3,11 +3,17 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background: transparent;
+    backdrop-filter: none;
     z-index: 1000;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
     transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
@@ -31,14 +37,28 @@
     font-family: 'Crimson Text', serif;
     font-size: 1.8rem;
     font-weight: 600;
-    color: #1a365d;
+    color: white;
     margin-bottom: -5px;
+    transition: color 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navbar.scrolled .nav-logo h2 {
+    color: #1a365d;
+    text-shadow: none;
 }
 
 .nav-logo p {
     font-size: 0.9rem;
-    color: #666;
+    color: rgba(255, 255, 255, 0.9);
     font-style: italic;
+    transition: color 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navbar.scrolled .nav-logo p {
+    color: #666;
+    text-shadow: none;
 }
 
 .nav-menu {
@@ -50,11 +70,20 @@
 
 .nav-link {
     text-decoration: none;
-    color: #333;
+    color: white;
+    font-family: 'Bodoni 72 Smallcaps', 'Bodoni 72', 'Bodoni MT', 'Bodoni', 'Didot', serif;
+    font-size: 1.1rem;
     font-weight: 500;
+    text-transform: uppercase;
     transition: color 0.3s ease;
     position: relative;
     white-space: nowrap;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navbar.scrolled .nav-link {
+    color: #333;
+    text-shadow: none;
 }
 
 .nav-link:hover {
@@ -62,6 +91,10 @@
 }
 
 .nav-link.active {
+    color: #c5a572;
+}
+
+.navbar.scrolled .nav-link.active {
     color: #c5a572;
 }
 

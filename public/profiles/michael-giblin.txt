@@ -1,6 +1,6 @@
 name: Michael E. Giblin
 title: Managing Partner
-specialization: Corporate Law & Real Estate
+practice areas: Corporate Law & Real Estate
 image: images/attorneys/Michael-E.-Giblin.jpg
 email: mgiblin@swartzcampbell.com
 phone: (555) 123-4560

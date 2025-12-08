@@ -1,6 +1,6 @@
 name: N. Goldstein
 title: Partner
-specialization: Commercial Real Estate & Zoning
+practice areas: Commercial Real Estate & Zoning
 image: images/attorneys/N.-Goldstein-047-731x1024.jpg
 email: ngoldstein@swartzcampbell.com
 phone: (555) 123-4579

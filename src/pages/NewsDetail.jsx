@@ -153,7 +153,7 @@ const NewsDetail = () => {
             <p>Contact our legal team to discuss how our experience might help with your situation.</p>
             <div className="cta-buttons">
               <button onClick={scrollToContact} className="btn btn-primary">
-                Free Consultation
+                Contact Us
               </button>
               <Link to="/team" className="btn btn-secondary">
                 Meet Our Team

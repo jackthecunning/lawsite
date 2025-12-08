@@ -1,6 +1,6 @@
 name: Kristin Mutzig
 title: Senior Associate
-specialization: Family Law & Domestic Relations
+practice areas: Family Law & Domestic Relations
 image: images/attorneys/Mutzig-Kristin-095.png
 email: kmutzig@swartzcampbell.com
 phone: (555) 123-4578

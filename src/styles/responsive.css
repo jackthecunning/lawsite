@@ -22,6 +22,27 @@
         left: 0;
     }
 
+    .navbar {
+        background: rgba(255, 255, 255, 1) !important;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar .nav-logo h2 {
+        color: #1a365d !important;
+        text-shadow: none !important;
+    }
+
+    .navbar .nav-logo p {
+        color: #666 !important;
+        text-shadow: none !important;
+    }
+
+    .navbar .nav-link {
+        color: #333 !important;
+        text-shadow: none !important;
+    }
+
     .hero h1 {
         font-size: 2.5rem;
     }

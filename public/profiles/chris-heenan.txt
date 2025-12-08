@@ -1,6 +1,6 @@
 name: Chris Heenan
 title: Partner
-specialization: Labor Relations & Union Law
+practice areas: Labor Relations & Union Law
 image: images/attorneys/Heenan-Chris-002-732x1024.jpg
 email: cheenan@swartzcampbell.com
 phone: (555) 123-4573

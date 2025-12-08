@@ -1,32 +1,8 @@
+import { Link } from 'react-router-dom';
+import { offices } from '../data/firmData';
 import '../styles/about-pages.css';
 
 const Offices = () => {
-  const offices = [
-    {
-      name: 'Philadelphia',
-      address: '123 Market Street',
-      city: 'Philadelphia, PA 19103',
-      phone: '(215) 555-0100',
-      email: 'philadelphia@swartzcampbell.com',
-      hours: 'Monday - Friday: 9:00 AM - 5:00 PM'
-    },
-    {
-      name: 'Pittsburgh',
-      address: '456 Liberty Avenue',
-      city: 'Pittsburgh, PA 15222',
-      phone: '(412) 555-0200',
-      email: 'pittsburgh@swartzcampbell.com',
-      hours: 'Monday - Friday: 9:00 AM - 5:00 PM'
-    },
-    {
-      name: 'Harrisburg',
-      address: '789 State Street',
-      city: 'Harrisburg, PA 17101',
-      phone: '(717) 555-0300',
-      email: 'harrisburg@swartzcampbell.com',
-      hours: 'Monday - Friday: 9:00 AM - 5:00 PM'
-    }
-  ];
 
   return (
     <>
@@ -44,35 +20,45 @@ const Offices = () => {
         <div className="container">
           <div className="section-header">
             <h2>Visit Us</h2>
-            <p>We have offices throughout Pennsylvania to better serve our clients</p>
+            <p>We have offices worldwide to better serve our clients</p>
           </div>
 
           <div className="offices-grid">
             {offices.map((office, index) => (
-              <div key={index} className="office-card">
-                <h3>{office.name}</h3>
-                <div className="office-details">
-                  <p>
-                    <i className="fas fa-map-marker-alt"></i>
-                    <span>
-                      {office.address}<br />
-                      {office.city}
-                    </span>
-                  </p>
-                  <p>
-                    <i className="fas fa-phone"></i>
-                    <a href={`tel:${office.phone.replace(/[^0-9]/g, '')}`}>{office.phone}</a>
-                  </p>
-                  <p>
-                    <i className="fas fa-envelope"></i>
-                    <a href={`mailto:${office.email}`}>{office.email}</a>
-                  </p>
-                  <p>
-                    <i className="fas fa-clock"></i>
-                    <span>{office.hours}</span>
-                  </p>
+              <Link
+                key={index}
+                to={`/offices/${office.id}`}
+                className="office-card-link"
+              >
+                <div className="office-card">
+                  <h3>{office.name}</h3>
+                  <div className="office-details">
+                    <p>
+                      <i className="fas fa-map-marker-alt"></i>
+                      <span>
+                        {office.address}<br />
+                        {office.addressLine2 && <>{office.addressLine2}<br /></>}
+                        {office.city}
+                      </span>
+                    </p>
+                    <p>
+                      <i className="fas fa-phone"></i>
+                      <a href={`tel:${office.phone.replace(/[^0-9]/g, '')}`} onClick={(e) => e.stopPropagation()}>{office.phone}</a>
+                    </p>
+                    <p>
+                      <i className="fas fa-envelope"></i>
+                      <a href={`mailto:${office.email}`} onClick={(e) => e.stopPropagation()}>{office.email}</a>
+                    </p>
+                    <p>
+                      <i className="fas fa-clock"></i>
+                      <span>{office.hours}</span>
+                    </p>
+                  </div>
+                  <div className="office-card-footer">
+                    <span>View Details <i className="fas fa-arrow-right"></i></span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

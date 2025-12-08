@@ -1,6 +1,6 @@
 name: William T. Salzer
 title: Senior Associate
-specialization: Appellate Practice & Constitutional Law
+practice areas: Appellate Practice & Constitutional Law
 image: images/attorneys/William-T.-Salzer.jpg
 email: wsalzer@swartzcampbell.com
 phone: (555) 123-4589

@@ -1,6 +1,6 @@
 name: Nicholas Skiles
 title: Senior Associate
-specialization: Criminal Defense & DUI Law
+practice areas: Criminal Defense & DUI Law
 image: images/attorneys/Skiles-Nicholas-058-683x1024.jpg
 email: nskiles@swartzcampbell.com
 phone: (555) 123-4583

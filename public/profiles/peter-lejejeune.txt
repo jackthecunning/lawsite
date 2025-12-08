@@ -1,6 +1,6 @@
 name: Peter Le Jejeune
 title: Senior Associate
-specialization: Securities Law & Corporate Compliance
+practice areas: Securities Law & Corporate Compliance
 image: images/attorneys/Le-Jejeune-Peter-029-683x1024.jpg
 email: plejejeune@swartzcampbell.com
 phone: (555) 123-4575

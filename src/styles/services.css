@@ -1,12 +1,13 @@
 /* Services Section */
 .services {
-    padding: 40px 0 60px 0;
+    padding: 40px 0 40px 0;
     background-color: #f8f9fa;
     position: relative;
     overflow: hidden;
     transform: translateY(30px);
     opacity: 0;
     transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* border:#1a365d 1px solid; */
 }
 
 .services.animate-in {
@@ -32,118 +33,6 @@
     margin: 0 auto;
 }
 
-.service-card {
-    background: white;
-    padding: 20px 15px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    border-top: 3px solid #c5a572;
-    transform: translateY(60px);
-    opacity: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 200px;
-}
-
-/* Compact version for home page */
-.service-card-compact {
-    min-height: 180px;
-}
-
-.services-grid.cards-animate .service-card:nth-child(1) { animation: staggeredSlideIn 0.6s ease-out 0.05s forwards; }
-.services-grid.cards-animate .service-card:nth-child(2) { animation: staggeredSlideIn 0.6s ease-out 0.1s forwards; }
-.services-grid.cards-animate .service-card:nth-child(3) { animation: staggeredSlideIn 0.6s ease-out 0.15s forwards; }
-.services-grid.cards-animate .service-card:nth-child(4) { animation: staggeredSlideIn 0.6s ease-out 0.2s forwards; }
-.services-grid.cards-animate .service-card:nth-child(5) { animation: staggeredSlideIn 0.6s ease-out 0.25s forwards; }
-.services-grid.cards-animate .service-card:nth-child(6) { animation: staggeredSlideIn 0.6s ease-out 0.3s forwards; }
-.services-grid.cards-animate .service-card:nth-child(7) { animation: staggeredSlideIn 0.6s ease-out 0.35s forwards; }
-.services-grid.cards-animate .service-card:nth-child(8) { animation: staggeredSlideIn 0.6s ease-out 0.4s forwards; }
-.services-grid.cards-animate .service-card:nth-child(9) { animation: staggeredSlideIn 0.6s ease-out 0.45s forwards; }
-.services-grid.cards-animate .service-card:nth-child(10) { animation: staggeredSlideIn 0.6s ease-out 0.5s forwards; }
-.services-grid.cards-animate .service-card:nth-child(11) { animation: staggeredSlideIn 0.6s ease-out 0.55s forwards; }
-.services-grid.cards-animate .service-card:nth-child(12) { animation: staggeredSlideIn 0.6s ease-out 0.6s forwards; }
-.services-grid.cards-animate .service-card:nth-child(13) { animation: staggeredSlideIn 0.6s ease-out 0.65s forwards; }
-.services-grid.cards-animate .service-card:nth-child(14) { animation: staggeredSlideIn 0.6s ease-out 0.7s forwards; }
-.services-grid.cards-animate .service-card:nth-child(15) { animation: staggeredSlideIn 0.6s ease-out 0.75s forwards; }
-.services-grid.cards-animate .service-card:nth-child(16) { animation: staggeredSlideIn 0.6s ease-out 0.8s forwards; }
-
-.service-card:hover {
-    transform: translateY(-10px) !important;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2) !important;
-}
-
-.service-card i {
-    font-size: 2rem;
-    color: #c5a572;
-    margin-bottom: 10px;
-}
-
-.service-card h3 {
-    font-family: 'Crimson Text', serif;
-    font-size: 1.1rem;
-    color: #1a365d;
-    margin-bottom: 8px;
-    line-height: 1.3;
-}
-
-.service-card p {
-    color: #666;
-    margin-bottom: 0;
-    line-height: 1.4;
-    font-size: 0.85rem;
-    flex-grow: 1;
-}
-
-.service-card ul {
-    list-style: none;
-    margin-bottom: 15px;
-}
-
-.service-card li {
-    padding: 5px 0;
-    color: #555;
-    position: relative;
-    padding-left: 20px;
-    font-size: 0.9rem;
-}
-
-.service-card li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: #c5a572;
-    font-weight: bold;
-}
-
-.service-card-footer {
-    margin-top: 15px;
-    padding-top: 12px;
-}
-
-.learn-more-link {
-    color: #c5a572;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    transition: color 0.3s ease;
-    font-size: 0.85rem;
-}
-
-.service-card:hover .learn-more-link {
-    color: #1a365d;
-}
-
-.learn-more-link i {
-    font-size: 0.75rem;
-    transition: transform 0.3s ease;
-}
-
-.service-card:hover .learn-more-link i {
-    transform: translateX(5px);
-}
-
 /* Services Responsive Styles */
 @media (max-width: 1200px) {
     .services-grid {
@@ -157,39 +46,72 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
-
-    .service-card {
-        padding: 20px 15px;
-        min-height: 220px;
-    }
-
-    .service-card i {
-        font-size: 1.8rem;
-        margin-bottom: 10px;
-    }
-
-    .service-card h3 {
-        font-size: 1.3rem;
-        margin-bottom: 10px;
-    }
-
-    .service-card p {
-        font-size: 0.9rem;
-        margin-bottom: 15px;
-    }
 }
 
-.services-cta {
-    text-align: center;
+/* Simple Two-Column List for Practice Areas */
+.practice-areas-simple-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 40px;
     margin-top: 50px;
-    transform: translateY(40px);
-    opacity: 0;
-    transition: all 0.6s ease 0.8s;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.services.animate-in .services-cta {
-    transform: translateY(0);
-    opacity: 1;
+.practice-area-name {
+    font-family: 'Bodoni 72', 'Bodoni MT', 'Bodoni', 'Didot', serif;
+    font-size: 1.3rem;
+    color: #1a365d;
+    text-decoration: none;
+    padding: 15px 0;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+}
+
+.practice-area-name.item-visible {
+    animation: fallIntoPlace 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes fallIntoPlace {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    50% {
+        transform: translateY(-5px) scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.practice-area-name i {
+    color: #c5a572;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.practice-area-name:hover {
+    color: #c5a572;
+}
+
+.practice-area-name:hover i {
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .practice-areas-simple-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
 }
 
 /* Sidebar Layout for Practice Areas */

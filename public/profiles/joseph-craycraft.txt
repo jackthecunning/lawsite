@@ -1,6 +1,6 @@
 name: P. Joseph Craycraft
 title: Senior Partner
-specialization: Corporate Governance & Mergers
+practice areas: Corporate Governance & Mergers
 image: images/attorneys/P.-Joseph-Craycraft.jpg
 email: pcraycraft@swartzcampbell.com
 phone: (555) 123-4581

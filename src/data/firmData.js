@@ -1,91 +1,67 @@
 export const services = [
   {
     id: 1,
-    icon: "fas fa-home",
-    title: "Real Estate Law",
-    description: "Comprehensive legal services for all your real estate transactions, from residential purchases to commercial developments.",
+    icon: "fas fa-balance-scale",
+    title: "Appellate Advocacy",
+    description: "Expert representation in appellate courts, handling complex appeals and legal arguments.",
     features: [
-      "Property transactions",
-      "Contract negotiations",
-      "Title issues",
-      "Zoning matters"
+      "Civil appeals",
+      "Criminal appeals",
+      "Appellate brief writing",
+      "Oral arguments"
     ]
   },
   {
     id: 2,
-    icon: "fas fa-briefcase",
-    title: "Business Law",
-    description: "Expert guidance for businesses of all sizes, from startups to established corporations.",
+    icon: "fas fa-hand-holding-usd",
+    title: "Bad Faith",
+    description: "Holding insurance companies accountable for bad faith practices and unfair claim denials.",
     features: [
-      "Business formation",
-      "Contract drafting",
-      "Employment law",
-      "Mergers & acquisitions"
+      "Insurance bad faith claims",
+      "Claim denial disputes",
+      "Policy coverage litigation",
+      "Damages recovery"
     ]
   },
   {
     id: 3,
-    icon: "fas fa-heart",
-    title: "Family Law",
-    description: "Compassionate representation for sensitive family matters with a focus on amicable resolutions.",
+    icon: "fas fa-users",
+    title: "Class Action",
+    description: "Representing groups of individuals in large-scale litigation against corporations.",
     features: [
-      "Divorce proceedings",
-      "Child custody",
-      "Adoption services",
-      "Prenuptial agreements"
+      "Consumer protection",
+      "Securities fraud",
+      "Product liability",
+      "Employment disputes"
     ]
   },
   {
     id: 4,
-    icon: "fas fa-car",
-    title: "Personal Injury",
-    description: "Aggressive representation to help you recover maximum compensation for your injuries.",
+    icon: "fas fa-hard-hat",
+    title: "Construction",
+    description: "Comprehensive legal services for construction disputes and contract matters.",
     features: [
-      "Auto accidents",
-      "Slip and fall",
-      "Medical malpractice",
-      "Workers compensation"
+      "Contract disputes",
+      "Defect claims",
+      "Delay claims",
+      "Mechanics liens"
     ]
   },
   {
     id: 5,
-    icon: "fas fa-gavel",
-    title: "Criminal Defense",
-    description: "Experienced criminal defense representation protecting your rights and freedom.",
+    icon: "fas fa-leaf",
+    title: "Environmental & Toxic Torts",
+    description: "Representing clients in environmental litigation and toxic exposure cases.",
     features: [
-      "DUI/DWI defense",
-      "Drug charges",
-      "White collar crimes",
-      "Assault charges"
+      "Environmental compliance",
+      "Toxic exposure claims",
+      "Contamination cases",
+      "Regulatory matters"
     ]
   },
   {
     id: 6,
-    icon: "fas fa-file-alt",
-    title: "Estate Planning",
-    description: "Comprehensive estate planning services to protect your assets and secure your family's future.",
-    features: [
-      "Will drafting",
-      "Trust creation",
-      "Estate administration",
-      "Probate services"
-    ]
-  },
-  {
-    id: 7,
-    icon: "fas fa-landmark",
-    title: "Civil Litigation",
-    description: "Strategic representation in complex civil disputes and litigation matters.",
-    features: [
-      "Contract disputes",
-      "Business litigation",
-      "Property disputes",
-      "Appeal representation"
-    ]
-  },
-  {
-    id: 8,
-    icon: "fas fa-user-shield",
+    icon: "fas fa-user-tie",
     title: "Employment Law",
     description: "Protecting employee rights and helping employers navigate workplace regulations.",
     features: [
@@ -96,31 +72,31 @@ export const services = [
     ]
   },
   {
+    id: 7,
+    icon: "fas fa-gavel",
+    title: "General Liability",
+    description: "Defense representation in a wide range of liability claims and litigation.",
+    features: [
+      "Premises liability",
+      "Personal injury defense",
+      "Negligence claims",
+      "Trial representation"
+    ]
+  },
+  {
+    id: 8,
+    icon: "fas fa-file-contract",
+    title: "Insurance Coverage",
+    description: "Analyzing and litigating complex insurance coverage disputes and policy interpretations.",
+    features: [
+      "Coverage analysis",
+      "Policy interpretation",
+      "Bad faith claims",
+      "Declaratory actions"
+    ]
+  },
+  {
     id: 9,
-    icon: "fas fa-hand-holding-usd",
-    title: "Bankruptcy",
-    description: "Guiding individuals and businesses through debt relief and financial restructuring.",
-    features: [
-      "Chapter 7 bankruptcy",
-      "Chapter 13 bankruptcy",
-      "Debt negotiation",
-      "Creditor protection"
-    ]
-  },
-  {
-    id: 10,
-    icon: "fas fa-building",
-    title: "Corporate Law",
-    description: "Comprehensive legal counsel for corporations and business entities.",
-    features: [
-      "Corporate governance",
-      "Securities compliance",
-      "Shareholder agreements",
-      "Corporate transactions"
-    ]
-  },
-  {
-    id: 11,
     icon: "fas fa-lightbulb",
     title: "Intellectual Property",
     description: "Protecting your innovations, brands, and creative works.",
@@ -132,71 +108,97 @@ export const services = [
     ]
   },
   {
+    id: 10,
+    icon: "fas fa-box",
+    title: "Products Liability",
+    description: "Defense of manufacturers and distributors in product defect and injury claims.",
+    features: [
+      "Design defect claims",
+      "Manufacturing defects",
+      "Warning claims",
+      "Recall matters"
+    ]
+  },
+  {
+    id: 11,
+    icon: "fas fa-user-shield",
+    title: "Professional Liability",
+    description: "Defense representation for professionals facing malpractice and negligence claims.",
+    features: [
+      "Medical malpractice",
+      "Legal malpractice",
+      "Accounting malpractice",
+      "Professional errors"
+    ]
+  },
+  {
     id: 12,
-    icon: "fas fa-hospital",
-    title: "Medical Malpractice",
-    description: "Advocating for victims of medical negligence and healthcare errors.",
+    icon: "fas fa-hard-hat",
+    title: "Workers Compensation",
+    description: "Representing employers and insurers in workers compensation matters.",
     features: [
-      "Surgical errors",
-      "Misdiagnosis cases",
-      "Birth injuries",
-      "Medication errors"
+      "Claim defense",
+      "Benefit disputes",
+      "Subrogation",
+      "Coverage issues"
     ]
+  }
+];
+
+export const offices = [
+  {
+    id: 'philadelphia',
+    name: 'Philadelphia',
+    fullName: 'Philadelphia Office',
+    address: '2001 Market Street',
+    addressLine2: 'Suite 2815',
+    city: 'Philadelphia, PA 19103',
+    phone: '(215) 564-5190',
+    fax: '(215) 564-5191',
+    email: 'jmccarron@swartzcampbell.com',
+    hours: 'Monday - Friday: 9:00 AM - 5:00 PM'
   },
   {
-    id: 13,
-    icon: "fas fa-clipboard-check",
-    title: "Insurance Law",
-    description: "Resolving disputes with insurance companies and ensuring fair coverage.",
-    features: [
-      "Claim denials",
-      "Bad faith insurance",
-      "Policy disputes",
-      "Coverage litigation"
-    ]
+    id: 'pittsburgh',
+    name: 'Pittsburgh',
+    fullName: 'Pittsburgh Office',
+    address: 'Koppers Building, 436 7th Avenue',
+    addressLine2: 'Floors 7 & 8',
+    city: 'Pittsburgh, PA 15219',
+    phone: '(412) 232-9800',
+    fax: '(412) 232-9801',
+    email: 'largento@swartzcampbell.com',
+    hours: 'Monday - Friday: 9:00 AM - 5:00 PM'
   },
   {
-    id: 14,
-    icon: "fas fa-users",
-    title: "Immigration Law",
-    description: "Helping individuals and families navigate complex immigration processes.",
-    features: [
-      "Visa applications",
-      "Green card processing",
-      "Citizenship services",
-      "Deportation defense"
-    ]
+    id: 'newyork',
+    name: 'New York',
+    fullName: 'New York Office',
+    address: '350 Fifth Avenue',
+    addressLine2: 'Suite 4820',
+    city: 'New York, NY 10118',
+    phone: '(212) 555-7300',
+    fax: '(212) 555-7301',
+    email: 'nyoffice@swartzcampbell.com',
+    hours: 'Monday - Friday: 9:00 AM - 6:00 PM'
   },
   {
-    id: 15,
-    icon: "fas fa-leaf",
-    title: "Environmental Law",
-    description: "Legal counsel on environmental regulations and compliance matters.",
-    features: [
-      "Regulatory compliance",
-      "Environmental litigation",
-      "Land use planning",
-      "Contamination claims"
-    ]
-  },
-  {
-    id: 16,
-    icon: "fas fa-handshake",
-    title: "Contract Law",
-    description: "Expert drafting, review, and enforcement of contracts and agreements.",
-    features: [
-      "Contract drafting",
-      "Contract review",
-      "Breach of contract",
-      "Negotiation services"
-    ]
+    id: 'london',
+    name: 'London',
+    fullName: 'London Office',
+    address: '10 Fleet Place',
+    city: 'London EC4M 7RB, United Kingdom',
+    phone: '+44 20 7123 4500',
+    fax: '+44 20 7123 4501',
+    email: 'london@swartzcampbell.com',
+    hours: 'Monday - Friday: 9:00 AM - 5:00 PM GMT'
   }
 ];
 
 export const firmInfo = {
   name: "Swartz Campbell",
   tagline: "Attorneys at Law",
-  description: "Providing exceptional legal services with integrity, dedication, and results for over 25 years.",
+  description: "Providing exceptional legal services with integrity, dedication, and results for over 100 years.",
   contact: {
     address: {
       street: "123 Main Street, Suite 400",

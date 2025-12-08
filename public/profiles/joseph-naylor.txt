@@ -1,6 +1,6 @@
 name: Joseph Naylor
 title: Associate Attorney
-specialization: Personal Injury & Workers' Compensation
+practice areas: Personal Injury & Workers' Compensation
 image: images/attorneys/Naylor-Joseph-088-240x300.jpg
 email: jnaylor@swartzcampbell.com
 phone: (555) 123-4580

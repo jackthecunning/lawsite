@@ -257,6 +257,160 @@
     display: inline-block;
 }
 
+/* Office Card Link Styles */
+.office-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    height: 100%;
+}
+
+.office-card-link .office-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+}
+
+.office-card-link .office-details {
+    flex: 1;
+}
+
+.office-card-footer {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #f0f0f0;
+    text-align: center;
+    color: #c5a572;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.office-card-link:hover .office-card-footer {
+    color: #1a365d;
+}
+
+.office-card-footer i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.office-card-link:hover .office-card-footer i {
+    transform: translateX(5px);
+}
+
+/* Individual Office Page Layout */
+.office-detail-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.office-main-info {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.office-description {
+    margin-top: 20px;
+}
+
+.office-description p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.office-cta {
+    margin-top: 50px;
+    padding: 40px;
+    background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+}
+
+.office-cta h3 {
+    font-family: 'Crimson Text', serif;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.office-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.office-cta .cta-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.office-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sidebar-section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-section h3 {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.5rem;
+    color: #1a365d;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.sidebar-section p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.sidebar-section .btn {
+    width: 100%;
+    text-align: center;
+}
+
+.office-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    color: #555;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.office-link:last-child {
+    border-bottom: none;
+}
+
+.office-link:hover {
+    color: #1a365d;
+    padding-left: 10px;
+}
+
+.office-link i {
+    color: #c5a572;
+    font-size: 1.2rem;
+    min-width: 20px;
+}
+
 /* Diversity Page - Diversity Sections */
 .diversity-sections {
     display: grid;
@@ -314,6 +468,30 @@
 }
 
 /* CTA Section */
+/* Responsive Styles for Office Pages */
+@media (max-width: 900px) {
+    .office-detail-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .office-main-info {
+        padding: 30px;
+    }
+
+    .office-cta {
+        padding: 30px;
+    }
+
+    .office-cta h3 {
+        font-size: 1.6rem;
+    }
+
+    .office-cta .cta-buttons {
+        flex-direction: column;
+    }
+}
+
 .cta-section {
     background: white;
     padding: 60px;

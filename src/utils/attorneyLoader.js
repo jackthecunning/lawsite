@@ -19,8 +19,8 @@ export const parseAttorneyProfile = (profileText) => {
       attorney.name = line.substring(5).trim();
     } else if (line.startsWith('title:')) {
       attorney.title = line.substring(6).trim();
-    } else if (line.startsWith('specialization:')) {
-      attorney.specialization = line.substring(15).trim();
+    } else if (line.startsWith('practice areas:')) {
+      attorney.practiceAreas = line.substring(15).trim();
     } else if (line.startsWith('image:')) {
       attorney.image = line.substring(6).trim();
     } else if (line.startsWith('personal photo:')) {
@@ -51,11 +51,11 @@ export const parseAttorneyProfile = (profileText) => {
   }
 
   if (bioLines.length > 0) {
-    attorney.bio = bioLines.join(' ').trim();
+    attorney.bio = bioLines.join('\n').trim();
   }
 
   if (personalBioLines.length > 0) {
-    attorney.personalBio = personalBioLines.join(' ').trim();
+    attorney.personalBio = personalBioLines.join('\n').trim();
   }
 
   return attorney;
@@ -94,7 +94,7 @@ export const loadAllAttorneyProfiles = async () => {
 
     for (const filename of profileFiles) {
       const attorney = await loadAttorneyProfile(filename);
-      if (attorney) {
+      if (attorney && attorney.name) {
         attorney.id = id++;
         // Create URL-friendly slug from name for routing
         attorney.slug = attorney.name
@@ -104,6 +104,8 @@ export const loadAllAttorneyProfiles = async () => {
           .trim();
 
         attorneys.push(attorney);
+      } else {
+        console.warn(`Skipping profile ${filename}: missing name field`);
       }
     }
 

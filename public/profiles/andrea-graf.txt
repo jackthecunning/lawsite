@@ -1,6 +1,6 @@
 name: Andrea Graf
 title: Partner
-specialization: Employment Law & Civil Rights
+practice areas: Employment Law & Civil Rights
 image: images/attorneys/andrea-graf.jpg
 email: agraf@swartzcampbell.com
 phone: (555) 123-4564

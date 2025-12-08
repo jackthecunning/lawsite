@@ -156,7 +156,7 @@ const PracticeAreaDetail = () => {
               </div>
 
               <div className="related-areas">
-                <h3>Related Practice Areas</h3>
+                <h3>Our Other Practice Areas</h3>
                 <div className="related-links">
                   {services
                     .filter(service => service.id !== practiceArea.id)
@@ -189,7 +189,7 @@ const PracticeAreaDetail = () => {
             </p>
             <div className="cta-buttons">
               <button onClick={scrollToContact} className="btn btn-primary">
-                Free Consultation
+                Contact Us
               </button>
               <Link to="/practice-areas" className="btn btn-secondary">
                 View All Practice Areas

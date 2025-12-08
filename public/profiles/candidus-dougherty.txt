@@ -1,6 +1,6 @@
 name: Candidus K. Dougherty
 title: Partner
-specialization: Civil Litigation & Dispute Resolution
+practice areas: Civil Litigation & Dispute Resolution
 image: images/attorneys/Candidus-K-Dougherty.jpg
 email: cdougherty@swartzcampbell.com
 phone: (555) 123-4590

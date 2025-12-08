@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { firmInfo } from '../data/firmData';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -22,9 +24,10 @@ const Navigation = () => {
 
   const handleHomeClick = (e) => {
     closeMenu();
-    // If already on homepage, prevent navigation and don't scroll
+    // If already on homepage, scroll to top
     if (location.pathname === '/') {
       e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
     // If not on homepage, allow navigation and jump to top after navigation
@@ -72,10 +75,56 @@ const Navigation = () => {
     }, 50);
   };
 
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    closeMenu();
+
+    // If not on homepage, navigate to homepage first
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollToContact: true } });
+    } else {
+      // If already on homepage, just scroll to contact section
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   // Close mobile menu when route changes
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location]);
+
+  // Handle scrolling to contact section after navigation
+  useEffect(() => {
+    if (location.pathname === '/' && location.state?.scrollToContact) {
+      // Wait for the page to render
+      setTimeout(() => {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+          const navbarHeight = 80; // Height of the navbar
+          const elementPosition = contactSection.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - navbarHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    }
+  }, [location]);
+
+  // Handle scroll to change navbar background
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const isActive = (path) => {
     if (path === '/' && location.pathname === '/') return true;
@@ -83,8 +132,10 @@ const Navigation = () => {
     return false;
   };
 
+  const isHomePage = location.pathname === '/';
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isScrolled || !isHomePage ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <Link to="/" className="nav-logo" onClick={handleLogoClick}>
           <h2>{firmInfo.name}</h2>
@@ -140,7 +191,7 @@ const Navigation = () => {
           <a
             href="/#contact"
             className="nav-link"
-            onClick={closeMenu}
+            onClick={handleContactClick}
           >
             Contact
           </a>

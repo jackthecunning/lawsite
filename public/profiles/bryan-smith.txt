@@ -1,6 +1,6 @@
 name: Bryan Smith
 title: Associate Attorney
-specialization: Contract Law & Business Transactions
+practice areas: Contract Law & Business Transactions
 image: images/attorneys/Smith-Bryan.png
 email: bsmith@swartzcampbell.com
 phone: (555) 123-4584

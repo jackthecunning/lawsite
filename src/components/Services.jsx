@@ -4,6 +4,7 @@ import { services } from '../data/firmData';
 
 const Services = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [itemsVisible, setItemsVisible] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const sectionRef = useRef(null);
   const contentRef = useRef(null);
@@ -16,6 +17,12 @@ const Services = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true);
+            // Trigger staggered animation for each item
+            services.forEach((_, index) => {
+              setTimeout(() => {
+                setItemsVisible(prev => [...prev, index]);
+              }, index * 100); // 100ms delay between each item
+            });
           }
         });
       },
@@ -99,6 +106,9 @@ const Services = () => {
 
   const currentService = services[currentIndex];
 
+  // Sort services alphabetically by title
+  const sortedServices = [...services].sort((a, b) => a.title.localeCompare(b.title));
+
   return (
     <section
       id="services"
@@ -110,44 +120,17 @@ const Services = () => {
           <h2>Practice Areas</h2>
           <p>Comprehensive Legal Services</p>
         </div>
-        <div className="services-sidebar-layout" ref={contentRef}>
-          <div className="practice-areas-sidebar">
-            <div className="sidebar-list">
-              {services.map((service, index) => (
-                <div
-                  key={service.id}
-                  className={`sidebar-item ${index === currentIndex ? 'active' : ''}`}
-                  onClick={() => handleItemClick(index)}
-                >
-                  <i className={service.icon}></i>
-                  <span>{service.title}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="practice-areas-content">
-            <div className="content-icon">
-              <i className={currentService.icon}></i>
-            </div>
-            <h3>{currentService.title}</h3>
-            <p className="content-description">{currentService.description}</p>
-            {currentService.features && (
-              <ul className="content-features">
-                {currentService.features.map((feature, idx) => (
-                  <li key={idx}>
-                    <i className="fas fa-check-circle"></i>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            )}
+        <div className="practice-areas-simple-list">
+          {sortedServices.map((service, index) => (
             <Link
-              to={`/practice-areas/${currentService.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
-              className="btn btn-primary learn-more-btn"
+              key={service.id}
+              to={`/practice-areas/${service.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
+              className={`practice-area-name ${itemsVisible.includes(index) ? 'item-visible' : ''}`}
             >
-              Learn More <i className="fas fa-arrow-right"></i>
+              <i className={service.icon}></i>
+              <span>{service.title}</span>
             </Link>
-          </div>
+          ))}
         </div>
       </div>
     </section>

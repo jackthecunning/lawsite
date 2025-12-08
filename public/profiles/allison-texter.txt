@@ -1,6 +1,6 @@
 name: Allison Texter
 title: Associate Attorney
-specialization: Healthcare Law & Medical Privacy
+practice areas: Healthcare Law & Medical Privacy
 image: images/attorneys/Texter-Allison-023-683x1024.jpg
 email: atexter@swartzcampbell.com
 phone: (555) 123-4587

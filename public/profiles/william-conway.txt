@@ -1,6 +1,6 @@
 name: William F. Conway
 title: Partner
-specialization: Municipal Law & Government Relations
+practice areas: Municipal Law & Government Relations
 image: images/attorneys/William-F.-Conway.jpg
 email: wconway@swartzcampbell.com
 phone: (555) 123-4588

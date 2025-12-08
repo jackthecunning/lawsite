@@ -1,6 +1,6 @@
 name: Caryn Steiger
 title: Partner
-specialization: Trust & Estate Planning
+practice areas: Trust & Estate Planning
 image: images/attorneys/Steiger-Caryn-04271-683x1024.jpg
 email: csteiger@swartzcampbell.com
 phone: (555) 123-4585

@@ -1,6 +1,6 @@
 name: William A. Jones
 title: Partner
-specialization: Criminal Defense & White Collar Crime
+practice areas: Criminal Defense & White Collar Crime
 image: images/attorneys/William-A.-Jones.jpg
 email: wjones@swartzcampbell.com
 phone: (555) 123-4563

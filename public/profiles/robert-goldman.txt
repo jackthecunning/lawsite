@@ -1,6 +1,6 @@
 name: Robert Goldman
 title: Partner
-specialization: Tax Law & Business Planning
+practice areas: Tax Law & Business Planning
 image: images/attorneys/Goldman-Robert-304-731x1024.jpg
 email: rgoldman@swartzcampbell.com
 phone: (555) 123-4567

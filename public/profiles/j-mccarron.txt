@@ -1,6 +1,6 @@
 name: J. McCarron
 title: Associate Attorney
-specialization: Bankruptcy & Debt Resolution
+practice areas: Bankruptcy & Debt Resolution
 image: images/attorneys/J.McCarron.png
 personal photo: images/attorneys/J.McCarron.png
 email: jmccarron@swartzcampbell.com

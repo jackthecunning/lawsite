@@ -1,12 +1,13 @@
 /* Attorneys Section */
 .attorneys {
-    padding: 0 0 100px 0;
+    padding: 20px 0 20px 0;
     background-color: #f8f9fa;
     position: relative;
     overflow: hidden;
     transform: translateY(20px);
     opacity: 1;
     transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* border:#1a365d 1px solid; */
 }
 
 .attorneys.animate-in {
@@ -24,49 +25,10 @@
     animation: slideInFromBottom 0.8s ease-out forwards;
 }
 
-.attorneys-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-.attorneys-scroll-container {
-    display: flex;
-    gap: 30px;
-    overflow-x: auto;
-    padding: 20px 0;
-    scrollbar-width: thin;
-    scrollbar-color: #c5a572 #f1f1f1;
-}
-
-.attorneys-scroll-container::-webkit-scrollbar {
-    height: 8px;
-}
-
-.attorneys-scroll-container::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 4px;
-}
-
-.attorneys-scroll-container::-webkit-scrollbar-thumb {
-    background: #c5a572;
-    border-radius: 4px;
-}
-
-.attorneys-scroll-container::-webkit-scrollbar-thumb:hover {
-    background: #a08659;
-}
-
 .attorneys-carousel-wrapper {
     display: flex;
     align-items: center;
     gap: 20px;
-    position: relative;
-}
-
-.attorneys-carousel {
-    flex: 1;
-    overflow: hidden;
     position: relative;
 }
 
@@ -149,47 +111,11 @@
     opacity: 1;
 }
 
-/* Horizontal slide out animations for card changes */
-.attorneys-carousel-track .team-card.slide-out {
-    animation: slideOutHorizontal 0.4s ease-in forwards;
-}
-
-.attorneys-carousel-track .team-card.slide-in {
-    animation: slideInHorizontal 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
 .attorneys-carousel-track .team-card-link {
     text-decoration: none;
     color: inherit;
     opacity: 1;
     display: block;
-}
-
-.carousel-indicators {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 30px;
-}
-
-.carousel-indicators .indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 2px solid #c5a572;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.carousel-indicators .indicator.active {
-    background: #c5a572;
-    transform: scale(1.2);
-}
-
-.carousel-indicators .indicator:hover {
-    background: #c5a572;
-    opacity: 0.7;
 }
 
 .carousel-indicators {
@@ -255,7 +181,9 @@
     .attorneys-carousel-track .team-card {
         width: 280px;
         height: 380px;
-    }    .carousel-indicators {
+    }
+
+    .carousel-indicators {
         margin-top: 20px;
     }
 }
@@ -265,11 +193,6 @@
     animation: expandAndFadeSection 0.5s ease-in-out forwards;
     position: relative;
     z-index: 1000;
-}
-
-.attorneys.expanding .attorneys-scroll-container {
-    animation: fadeOutCards 0.4s ease-out forwards;
-    animation-delay: 0.1s;
 }
 
 .attorneys.expanding .team-expand-btn {
@@ -296,21 +219,6 @@
         transform: translateY(-60px) scale(1.06);
         background-color: #ffffff;
         opacity: 0;
-    }
-}
-
-@keyframes fadeOutCards {
-    0% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-    60% {
-        opacity: 0.3;
-        transform: translateY(-15px) scale(0.96);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-25px) scale(0.92);
     }
 }
 
