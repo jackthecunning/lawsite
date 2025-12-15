@@ -4,7 +4,7 @@ practice areas: Personal Injury & Workers' Compensation
 image: images/attorneys/Naylor-Joseph-088-240x300.jpg
 email: jnaylor@swartzcampbell.com
 phone: (555) 123-4580
-office: Fredonia
+office: Philadelphia
 
 credentials:
 - J.D., Temple University Beasley School of Law, 2017

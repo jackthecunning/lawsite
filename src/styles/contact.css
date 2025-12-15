@@ -1,4 +1,4 @@
-/* Contact Section */
+/* #region Contact Section */
 .contact {
     padding: 100px 0;
     background-color: white;
@@ -90,8 +90,9 @@
 .form-group textarea {
     resize: vertical;
 }
+/* #endregion */
 
-/* Office Locations Section */
+/* #region Office Locations Section */
 .office-locations {
     padding-top: 60px;
     border-top: 2px solid #f0f0f0;
@@ -227,9 +228,10 @@
 .detail-item a:hover {
     color: #c5a572;
 }
+/* #endregion */
 
-/* Responsive Contact Styles */
-@media (max-width: 768px) {
+/* #region Responsive Contact Styles */
+@media (max-width: 900px) {
     .contact-items-grid {
         grid-template-columns: 1fr;
     }
@@ -256,3 +258,4 @@
         padding-top: 40px;
     }
 }
+/* #endregion */

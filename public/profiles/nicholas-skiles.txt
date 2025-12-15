@@ -4,7 +4,7 @@ practice areas: Criminal Defense & DUI Law
 image: images/attorneys/Skiles-Nicholas-058-683x1024.jpg
 email: nskiles@swartzcampbell.com
 phone: (555) 123-4583
-office: Fredonia
+office: Philadelphia
 
 credentials:
 - J.D., Widener University Commonwealth Law School, 2009

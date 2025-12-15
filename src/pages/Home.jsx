@@ -1,16 +1,22 @@
+// #region Imports
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import Attorneys from '../components/Attorneys';
 import Services from '../components/Services';
 import HomeNews from '../components/HomeNews';
+// #endregion
 
 const Home = () => {
+  // #region State & Refs
   const [statsVisible, setStatsVisible] = useState(false);
+  const [quickAccessVisible, setQuickAccessVisible] = useState(false);
   const statsRef = useRef(null);
+  // #endregion
 
+  // #region Effects
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const statsObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -22,22 +28,37 @@ const Home = () => {
     );
 
     if (statsRef.current) {
-      observer.observe(statsRef.current);
+      statsObserver.observe(statsRef.current);
     }
+
+    // Show quick access cards on scroll
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setQuickAccessVisible(true);
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
       if (statsRef.current) {
-        observer.unobserve(statsRef.current);
+        statsObserver.unobserve(statsRef.current);
       }
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  // #endregion
 
+  // #region Helper Functions
   const getYearsSinceFounding = () => {
     const foundingYear = 1921;
     const currentYear = new Date().getFullYear();
     return currentYear - foundingYear;
   };
+  // #endregion
 
+  // #region JSX Return
   return (
     <>
       <Hero />
@@ -45,7 +66,7 @@ const Home = () => {
       {/* Quick Access Section */}
       <section className="home-quick-access">
         <div className="container">
-          <div className="quick-access-grid">
+          <div className={`quick-access-grid ${quickAccessVisible ? 'visible' : ''}`}>
             <Link to="/team" className="quick-access-card primary-card">
               <div className="card-icon">
                 <i className="fas fa-users"></i>
@@ -55,14 +76,14 @@ const Home = () => {
               <span className="card-arrow">→</span>
             </Link>
 
-            <Link to="/careers" className="quick-access-card accent-card">
+            {/* <Link to="/careers" className="quick-access-card accent-card">
               <div className="card-icon">
                 <i className="fas fa-briefcase"></i>
               </div>
               <h3>Join Our Team</h3>
               <p>Explore career opportunities at Swartz Campbell</p>
               <span className="card-arrow">→</span>
-            </Link>
+            </Link> */}
 
             <Link to="/practice-areas" className="quick-access-card">
               <div className="card-icon">
@@ -81,6 +102,16 @@ const Home = () => {
               <p>Philadelphia • Pittsburgh • New York • London</p>
               <span className="card-arrow">→</span>
             </Link>
+
+            <Link to="/history" className="quick-access-card">
+              <div className="card-icon">
+                <i className="fas fa-landmark"></i>
+              </div>
+              <h3>History</h3>
+              <p>Explore our rich history as we build an even brighter future. But something less dumb</p>
+              <span className="card-arrow">→</span>
+            </Link>
+
           </div>
         </div>
       </section>
@@ -93,7 +124,7 @@ const Home = () => {
               <div className="heritage-badge">
                 <span className="badge-year">Est. 1921</span>
               </div>
-              <h2>A Century of Legal Excellence</h2>
+              <h2>A Century of Legal Excellence & Jets</h2>
               <p className="lead-text">
                 For over {getYearsSinceFounding()} years, Swartz Campbell has been a cornerstone
                 of the legal community, serving clients with unwavering dedication and expertise.
@@ -103,6 +134,7 @@ const Home = () => {
                 our professional relationships. We are trusted by individuals, businesses, and
                 fellow legal professionals throughout the region and beyond.
               </p>
+              <p>Obviously, the jets explain themselves.</p>
               <div className="heritage-stats">
                 <div className="heritage-stat">
                   <div className="stat-number">{getYearsSinceFounding()}+</div>
@@ -120,71 +152,7 @@ const Home = () => {
             </div>
             <div className="heritage-image">
               <div className="image-frame">
-                <img src="/images/office-exterior.jpg" alt="Swartz Campbell Office" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Attorney Showcase */}
-      <Attorneys />
-
-      {/* Culture & Careers Section */}
-      <section className="home-careers-spotlight">
-        <div className="container">
-          <div className="careers-content">
-            <div className="careers-visual">
-              <div className="visual-grid">
-                <div className="visual-item">
-                  <i className="fas fa-balance-scale"></i>
-                  <span>Professional Growth</span>
-                </div>
-                <div className="visual-item">
-                  <i className="fas fa-users"></i>
-                  <span>Collaborative Culture</span>
-                </div>
-                <div className="visual-item">
-                  <i className="fas fa-trophy"></i>
-                  <span>Challenging Work</span>
-                </div>
-                <div className="visual-item">
-                  <i className="fas fa-graduation-cap"></i>
-                  <span>Mentorship</span>
-                </div>
-              </div>
-            </div>
-            <div className="careers-text">
-              <h2>Build Your Career with Us</h2>
-              <p className="lead-text">
-                We're seeking exceptional attorneys to join our established practice.
-              </p>
-              <div className="careers-features">
-                <div className="feature-item">
-                  <i className="fas fa-check-circle"></i>
-                  <span>Work alongside experienced partners and senior counsel</span>
-                </div>
-                <div className="feature-item">
-                  <i className="fas fa-check-circle"></i>
-                  <span>Handle sophisticated legal matters for established clients</span>
-                </div>
-                <div className="feature-item">
-                  <i className="fas fa-check-circle"></i>
-                  <span>Benefit from over a century of institutional knowledge</span>
-                </div>
-                <div className="feature-item">
-                  <i className="fas fa-check-circle"></i>
-                  <span>Competitive compensation and comprehensive benefits</span>
-                </div>
-              </div>
-              <div className="careers-cta">
-                <Link to="/careers" className="btn btn-primary btn-large">
-                  <i className="fas fa-arrow-right"></i>
-                  View Career Opportunities
-                </Link>
-                <Link to="/diversity" className="btn btn-outline btn-large">
-                  Our Commitment to Diversity
-                </Link>
+                <img src="/images/fighter-jet.jpg" alt="Fighter Jet" />
               </div>
             </div>
           </div>
@@ -194,11 +162,14 @@ const Home = () => {
       {/* Practice Areas */}
       <Services />
 
+      {/* Attorney Showcase */}
+      <Attorneys />
+
       {/* News & Updates */}
       <HomeNews />
 
       {/* Professional Contact Section */}
-      <section className="home-professional-contact">
+      <section id="contact" className="home-professional-contact">
         <div className="container">
           <div className="contact-grid">
             <div className="contact-info">
@@ -272,6 +243,7 @@ const Home = () => {
       </section>
     </>
   );
+  // #endregion
 };
 
 export default Home;

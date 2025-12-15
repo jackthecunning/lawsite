@@ -1,4 +1,4 @@
-/* Hero Section */
+/* #region Hero Section */
 .hero {
     color: white;
     padding: 0;
@@ -37,8 +37,9 @@
 .hero-slide.active {
     opacity: 1;
 }
+/* #endregion */
 
-/* Banner Image Component Styles */
+/* #region Banner Image Component Styles */
 .banner-image-container {
     position: relative;
     width: 100%;
@@ -62,15 +63,15 @@
     background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
 }
 
-/* .hero-overlay {
+.hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(26, 54, 93, 0.7) 0%, rgba(45, 90, 135, 0.7) 100%);
+    background: rgba(0, 0, 0, 0.25);
     z-index: 1;
-} */
+}
 
 .hero-content {
     position: relative;
@@ -93,16 +94,24 @@
     margin-bottom: 40px;
     opacity: 0.9;
 }
+/* #endregion */
 
-/* Enhanced Hero Text Styling */
+/* #region Enhanced Hero Text Styling */
 .hero-text-wrapper {
     text-align: center;
     margin-bottom: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .firm-name {
-    margin-bottom: 20px !important;
+    margin-bottom: 10px !important;
     position: relative;
+    padding-bottom: 20px;
+    display: block;
+    text-align: center;
 }
 
 .firm-name-main {
@@ -115,27 +124,34 @@
     position: relative;
     display: inline-block;
     white-space: nowrap;
-    text-shadow:
+    /* text-shadow:
         0 4px 8px rgba(0, 0, 0, 0.3),
         -2px -2px 0 #b8934a,
         -1px -1px 0 #a67d3d,
         0px 0px 0 #8d6630,
         1px 1px 0 #6d4d20,
-        2px 2px 0 #000000;
+        2px 2px 0 #000000; */
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.4),
+        -0.5px -0.5px 0 #1a3a5c,
+        0.5px -0.5px 0 #1a3a5c,
+        -0.5px 0.5px 0 #1a3a5c,
+        0.5px 0.5px 0 #1a3a5c;
 }
 
-.firm-name-main::after {
+/* .firm-name-main::after {
     content: '';
     position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
+    bottom: -15px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 200px;
     height: 3px;
     background: linear-gradient(90deg, #c5a572 0%, #d4b886 100%);
     border-radius: 2px;
     box-shadow: 0 2px 4px rgba(197, 165, 114, 0.4);
-}
+} */
 
 .firm-name-main .capital-letter {
     font-size: 1.6em;
@@ -156,22 +172,32 @@
     justify-content: center;
     gap: 12px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    flex-wrap: nowrap;
+    white-space: nowrap;
 }
 
 .celebrating {
     color: #f8f9fa;
     font-style: italic;
+    font-size: 1.8rem;
     opacity: 0.95;
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.4),
+        -0.5px -0.5px 0 #1a3a5c,
+        0.5px -0.5px 0 #1a3a5c,
+        -0.5px 0.5px 0 #1a3a5c,
+        0.5px 0.5px 0 #1a3a5c;
 }
 
 .years-number {
-    background: linear-gradient(135deg, #c5a572 0%, #d4b886 50%, #c5a572 100%);
+    background: linear-gradient(135deg, #e6c589 0%, #f4d9a6 50%, #e6c589 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-size: 2.4rem;
+    font-size: 2.1rem;
     font-weight: 700;
-    text-shadow: 0 3px 6px rgba(197, 165, 114, 0.5);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8))
+            drop-shadow(0 0 20px rgba(230, 197, 137, 0.6));
     position: relative;
 }
 
@@ -192,6 +218,30 @@
     color: #f8f9fa;
     font-style: italic;
     opacity: 0.95;
+    font-size: 1.8rem;
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.4),
+        -0.5px -0.5px 0 #1a3a5c,
+        0.5px -0.5px 0 #1a3a5c,
+        -0.5px 0.5px 0 #1a3a5c,
+        0.5px 0.5px 0 #1a3a5c;
+}
+
+.legal-excellence {
+    font-family: 'Bodoni 72', 'Bodoni MT', 'Bodoni', 'Didot', 'Crimson Text', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    font-style: italic;
+    color: #f8f9fa;
+    opacity: 0.95;
+    margin: -45px 0 0 0;
+    line-height: 1;
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.4),
+        -0.5px -0.5px 0 #1a3a5c,
+        0.5px -0.5px 0 #1a3a5c,
+        -0.5px 0.5px 0 #1a3a5c,
+        0.5px 0.5px 0 #1a3a5c;
 }
 
 .hero-buttons {
@@ -260,3 +310,4 @@
     font-size: 1rem;
     opacity: 0.8;
 }
+/* #endregion */

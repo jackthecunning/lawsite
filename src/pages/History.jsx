@@ -33,7 +33,7 @@ const History = () => {
                 <div className="timeline-year">1921</div>
                 <div className="timeline-content">
                   <h3>Firm Founded</h3>
-                  <p>Swartz Campbell established in Philadelphia, Pennsylvania</p>
+                  <p>Swartz Campbell established in Philadelphia, Pennsylvania. This is when our history with fighter jets first began.</p>
                 </div>
               </div>
 

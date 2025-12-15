@@ -1,13 +1,18 @@
+// #region Imports
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { firmInfo } from '../data/firmData';
+// #endregion
 
 const Navigation = () => {
+  // #region State & Hooks
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  // #endregion
 
+  // #region Handler Functions
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -205,6 +210,7 @@ const Navigation = () => {
       </div>
     </nav>
   );
+  // #endregion
 };
 
 export default Navigation;

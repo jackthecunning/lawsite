@@ -4,7 +4,7 @@ practice areas: Labor Relations & Union Law
 image: images/attorneys/Heenan-Chris-002-732x1024.jpg
 email: cheenan@swartzcampbell.com
 phone: (555) 123-4573
-office: Fredonia
+office: Philadelphia
 
 credentials:
 - J.D., University of Notre Dame Law School, 2001

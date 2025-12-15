@@ -27,7 +27,7 @@ const Careers = () => {
       id: 3,
       title: "Legal Assistant",
       department: "General Practice",
-      location: "Fredonia, NY",
+      location: "Philadelphia, PA",
       type: "Full-time",
       experience: "1-3 years",
       description: "Support our legal team with case preparation, client communication, and administrative tasks. Paralegal certification preferred but not required."

@@ -3,6 +3,13 @@ import { useState, useEffect } from 'react';
 import { loadAllAttorneyProfiles } from '../utils/attorneyLoader';
 import AttorneyImage from '../components/AttorneyImage';
 import { getFirstName } from '../utils/nameUtils';
+import {
+  AttorneyHeroSection,
+  AttorneyCredentialsSection,
+  AttorneyPracticeSection,
+  AttorneyContactSection,
+  AttorneyNavigationSection
+} from '../components/AttorneyDetailSections';
 
 const AttorneyDetail = () => {
   const { id } = useParams(); // This is now the slug
@@ -84,7 +91,7 @@ const AttorneyDetail = () => {
                 </p>
                 <p>
                   <i className="fas fa-map-marker-alt"></i>
-                  {attorney.office} Office
+                  {attorney.offices ? attorney.offices.join(', ') : attorney.office} Office{attorney.offices && attorney.offices.length > 1 ? 's' : ''}
                 </p>
               </div>
             </div>
@@ -92,10 +99,14 @@ const AttorneyDetail = () => {
               <div className="attorney-bio">
                 <h1>{attorney.name}</h1>
                 <h2 className="attorney-title">{attorney.title}</h2>
-                {attorney.practiceAreas && (
-                  <p className="attorney-specialization">
-                    <i className="fas fa-gavel"></i> {attorney.practiceAreas}
-                  </p>
+                {attorney.practiceAreas && attorney.practiceAreas.length > 0 && (
+                  <div className="attorney-practice-areas">
+                    {attorney.practiceAreas.map((area, index) => (
+                      <span key={index} className="practice-area-tag">
+                        <i className="fas fa-gavel"></i> {area}
+                      </span>
+                    ))}
+                  </div>
                 )}
                 <h3>About {getFirstName(attorney.name)}</h3>
                 {attorney.bio && attorney.bio.split('\n').map((paragraph, index) => (
@@ -141,27 +152,245 @@ const AttorneyDetail = () => {
         </div>
       </section>
 
-      {/* Credentials Section */}
-      <section id="attorney-credentials" className="attorney-credentials-section section-light">
-        <div className="container">
-          <div className="section-header">
-            <h2>
-              <i className="fas fa-graduation-cap"></i>
-              Education & Credentials
-            </h2>
-          </div>
-          <div className="section-content">
-            <div className="credentials-grid">
-              {attorney.credentials.map((credential, index) => (
-                <div key={index} className="credential-item">
-                  <i className="fas fa-check-circle"></i>
-                  <span>{credential}</span>
-                </div>
-              ))}
+      {/* Education Section */}
+      {attorney.education && attorney.education.length > 0 && (
+        <section id="attorney-education" className="attorney-credentials-section section-light">
+          <div className="container">
+            <div className="section-header">
+              <h2>
+                <i className="fas fa-graduation-cap"></i>
+                Education
+              </h2>
+            </div>
+            <div className="section-content">
+              <div className="credentials-grid">
+                {attorney.education.map((item, index) => (
+                  <div key={index} className="credential-item">
+                    <i className="fas fa-check-circle"></i>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {/* Bar Admissions Section */}
+      {attorney.barAdmissions && attorney.barAdmissions.length > 0 && (
+        <section id="attorney-bar" className="attorney-credentials-section section-white">
+          <div className="container">
+            <div className="section-header">
+              <h2>
+                <i className="fas fa-gavel"></i>
+                Bar Admissions
+              </h2>
+            </div>
+            <div className="section-content">
+              <div className="credentials-grid">
+                {attorney.barAdmissions.map((item, index) => (
+                  <div key={index} className="credential-item">
+                    <i className="fas fa-check-circle"></i>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Court Admissions Section */}
+      {attorney.courtAdmissions && attorney.courtAdmissions.length > 0 && (
+        <section id="attorney-court" className="attorney-credentials-section section-light">
+          <div className="container">
+            <div className="section-header">
+              <h2>
+                <i className="fas fa-landmark"></i>
+                Court Admissions
+              </h2>
+            </div>
+            <div className="section-content">
+              <div className="credentials-grid">
+                {attorney.courtAdmissions.map((item, index) => (
+                  <div key={index} className="credential-item">
+                    <i className="fas fa-check-circle"></i>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Awards and Honors Section */}
+      {attorney.awards && attorney.awards.length > 0 && (
+        <section id="attorney-awards" className="attorney-credentials-section section-white">
+          <div className="container">
+            <div className="section-header">
+              <h2>
+                <i className="fas fa-trophy"></i>
+                Awards and Honors
+              </h2>
+            </div>
+            <div className="section-content">
+              <div className="credentials-grid">
+                {attorney.awards.map((item, index) => (
+                  <div key={index} className="credential-item">
+                    <i className="fas fa-award"></i>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Professional Organizations Section */}
+      {attorney.professionalOrganizations && attorney.professionalOrganizations.length > 0 && (
+        <section id="attorney-organizations" className="attorney-credentials-section section-light">
+          <div className="container">
+            <div className="section-header">
+              <h2>
+                <i className="fas fa-users"></i>
+                Professional Organizations
+              </h2>
+            </div>
+            <div className="section-content">
+              <div className="credentials-grid">
+                {attorney.professionalOrganizations.map((item, index) => (
+                  <div key={index} className="credential-item">
+                    <i className="fas fa-check-circle"></i>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Publications Section */}
+      {attorney.publications && attorney.publications.length > 0 && (
+        <section id="attorney-publications" className="attorney-credentials-section section-white">
+          <div className="container">
+            <div className="section-header">
+              <h2>
+                <i className="fas fa-book"></i>
+                Publications
+              </h2>
+            </div>
+            <div className="section-content">
+              <div className="credentials-grid">
+                {attorney.publications.map((item, index) => (
+                  <div key={index} className="credential-item">
+                    <i className="fas fa-file-alt"></i>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Pro Bono Work Section */}
+      {attorney.proBono && attorney.proBono.length > 0 && (
+        <section id="attorney-probono" className="attorney-credentials-section section-light">
+          <div className="container">
+            <div className="section-header">
+              <h2>
+                <i className="fas fa-hands-helping"></i>
+                Pro Bono Work
+              </h2>
+            </div>
+            <div className="section-content">
+              <div className="credentials-grid">
+                {attorney.proBono.map((item, index) => (
+                  <div key={index} className="credential-item">
+                    <i className="fas fa-heart"></i>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Credentials Section */}
+      {attorney.credentials && attorney.credentials.length > 0 && (
+        <section id="attorney-credentials" className="attorney-credentials-section section-white">
+          <div className="container">
+            <div className="section-header">
+              <h2>
+                <i className="fas fa-certificate"></i>
+                Credentials
+              </h2>
+            </div>
+            <div className="section-content">
+              <div className="credentials-grid">
+                {attorney.credentials.map((item, index) => (
+                  <div key={index} className="credential-item">
+                    <i className="fas fa-check-circle"></i>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Certifications Section */}
+      {attorney.certifications && attorney.certifications.length > 0 && (
+        <section id="attorney-certifications" className="attorney-credentials-section section-light">
+          <div className="container">
+            <div className="section-header">
+              <h2>
+                <i className="fas fa-award"></i>
+                Certifications
+              </h2>
+            </div>
+            <div className="section-content">
+              <div className="credentials-grid">
+                {attorney.certifications.map((item, index) => (
+                  <div key={index} className="credential-item">
+                    <i className="fas fa-check-circle"></i>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Military Service Section */}
+      {attorney.military && attorney.military.length > 0 && (
+        <section id="attorney-military" className="attorney-credentials-section section-white">
+          <div className="container">
+            <div className="section-header">
+              <h2>
+                <i className="fas fa-flag-usa"></i>
+                Military Service
+              </h2>
+            </div>
+            <div className="section-content">
+              <div className="credentials-grid">
+                {attorney.military.map((item, index) => (
+                  <div key={index} className="credential-item">
+                    <i className="fas fa-medal"></i>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Practice Focus Section */}
       <section id="attorney-practice" className="attorney-practice-section section-dark">

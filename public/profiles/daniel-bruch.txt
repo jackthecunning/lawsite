@@ -4,7 +4,7 @@ practice areas: Intellectual Property & Technology Law
 image: images/attorneys/Bruch-Daniel-017-683x1024.jpg
 email: dbruch@swartzcampbell.com
 phone: (555) 123-4565
-office: Fredonia
+office: Philadelphia
 
 credentials:
 - J.D., Stanford Law School, 2011

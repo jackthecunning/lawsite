@@ -1,6 +1,6 @@
-/* Utility Classes and Common Patterns */
+/* #region Utility Classes and Common Patterns */
 
-/* Attorney Image Component Styles */
+/* #region Attorney Image Component Styles */
 .attorney-image-wrapper {
     width: 100%;
     height: 100%;
@@ -29,8 +29,9 @@
     transform: scale(1.05);
     transition: transform 0.3s ease;
 }
+/* #endregion */
 
-/* Attorney Carousel Base Styles */
+/* #region Attorney Carousel Base Styles */
 .attorneys-carousel {
     position: relative;
     overflow: hidden;
@@ -120,8 +121,9 @@
     background: #c5a572;
     opacity: 0.7;
 }
+/* #endregion */
 
-/* Carousel sliding animations - track moves to show different cards */
+/* #region Carousel sliding animations - track moves to show different cards */
 @keyframes slideLeft {
     from {
         transform: translateX(0);
@@ -139,8 +141,9 @@
         transform: translateX(0);
     }
 }
+/* #endregion */
 
-/* CTA Sections */
+/* #region CTA Sections */
 .cta-section {
     text-align: center;
     margin-top: 60px;
@@ -152,28 +155,40 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+/* #endregion */
 
-/* Progress Indicators for All Sections */
-.about::before,
-.attorneys::before {
+/* #region Progress Indicators for All Sections */
+.attorneys::before,
+.home-news::before,
+.services::after {
     content: '';
     position: absolute;
-    top: 0;
     left: 0;
+    right: 0;
     height: 4px;
     background: linear-gradient(90deg, #c5a572 0%, #1a365d 100%);
     width: 0%;
-    z-index: 10;
+    z-index: 100;
     transition: width 0.3s ease;
 }
 
-.about.animate-in::before,
-.attorneys.animate-in::before {
-    animation: scrollProgress 1.5s ease-out 0.3s forwards;
+.attorneys::before,
+.home-news::before {
+    top: 0;
 }
 
-/* Connecting Elements */
-.about::after,
+.services::after {
+    bottom: 0;
+}
+
+.attorneys.animate-in::before,
+.home-news.animate-in::before,
+.services.animate-in::after {
+    animation: scrollProgress 1.5s ease-out 0.3s forwards;
+}
+/* #endregion */
+
+/* #region Connecting Elements */
 .attorneys::after {
     content: '';
     position: absolute;
@@ -188,13 +203,13 @@
     transition: all 0.6s ease 0.5s;
 }
 
-.about.animate-in::after,
 .attorneys.animate-in::after {
     opacity: 1;
     top: -20px;
 }
+/* #endregion */
 
-/* Team Overview Styles */
+/* #region Team Overview Styles */
 .team-overview {
     padding: 100px 0;
     background-color: #f8f9fa;
@@ -222,3 +237,5 @@
 .team-overview .cta-section {
     animation-delay: 2.2s; /* After all attorneys have appeared */
 }
+/* #endregion */
+/* #endregion */

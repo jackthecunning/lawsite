@@ -8,7 +8,7 @@ daniel-bruch.txt
 robert-goldman.txt
 brian-ahern.txt
 michael-cognetti.txt
-john-edmund.txt
+edmund-john.txt
 jillian-eisner.txt
 paige-fuchion.txt
 chris-heenan.txt

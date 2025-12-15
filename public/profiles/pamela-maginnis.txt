@@ -4,7 +4,7 @@ practice areas: Intellectual Property & Patent Law
 image: images/attorneys/Maginnis-Pamela-0589-731x1024.jpg
 email: pmaginnis@swartzcampbell.com
 phone: (555) 123-4577
-office: Fredonia
+office: Philadelphia
 
 credentials:
 - J.D., Franklin Pierce Law Center, 2010

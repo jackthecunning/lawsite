@@ -1,4 +1,4 @@
-/* Navigation */
+/* #region Navigation */
 .navbar {
     position: fixed;
     top: 0;
@@ -31,6 +31,12 @@
     align-items: flex-start;
     text-align: left;
     white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.navbar.scrolled .nav-logo {
+    opacity: 1;
 }
 
 .nav-logo h2 {
@@ -112,8 +118,9 @@
 .nav-link:hover::after {
     width: 100%;
 }
+/* #endregion */
 
-/* Dropdown Menu */
+/* #region Dropdown Menu */
 .nav-dropdown {
     position: relative;
 }
@@ -180,3 +187,4 @@
     margin: 3px 0;
     transition: 0.3s;
 }
+/* #endregion */

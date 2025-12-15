@@ -68,6 +68,7 @@ const Hero = () => {
               <span className="years-number">{getYearsSinceFounding()}</span>
               <span className="years-label">Years</span>
             </p>
+            <p className="legal-excellence">of Legal Excellence</p>
           </div>
         </div>
         <div className="hero-buttons">

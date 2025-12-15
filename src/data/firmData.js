@@ -183,15 +183,40 @@ export const offices = [
     hours: 'Monday - Friday: 9:00 AM - 6:00 PM'
   },
   {
-    id: 'london',
-    name: 'London',
-    fullName: 'London Office',
-    address: '10 Fleet Place',
-    city: 'London EC4M 7RB, United Kingdom',
-    phone: '+44 20 7123 4500',
-    fax: '+44 20 7123 4501',
-    email: 'london@swartzcampbell.com',
-    hours: 'Monday - Friday: 9:00 AM - 5:00 PM GMT'
+    id: 'mountlaurel',
+    name: 'Mount Laurel',
+    fullName: 'Mount Laurel Office',
+    address: '1060 N Kings Highway',
+    addressLine2: 'Suite 200',
+    city: 'Mount Laurel, NJ 08054',
+    phone: '(856) 234-5600',
+    fax: '(856) 234-5601',
+    email: 'mloffice@swartzcampbell.com',
+    hours: 'Monday - Friday: 9:00 AM - 5:00 PM'
+  },
+  {
+    id: 'baltimore',
+    name: 'Baltimore',
+    fullName: 'Baltimore Office',
+    address: '100 East Pratt Street',
+    addressLine2: 'Suite 2600',
+    city: 'Baltimore, MD 21202',
+    phone: '(410) 555-8900',
+    fax: '(410) 555-8901',
+    email: 'baltimore@swartzcampbell.com',
+    hours: 'Monday - Friday: 9:00 AM - 5:00 PM'
+  },
+  {
+    id: 'cleveland',
+    name: 'Cleveland',
+    fullName: 'Cleveland Office',
+    address: '1301 East Ninth Street',
+    addressLine2: 'Suite 3500',
+    city: 'Cleveland, OH 44114',
+    phone: '(216) 555-7200',
+    fax: '(216) 555-7201',
+    email: 'cleveland@swartzcampbell.com',
+    hours: 'Monday - Friday: 9:00 AM - 5:00 PM'
   }
 ];
 

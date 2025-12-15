@@ -20,7 +20,7 @@ specialization: [Practice Area]
 image: images/attorneys/[image-filename.jpg]
 email: [email@swartzcampbell.com]
 phone: [(555) 123-4567]
-office: [Philadelphia/New York/Fredonia]
+office: [Philadelphia/Pittsburgh/New York/Mount Laurel/Baltimore/Cleveland]
 
 credentials:
 - [Credential 1]
@@ -90,7 +90,10 @@ Place the attorney's photo in `/public/images/attorneys/` using the same filenam
 
 Currently supported office locations:
 - Philadelphia
+- Pittsburgh
 - New York
-- Fredonia
+- Mount Laurel
+- Baltimore
+- Cleveland
 
 Add new office locations as needed - the system will automatically include them in the filter options.

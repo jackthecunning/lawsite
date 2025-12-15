@@ -1,8 +1,11 @@
+// #region Imports
 import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import { services } from '../data/firmData';
+// #endregion
 
 const Services = () => {
+  // #region State & Refs
   const [isVisible, setIsVisible] = useState(false);
   const [itemsVisible, setItemsVisible] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -10,7 +13,9 @@ const Services = () => {
   const contentRef = useRef(null);
   const isScrollingRef = useRef(false);
   const scrollTimeoutRef = useRef(null);
+  // #endregion
 
+  // #region Effects
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -118,7 +123,6 @@ const Services = () => {
       <div className="container">
         <div className={`section-header ${isVisible ? 'header-animate' : ''}`}>
           <h2>Practice Areas</h2>
-          <p>Comprehensive Legal Services</p>
         </div>
         <div className="practice-areas-simple-list">
           {sortedServices.map((service, index) => (
@@ -135,6 +139,7 @@ const Services = () => {
       </div>
     </section>
   );
+  // #endregion
 };
 
 export default Services;

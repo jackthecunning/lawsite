@@ -4,7 +4,7 @@ practice areas: Personal Injury & Medical Malpractice
 image: images/attorneys/Joseph-A.-Venuti-Jr..jpg
 email: jvenuti@swartzcampbell.com
 phone: (555) 123-4562
-office: Fredonia
+office: Philadelphia
 
 credentials:
 - J.D., Temple University Beasley School of Law, 2005

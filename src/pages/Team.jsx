@@ -98,20 +98,25 @@ const Team = () => {
   }, []);
 
   // Get unique office locations
-  const locations = ['All', ...new Set(attorneys.map(attorney => attorney.office))];
+  const locations = ['All', ...new Set(attorneys.flatMap(attorney => attorney.offices || [attorney.office]).filter(Boolean))];
 
   // Unified attorney filtering function
   const getFilteredAttorneys = (location = selectedLocation, query = searchQuery) => {
+    if (!attorneys || attorneys.length === 0) return [];
+
     let filtered = location === 'All'
       ? attorneys
-      : attorneys.filter(attorney => attorney.office === location);
+      : attorneys.filter(attorney => {
+          const officeList = attorney.offices || (attorney.office ? [attorney.office] : []);
+          return officeList.includes(location);
+        });
 
-    if (query.trim()) {
+    if (query && query.trim()) {
       const searchTerm = query.toLowerCase();
       filtered = filtered.filter(attorney =>
-        attorney.name.toLowerCase().includes(searchTerm) ||
-        attorney.specialization.toLowerCase().includes(searchTerm) ||
-        attorney.title.toLowerCase().includes(searchTerm)
+        attorney?.name?.toLowerCase().includes(searchTerm) ||
+        attorney?.specialization?.toLowerCase().includes(searchTerm) ||
+        attorney?.title?.toLowerCase().includes(searchTerm)
       );
     }
 
@@ -120,22 +125,24 @@ const Team = () => {
 
   // Get search suggestions
   const getSearchSuggestions = () => {
-    if (!searchQuery.trim()) return [];
+    if (!searchQuery || !searchQuery.trim() || !attorneys || attorneys.length === 0) return [];
 
     const suggestions = new Set();
     const query = searchQuery.toLowerCase();
 
     attorneys.forEach(attorney => {
+      if (!attorney) return;
+
       // Add name matches
-      if (attorney.name.toLowerCase().includes(query)) {
+      if (attorney.name && attorney.name.toLowerCase().includes(query)) {
         suggestions.add(attorney.name);
       }
       // Add specialization matches
-      if (attorney.specialization.toLowerCase().includes(query)) {
+      if (attorney.specialization && attorney.specialization.toLowerCase().includes(query)) {
         suggestions.add(attorney.specialization);
       }
       // Add title matches
-      if (attorney.title.toLowerCase().includes(query)) {
+      if (attorney.title && attorney.title.toLowerCase().includes(query)) {
         suggestions.add(attorney.title);
       }
     });
@@ -147,6 +154,9 @@ const Team = () => {
 
   // Unified function for handling filter transitions
   const handleFilterTransition = (updateCallback) => {
+    // Prevent multiple animations from running simultaneously
+    if (isAnimating) return;
+
     // Clear any existing stagger delays from cards
     const allCards = document.querySelectorAll('.team-cards-grid .team-card');
     allCards.forEach(card => {
@@ -166,7 +176,7 @@ const Team = () => {
   };
 
   const handleLocationChange = (location) => {
-    if (location === selectedLocation) return;
+    if (location === selectedLocation || isAnimating) return;
 
     handleFilterTransition(() => {
       setSelectedLocation(location);
@@ -179,27 +189,24 @@ const Team = () => {
     setSearchQuery(query);
     setShowSuggestions(query.trim().length > 0);
 
-    handleFilterTransition(() => {
-      setDisplayedAttorneys(getFilteredAttorneys(selectedLocation, query));
-    });
+    // Update displayed attorneys immediately without animation during typing
+    setDisplayedAttorneys(getFilteredAttorneys(selectedLocation, query));
   };
 
   const handleSuggestionClick = (suggestion) => {
+    if (isAnimating) return;
+
     setSearchQuery(suggestion);
     setShowSuggestions(false);
-
-    handleFilterTransition(() => {
-      setDisplayedAttorneys(getFilteredAttorneys(selectedLocation, suggestion));
-    });
+    setDisplayedAttorneys(getFilteredAttorneys(selectedLocation, suggestion));
   };
 
   const clearSearch = () => {
+    if (isAnimating) return;
+
     setSearchQuery('');
     setShowSuggestions(false);
-
-    handleFilterTransition(() => {
-      setDisplayedAttorneys(getFilteredAttorneys(selectedLocation, ''));
-    });
+    setDisplayedAttorneys(getFilteredAttorneys(selectedLocation, ''));
   };
 
   // Close suggestions when clicking outside
@@ -234,8 +241,8 @@ const Team = () => {
       <section className={`team-overview ${isTransitioning ? 'entering-from-home' : ''}`}>
         <div className="container">
           <div className="section-header">
-            <h2 className="team-title-underlined">Our Attorneys</h2>
-            <p>Click on any attorney to learn more about their background and expertise</p>
+            <h2 className="team-title-underlined">Meet Our Team</h2>
+            {/* <p>Click on any attorney to learn more about their background and expertise</p> */}
           </div>
 
           {/* Search Bar */}
@@ -319,7 +326,7 @@ const Team = () => {
                     <p className="specialization">{attorney.specialization}</p>
                     <p className="office">
                       <i className="fas fa-map-marker-alt"></i>
-                      {attorney.office} Office
+                      {attorney.offices ? attorney.offices.join(', ') : attorney.office} Office{attorney.offices && attorney.offices.length > 1 ? 's' : ''}
                     </p>
                   </div>
                 </div>

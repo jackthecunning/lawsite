@@ -1,4 +1,4 @@
-/* Practice Areas Page Styles */
+/* #region Practice Areas Page Styles */
 .practice-areas-hero {
     background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
     color: white;
@@ -191,3 +191,4 @@
     margin-left: auto;
     margin-right: auto;
 }
+/* #endregion */

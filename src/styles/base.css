@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+/* #region Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -22,8 +22,9 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
+/* #endregion */
 
-/* Section Headers */
+/* #region Section Headers */
 .section-header {
     text-align: center;
     margin-bottom: 60px;
@@ -40,8 +41,9 @@ body {
     font-size: 1.1rem;
     color: #333;
 }
+/* #endregion */
 
-/* Buttons */
+/* #region Buttons */
 .btn {
     padding: 15px 30px;
     text-decoration: none;
@@ -75,8 +77,9 @@ body {
     background-color: white;
     color: #1a365d;
 }
+/* #endregion */
 
-/* Loading Animation */
+/* #region Loading Animation */
 @keyframes spin {
     to {
         transform: rotate(360deg);
@@ -91,8 +94,9 @@ body {
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
+/* #endregion */
 
-/* Page Transition Animations */
+/* #region Page Transition Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -120,3 +124,4 @@ body {
 .slide-up {
     animation: slideUp 0.6s ease-out;
 }
+/* #endregion */

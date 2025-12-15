@@ -1,9 +1,12 @@
+// #region Imports
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import { loadAllAttorneyProfiles } from '../utils/attorneyLoader';
 import AttorneyImage from './AttorneyImage';
+// #endregion
 
 const Attorneys = () => {
+  // #region State & Refs
   const [attorneys, setAttorneys] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isExpanding, setIsExpanding] = useState(false);
@@ -13,7 +16,9 @@ const Attorneys = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const sectionRef = useRef(null);
   const navigate = useNavigate();
+  // #endregion
 
+  // #region Effects
   useEffect(() => {
     const loadAttorneys = async () => {
       try {
@@ -56,7 +61,9 @@ const Attorneys = () => {
       }
     };
   }, []);
+  // #endregion
 
+  // #region Data Filtering
   // Show only partners on home page
   const featuredAttorneys = attorneys.filter(attorney =>
     attorney.title && attorney.title.toLowerCase().includes('partner')
@@ -66,7 +73,9 @@ const Attorneys = () => {
   const [cardsToShow, setCardsToShow] = useState(3);
   const totalCards = featuredAttorneys.length;
   const totalPages = Math.ceil(totalCards / cardsToShow);
+  // #endregion
 
+  // #region Handler Functions
   // Update cards to show based on screen size
   useEffect(() => {
     const updateCardsToShow = () => {
@@ -153,6 +162,9 @@ const Attorneys = () => {
       ref={sectionRef}
       className={`attorneys ${isExpanding ? 'expanding' : ''} ${isVisible ? 'animate-in' : ''}`}
     >
+      {/* <div className="progress-indicator">
+        <div className="progress-bar"></div>
+      </div> */}
       <div className="container">
         <div className={`section-header ${isVisible ? 'header-animate' : ''}`}>
           <h2>Our Legal Team</h2>
@@ -228,6 +240,7 @@ const Attorneys = () => {
       </div>
     </section>
   );
+  // #endregion
 };
 
 export default Attorneys;

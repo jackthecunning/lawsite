@@ -3,7 +3,16 @@
 export const parseAttorneyProfile = (profileText) => {
   const lines = profileText.split('\n');
   const attorney = {
-    credentials: []
+    credentials: [],
+    education: [],
+    awards: [],
+    courtAdmissions: [],
+    barAdmissions: [],
+    professionalOrganizations: [],
+    publications: [],
+    proBono: [],
+    military: [],
+    certifications: []
   };
 
   let currentSection = null;
@@ -15,22 +24,55 @@ export const parseAttorneyProfile = (profileText) => {
 
     if (!line) continue;
 
+    // Check for section headers (case-insensitive)
+    const upperLine = line.toUpperCase();
+
     if (line.startsWith('name:')) {
       attorney.name = line.substring(5).trim();
+      currentSection = null;
     } else if (line.startsWith('title:')) {
       attorney.title = line.substring(6).trim();
+      currentSection = null;
     } else if (line.startsWith('practice areas:')) {
-      attorney.practiceAreas = line.substring(15).trim();
+      const areasString = line.substring(15).trim();
+      // Split by comma or newline, then clean up
+      attorney.practiceAreas = areasString.split(/[,\n]/).map(area => area.trim()).filter(area => area);
+      currentSection = null;
     } else if (line.startsWith('image:')) {
       attorney.image = line.substring(6).trim();
+      currentSection = null;
     } else if (line.startsWith('personal photo:')) {
       attorney.personalPhoto = line.substring(15).trim();
+      currentSection = null;
     } else if (line.startsWith('email:')) {
       attorney.email = line.substring(6).trim();
+      currentSection = null;
     } else if (line.startsWith('phone:')) {
       attorney.phone = line.substring(6).trim();
-    } else if (line.startsWith('office:')) {
-      attorney.office = line.substring(7).trim();
+      currentSection = null;
+    } else if (line.startsWith('office:') || line.startsWith('offices:')) {
+      const officeString = line.substring(line.indexOf(':') + 1).trim();
+      // Split by comma or newline, then clean up
+      attorney.offices = officeString.split(/[,\n]/).map(office => office.trim()).filter(office => office);
+      currentSection = null;
+    } else if (upperLine === 'EDUCATION') {
+      currentSection = 'education';
+    } else if (upperLine === 'AWARDS AND HONORS') {
+      currentSection = 'awards';
+    } else if (upperLine === 'COURT ADMISSIONS') {
+      currentSection = 'courtAdmissions';
+    } else if (upperLine === 'BAR ADMISSIONS') {
+      currentSection = 'barAdmissions';
+    } else if (upperLine === 'PROFESSIONAL ORGANIZATIONS') {
+      currentSection = 'professionalOrganizations';
+    } else if (upperLine === 'PUBLICATIONS') {
+      currentSection = 'publications';
+    } else if (upperLine === 'PRO BONO WORK') {
+      currentSection = 'proBono';
+    } else if (upperLine === 'MILITARY') {
+      currentSection = 'military';
+    } else if (upperLine === 'CERTIFICATIONS') {
+      currentSection = 'certifications';
     } else if (line === 'credentials:') {
       currentSection = 'credentials';
     } else if (line.startsWith('bio:')) {
@@ -41,6 +83,26 @@ export const parseAttorneyProfile = (profileText) => {
       if (line.startsWith('personal bio:')) {
         personalBioLines.push(line.substring(13).trim());
       }
+    } else if (line === '---') {
+      currentSection = 'metadata';
+    } else if (currentSection === 'education' && !upperLine.startsWith('SPECIALIZATION')) {
+      attorney.education.push(line);
+    } else if (currentSection === 'awards') {
+      attorney.awards.push(line);
+    } else if (currentSection === 'courtAdmissions') {
+      attorney.courtAdmissions.push(line);
+    } else if (currentSection === 'barAdmissions') {
+      attorney.barAdmissions.push(line);
+    } else if (currentSection === 'professionalOrganizations') {
+      attorney.professionalOrganizations.push(line);
+    } else if (currentSection === 'publications') {
+      attorney.publications.push(line);
+    } else if (currentSection === 'proBono') {
+      attorney.proBono.push(line);
+    } else if (currentSection === 'military') {
+      attorney.military.push(line);
+    } else if (currentSection === 'certifications') {
+      attorney.certifications.push(line);
     } else if (line.startsWith('- ') && currentSection === 'credentials') {
       attorney.credentials.push(line.substring(2).trim());
     } else if (currentSection === 'bio') {
