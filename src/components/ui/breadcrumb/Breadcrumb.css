@@ -1,0 +1,29 @@
+.breadcrumb-section {
+  background-color: #f8f9fa;
+  padding: 100px 0 20px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+
+.breadcrumb a {
+  color: #c5a572;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb i {
+  color: #888;
+  font-size: 0.7rem;
+}
+
+.breadcrumb span {
+  color: #666;
+}

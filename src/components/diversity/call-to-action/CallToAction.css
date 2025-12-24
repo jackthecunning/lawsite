@@ -1,0 +1,62 @@
+/* CallToAction Component Styles */
+
+.cta-section {
+    background: white;
+    padding: 60px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 60px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.cta-section h3 {
+    font-size: 2rem;
+    color: #1a365d;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.cta-section .btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #1a365d 0%, #2d5a8f 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.cta-section .btn:hover {
+    background: white;
+    color: #1a365d;
+    border-color: #1a365d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26, 54, 93, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 40px 30px;
+    }
+
+    .cta-section h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-section {
+        padding: 30px 20px;
+    }
+}
+

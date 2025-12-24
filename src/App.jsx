@@ -1,22 +1,19 @@
 import { Routes, Route } from 'react-router-dom';
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop';
-import Home from './pages/Home';
-import Team from './pages/Team';
-import AttorneyDetail from './pages/AttorneyDetail';
-import PracticeAreas from './pages/PracticeAreas';
-import PracticeAreaDetail from './pages/PracticeAreaDetail';
-import Careers from './pages/Careers';
-import News from './pages/News';
-import NewsDetail from './pages/NewsDetail';
-import History from './pages/History';
-import Offices from './pages/Offices';
-import PhiladelphiaOffice from './pages/PhiladelphiaOffice';
-import PittsburghOffice from './pages/PittsburghOffice';
-import NewYorkOffice from './pages/NewYorkOffice';
-import LondonOffice from './pages/LondonOffice';
-import Diversity from './pages/Diversity';
+import Navigation from './components/navigation';
+import Footer from './components/footer';
+import ScrollToTop from './components/scroll-to-top';
+import Home from './pages/home';
+import Team from './pages/team';
+import AttorneyDetail from './pages/attorney-detail';
+import PracticeAreas from './pages/practice-areas';
+import PracticeAreaDetail from './pages/practice-area-detail';
+import Careers from './pages/careers';
+import News from './pages/news';
+import NewsDetail from './pages/news-detail';
+import History from './pages/history/History';
+import Offices from './pages/offices';
+import OfficeDetail from './pages/office-detail';
+import Diversity from './pages/diversity/Diversity';
 import './App.css';
 
 function App() {
@@ -33,10 +30,7 @@ function App() {
           <Route path="/practice-areas/:area" element={<PracticeAreaDetail />} />
           <Route path="/history" element={<History />} />
           <Route path="/offices" element={<Offices />} />
-          <Route path="/offices/philadelphia" element={<PhiladelphiaOffice />} />
-          <Route path="/offices/pittsburgh" element={<PittsburghOffice />} />
-          <Route path="/offices/newyork" element={<NewYorkOffice />} />
-          <Route path="/offices/london" element={<LondonOffice />} />
+          <Route path="/offices/:id" element={<OfficeDetail />} />
           <Route path="/diversity" element={<Diversity />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/news" element={<News />} />

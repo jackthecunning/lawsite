@@ -1,0 +1,76 @@
+.team-cta {
+    background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.team-cta .cta-content h2 {
+    font-family: 'Crimson Text', serif;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.team-cta .cta-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.team-cta .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.team-cta .btn {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    border: 2px solid white;
+    background: none;
+    cursor: pointer;
+}
+
+.team-cta .btn-primary {
+    background: white;
+    color: #1a365d;
+}
+
+.team-cta .btn-primary:hover {
+    background: transparent;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.team-cta .btn-secondary {
+    background: transparent;
+    color: white;
+}
+
+.team-cta .btn-secondary:hover {
+    background: white;
+    color: #1a365d;
+    transform: translateY(-2px);
+}
+
+.cta-entering-from-page {
+    animation: ctaSlideIn 0.8s ease-out forwards;
+}
+
+@keyframes ctaSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

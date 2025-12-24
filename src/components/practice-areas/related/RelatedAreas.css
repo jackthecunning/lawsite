@@ -1,0 +1,47 @@
+.related-areas {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  border: 2px solid #e9ecef;
+}
+
+.related-areas h3 {
+  font-family: 'Crimson Text', serif;
+  color: #1a365d;
+  margin-bottom: 20px;
+}
+
+.related-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.related-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.related-link:hover {
+  background: #c5a572;
+  color: white;
+  text-decoration: none;
+  transform: translateX(5px);
+}
+
+.related-link i {
+  color: #c5a572;
+  width: 20px;
+  transition: color 0.3s ease;
+}
+
+.related-link:hover i {
+  color: white;
+}

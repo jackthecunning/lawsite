@@ -82,7 +82,7 @@
 }
 
 .hero h1 {
-    font-family: 'Crimson Text', serif;
+    font-family: var(--font-serif);
     font-size: 3.5rem;
     font-weight: 600;
     margin-bottom: 20px;

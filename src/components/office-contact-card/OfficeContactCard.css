@@ -1,0 +1,54 @@
+.office-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 3px solid #1a365d;
+    border-style: double;
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+}
+
+.office-details {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+
+.office-details p {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+.office-details p:last-child {
+    margin-bottom: 0;
+}
+
+.office-details i {
+    color: #c5a572;
+    font-size: 1rem;
+    min-width: 25px;
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+.office-details a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.office-details a:hover {
+    color: #1a365d;
+}
+
+.office-details span {
+    display: inline-block;
+}

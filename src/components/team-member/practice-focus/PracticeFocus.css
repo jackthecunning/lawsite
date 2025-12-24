@@ -1,0 +1,67 @@
+.attorney-practice-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.attorney-practice-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.attorney-practice-section .section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.attorney-practice-section .section-header h2 {
+  font-family: 'Crimson Text', serif;
+  color: #1a365d;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.attorney-practice-section .section-header h2 i {
+  color: #c5a572;
+  margin-right: 15px;
+}
+
+.attorney-practice-section .section-content {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.practice-area-title {
+  font-family: 'Crimson Text', serif;
+  color: #1a365d;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #c5a572;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.attorney-practice-section .section-content p {
+  color: #555;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .attorney-practice-section .section-content {
+    padding: 30px 20px;
+  }
+
+  .attorney-practice-section .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .practice-area-title {
+    font-size: 1.5rem;
+  }
+}

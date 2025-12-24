@@ -1,0 +1,240 @@
+/* Offices List Page Styles */
+
+.offices-fullscreen {
+    min-height: 100vh;
+    padding: 100px 40px 40px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e8f4f8 50%, #f0f0f0 100%);
+    display: flex;
+    flex-direction: column;
+}
+
+.offices-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.offices-header h1 {
+    font-family: 'Crimson Text', serif;
+    font-size: 3.5rem;
+    color: #1a365d;
+    margin: 0 0 15px 0;
+    font-weight: 700;
+}
+
+.offices-header p {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 0;
+}
+
+.offices-grid-fullscreen {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+    flex: 1;
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Office Tile Styling */
+.office-tile {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    position: relative;
+}
+
+.office-tile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #1a365d 0%, #c5a572 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.office-tile:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.office-tile:hover::before {
+    transform: scaleX(1);
+}
+
+.office-tile-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.office-tile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.office-tile-header h2 {
+    font-family: 'Crimson Text', serif;
+    font-size: 2rem;
+    color: #1a365d;
+    margin: 0;
+    font-weight: 700;
+}
+
+.office-tile-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #1a365d 0%, #2c4a7c 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.office-tile-icon i {
+    font-size: 1.5rem;
+    color: #c5a572;
+}
+
+.office-tile-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.office-tile-info {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.office-tile-info > i {
+    color: #c5a572;
+    font-size: 1.1rem;
+    min-width: 20px;
+    margin-top: 3px;
+}
+
+.office-tile-info div {
+    flex: 1;
+}
+
+.office-tile-info p {
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.office-tile-info a {
+    color: #1a365d;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.office-tile-info a:hover {
+    color: #c5a572;
+}
+
+.office-tile-cta {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #c5a572;
+    font-weight: 600;
+}
+
+.office-tile-cta i {
+    transition: transform 0.3s ease;
+}
+
+.office-tile:hover .office-tile-cta i {
+    transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .offices-grid-fullscreen {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+    .offices-fullscreen {
+        padding: 80px 30px 30px;
+    }
+
+    .offices-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .offices-grid-fullscreen {
+        gap: 20px;
+    }
+
+    .office-tile-header h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .offices-fullscreen {
+        padding: 100px 20px 20px;
+        min-height: auto;
+    }
+
+    .offices-header h1 {
+        font-size: 2rem;
+    }
+
+    .offices-header p {
+        font-size: 1rem;
+    }
+
+    .offices-grid-fullscreen {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 20px;
+    }
+
+    .office-tile-content {
+        padding: 20px;
+    }
+
+    .office-tile-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .office-tile-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .office-tile-icon i {
+        font-size: 1.2rem;
+    }
+}

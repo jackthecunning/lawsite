@@ -3,17 +3,19 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background: transparent;
-    backdrop-filter: none;
+    background: rgba(26, 54, 93, 0.7);
+    backdrop-filter: blur(10px);
     z-index: 1000;
-    box-shadow: none;
-    transition: all 0.3s ease;
+    box-shadow: 0 2px 20px rgba(26, 54, 93, 0.3);
+    transform: translateY(-100%);
+    transition: var(--transition-base);
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 1);
+    background: rgba(26, 54, 93, 0.85);
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(26, 54, 93, 0.5);
+    transform: translateY(0);
 }
 
 .nav-container {
@@ -31,7 +33,7 @@
     align-items: flex-start;
     text-align: left;
     white-space: nowrap;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.3s ease;
 }
 
@@ -43,27 +45,27 @@
     font-family: 'Crimson Text', serif;
     font-size: 1.8rem;
     font-weight: 600;
-    color: white;
+    color: #ffffff;
     margin-bottom: -5px;
     transition: color 0.3s ease;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
 }
 
 .navbar.scrolled .nav-logo h2 {
-    color: #1a365d;
+    color: #ffffff;
     text-shadow: none;
 }
 
 .nav-logo p {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.8);
     font-style: italic;
     transition: color 0.3s ease;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
 }
 
 .navbar.scrolled .nav-logo p {
-    color: #666;
+    color: rgba(255, 255, 255, 0.8);
     text-shadow: none;
 }
 
@@ -76,7 +78,7 @@
 
 .nav-link {
     text-decoration: none;
-    color: white;
+    color: #ffffff;
     font-family: 'Bodoni 72 Smallcaps', 'Bodoni 72', 'Bodoni MT', 'Bodoni', 'Didot', serif;
     font-size: 1.1rem;
     font-weight: 500;
@@ -84,11 +86,11 @@
     transition: color 0.3s ease;
     position: relative;
     white-space: nowrap;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
 }
 
 .navbar.scrolled .nav-link {
-    color: #333;
+    color: #ffffff;
     text-shadow: none;
 }
 
@@ -183,7 +185,7 @@
 .bar {
     width: 25px;
     height: 3px;
-    background-color: #333;
+    background-color: #ffffff;
     margin: 3px 0;
     transition: 0.3s;
 }

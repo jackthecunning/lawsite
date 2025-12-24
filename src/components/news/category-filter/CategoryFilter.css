@@ -1,0 +1,48 @@
+.category-filter {
+    margin-bottom: 30px;
+}
+
+.category-filter h3 {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.3rem;
+    color: #1a365d;
+    margin-bottom: 15px;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: 2px solid #c5a572;
+    background: white;
+    color: #1a365d;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.filter-btn:hover {
+    background: #c5a572;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: #c5a572;
+    color: white;
+}
+
+.filter-results {
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+    font-style: italic;
+}

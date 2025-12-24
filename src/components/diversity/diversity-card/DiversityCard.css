@@ -1,0 +1,50 @@
+/* DiversityCard Component Styles */
+
+.diversity-section {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.diversity-section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.diversity-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    background: linear-gradient(135deg, #1a365d 0%, #2d5a8f 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.diversity-section:hover .diversity-icon {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #c5a572 0%, #d4b883 100%);
+}
+
+.diversity-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.diversity-section h3 {
+    font-size: 1.5rem;
+    color: #1a365d;
+    margin-bottom: 15px;
+}
+
+.diversity-section p {
+    color: #666;
+    line-height: 1.7;
+    margin: 0;
+}
+

@@ -1,0 +1,61 @@
+/* PageHero Component Styles */
+
+.page-hero {
+    position: relative;
+    height: 400px;
+    background: linear-gradient(135deg, #1a365d 0%, #2d5a8f 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/courthouse.jpg') center/cover;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.page-hero .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(26, 54, 93, 0.9) 0%, rgba(45, 90, 143, 0.85) 100%);
+    z-index: 1;
+}
+
+.page-hero .container {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.page-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.page-hero p {
+    font-size: 1.3rem;
+    color: #c5a572;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .page-hero h1 {
+        font-size: 2rem;
+    }
+}
+

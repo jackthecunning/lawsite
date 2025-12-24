@@ -1,0 +1,45 @@
+.practice-services {
+  margin-bottom: 50px;
+}
+
+.practice-services h2 {
+  font-family: 'Crimson Text', serif;
+  color: #1a365d;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #c5a572;
+  padding-bottom: 10px;
+}
+
+.services-grid {
+  display: grid;
+  gap: 25px;
+}
+
+.service-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 25px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border-left: 4px solid #c5a572;
+}
+
+.service-icon i {
+  font-size: 1.5rem;
+  color: #c5a572;
+  margin-top: 3px;
+}
+
+.service-content h4 {
+  color: #1a365d;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.service-content p {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}

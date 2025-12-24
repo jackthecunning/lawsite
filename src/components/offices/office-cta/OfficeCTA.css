@@ -1,0 +1,41 @@
+.office-cta {
+    margin-top: 50px;
+    padding: 40px;
+    background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+}
+
+.office-cta h3 {
+    font-family: 'Crimson Text', serif;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.office-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.office-cta .cta-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+    .office-cta {
+        padding: 30px;
+    }
+
+    .office-cta h3 {
+        font-size: 1.6rem;
+    }
+
+    .office-cta .cta-buttons {
+        flex-direction: column;
+    }
+}

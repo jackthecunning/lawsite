@@ -1,0 +1,49 @@
+.location-filter {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.location-filter h3 {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.3rem;
+  color: #1a365d;
+  margin-bottom: 20px;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border: 2px solid #c5a572;
+  background-color: transparent;
+  color: #c5a572;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.filter-btn:hover {
+  background-color: #c5a572;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background-color: #c5a572;
+  color: white;
+  box-shadow: 0 4px 8px rgba(197, 165, 114, 0.3);
+}
+
+.filter-results {
+  color: #64748b;
+  font-style: italic;
+  font-size: 0.95rem;
+}

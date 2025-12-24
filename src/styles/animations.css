@@ -126,4 +126,23 @@
         transform: translateX(0);
     }
 }
+
+/* Carousel sliding animations - track moves to show different cards */
+@keyframes slideLeft {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
 /* #endregion */

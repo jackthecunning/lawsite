@@ -1,0 +1,173 @@
+.attorney-detailed {
+  padding: 80px 0 40px 0;
+  background-color: #f8f9fa;
+}
+
+.attorney-detail-content {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+  padding-top: 40px;
+  align-items: start;
+}
+
+.attorney-detail-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.attorney-image-wrapper.uncropped {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.attorney-image-wrapper.uncropped img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.attorney-quick-contact {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.attorney-quick-contact h4 {
+  font-family: 'Crimson Text', serif;
+  color: #1a365d;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #c5a572;
+  padding-bottom: 10px;
+}
+
+.attorney-quick-contact p {
+  color: #666;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.attorney-quick-contact i {
+  color: #c5a572;
+  width: 20px;
+}
+
+.attorney-quick-contact a {
+  color: #666;
+  text-decoration: none;
+}
+
+.attorney-quick-contact a:hover {
+  color: #c5a572;
+}
+
+.attorney-detail-info {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.attorney-detail-info h1 {
+  font-family: 'Crimson Text', serif;
+  color: #1a365d;
+  font-size: 2.5rem;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+
+.attorney-title {
+  color: #666;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+}
+
+.attorney-practice-areas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 30px 0;
+}
+
+.practice-area-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #1a365d 0%, #2c4a7c 100%);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.practice-area-tag i {
+  font-size: 0.85rem;
+}
+
+.attorney-bio h3 {
+  font-family: 'Crimson Text', serif;
+  color: #1a365d;
+  font-size: 1.8rem;
+  margin: 30px 0 20px 0;
+  font-weight: 600;
+}
+
+.attorney-bio p {
+  color: #666;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .attorney-detail-content {
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .attorney-detail-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .attorney-detail-sidebar {
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .attorney-quick-contact {
+    margin-top: 20px;
+  }
+
+  .attorney-detail-info {
+    padding: 30px 20px;
+  }
+
+  .attorney-detail-info h1 {
+    font-size: 2rem;
+  }
+
+  .attorney-bio h3 {
+    font-size: 1.5rem;
+  }
+}
