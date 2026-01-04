@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { firmInfo } from '../../data/firmData';
+import './Navigation.css';
 // #endregion
 
 const Navigation = () => {
@@ -148,13 +149,13 @@ const Navigation = () => {
         </Link>
 
         <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`} id="nav-menu">
-          <Link
+          {/* <Link
             to="/"
             className={`nav-link ${isActive('/') ? 'active' : ''}`}
             onClick={handleHomeClick}
           >
             Home
-          </Link>
+          </Link> */}
           <div className="nav-dropdown">
             <a href="/#about" className="nav-link" onClick={closeMenu}>
               About <i className="fas fa-chevron-down"></i>
@@ -163,21 +164,22 @@ const Navigation = () => {
               <Link to="/history" onClick={closeMenu}>History</Link>
               <Link to="/offices" onClick={closeMenu}>Offices</Link>
               <Link to="/diversity" onClick={closeMenu}>Diversity</Link>
+              <Link to="/women" onClick={closeMenu}>The Women of Swartz Campbell</Link>
             </div>
           </div>
-          <Link
-            to="/practice-areas"
-            className={`nav-link ${isActive('/practice-areas') ? 'active' : ''}`}
-            onClick={closeMenu}
-          >
-            Practice Areas
-          </Link>
           <Link
             to="/team"
             className={`nav-link ${isActive('/team') ? 'active' : ''}`}
             onClick={handleTeamClick}
           >
             Our Team
+          </Link>
+          <Link
+            to="/practice-areas"
+            className={`nav-link ${isActive('/practice-areas') ? 'active' : ''}`}
+            onClick={closeMenu}
+          >
+            Practice Areas
           </Link>
           <Link
             to="/news"

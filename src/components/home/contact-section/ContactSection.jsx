@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { offices } from '../../../data/firmData';
 import './ContactSection.css';
 
 const ContactSection = () => {
@@ -50,26 +51,13 @@ const ContactSection = () => {
           <div className="office-links">
             <h3>Our Offices</h3>
             <div className="office-list">
-              <Link to="/offices/philadelphia" className="office-link">
-                <i className="fas fa-map-marker-alt"></i>
-                <span>Philadelphia Office</span>
-                <i className="fas fa-chevron-right"></i>
-              </Link>
-              <Link to="/offices/pittsburgh" className="office-link">
-                <i className="fas fa-map-marker-alt"></i>
-                <span>Pittsburgh Office</span>
-                <i className="fas fa-chevron-right"></i>
-              </Link>
-              <Link to="/offices/newyork" className="office-link">
-                <i className="fas fa-map-marker-alt"></i>
-                <span>New York Office</span>
-                <i className="fas fa-chevron-right"></i>
-              </Link>
-              <Link to="/offices/london" className="office-link">
-                <i className="fas fa-map-marker-alt"></i>
-                <span>London Office</span>
-                <i className="fas fa-chevron-right"></i>
-              </Link>
+              {offices.map((office) => (
+                <Link key={office.id} to={`/offices/${office.id}`} className="office-link">
+                  <i className="fas fa-map-marker-alt"></i>
+                  <span>{office.fullName}</span>
+                  <i className="fas fa-chevron-right"></i>
+                </Link>
+              ))}
             </div>
           </div>
         </div>

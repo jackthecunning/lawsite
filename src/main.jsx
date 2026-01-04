@@ -5,9 +5,7 @@ import App from './App.jsx'
 
 // Import global CSS files
 import './styles/base.css'
-import './styles/navbar.css'
 import './styles/footer.css'
-import './styles/hero.css'
 import './styles/utilities.css'
 import './styles/animations.css'
 import './styles/responsive.css'

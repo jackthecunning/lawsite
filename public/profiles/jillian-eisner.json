@@ -1,0 +1,58 @@
+{
+  "name": "Jillian Eisner",
+  "title": "Partner",
+  "image": "images/attorneys/Eisner-Jillian-07-e1717099262710.jpg",
+  "email": "jeisner@swartzcampbell.com",
+  "phone": "(555) 123-4571",
+  "offices": ["Philadelphia", "Mount Laurel"],
+  "practiceAreas": [
+    "General Liability Defense",
+    "Insurance Defense",
+    "Public Entity Defense",
+    "Commercial Auto Liability",
+    "Civil Litigation"
+  ],
+  "barAdmissions": [
+    {
+      "year": 2011,
+      "jurisdiction": "Pennsylvania"
+    },
+    {
+      "year": 2011,
+      "jurisdiction": "New Jersey"
+    }
+  ],
+  "courtAdmissions": [
+    "U.S. District Court – Eastern District of Pennsylvania",
+    "U.S. District Court – Middle District of Pennsylvania",
+    "U.S. District Court – New Jersey"
+  ],
+  "education": [
+    {
+      "year": 2011,
+      "institution": "Villanova University Charles Widger School of Law",
+      "location": "Villanova, PA",
+      "degree": "JD/MBA"
+    },
+    {
+      "year": 2008,
+      "institution": "University of Maryland",
+      "location": "College Park, PA",
+      "degree": "Accounting"
+    }
+  ],
+  "awardsAndHonors": [
+    "Super Lawyers Rising Star 2023-2026"
+  ],
+  "professionalOrganizations": [
+    "Pennsylvania Bar Association",
+    "Philadelphia Association of Defense Counsel",
+    "New Jersey Defense Association"
+  ],
+  "publications": [
+    "Jillian Bluestone, LaRussa's Loophole Trademark Infringement Lawsuits and Social Network, 17 Jeffrey S. Moorad Sports L.J. 573 2010"
+  ],
+  "proBonoWork": "2011 to Present Philadelphia VIP",
+  "bio": "Jillian Eisner is a partner in Swartz Campbell's General Litigation and Casualty Groups, practicing throughout Pennsylvania and New Jersey. With over a decade of experience, she has established herself as a skilled litigator with a proven track record of success defending a diverse range of clients—from government entities and public transportation authorities to trucking companies, construction firms, rideshare companies, commercial properties, fraternities, and insurance carriers. She has been recognized as a Pennsylvania Super Lawyers Rising Star from 2023 to 2026, an honor bestowed upon only 2.5% of attorneys in each state based on peer reviews and professional achievement.\nMs. Eisner focuses her practice on complex insurance defense, including auto liability for commercial and private vehicles, premises liability, and catastrophic injury claims. She has defended cases through all stages of litigation—from case inception through trial, arbitration, mediation, and appeals. She prioritizes developing strong professional relationships and maintaining frequent and open communication with clients, carriers, and opposing counsel. Combining aggressive advocacy, a trial-ready mindset, and keen early case assessment skills, Ms. Eisner excels at developing comprehensive, customized defense strategies that lead to favorable settlements and successful courtroom outcomes.\nMs. Eisner earned her JD and MBA simultaneously from Villanova University Charles Widger School of Law in 2011, where she served as Vice President of the Student Bar Association and as a published editor of the Sports and Entertainment Law Journal. She holds a Bachelor's degree in Accounting from the University of Maryland, where she was a member of the Kappa Alpha Theta Sorority. Her background in business and accounting provides valuable analytical insight when handling cases involving financial complexities and commercial disputes.\nPrior to joining Swartz Campbell, Ms. Eisner served as staff counsel at a major insurance company, where she litigated hundreds of automobile first-party (UIM/UM) and third-party claims at the arbitration, trial, and federal court levels. This experience provided her with a unique understanding of insurance company perspectives and case evaluation strategies.",
+  "personalBio": "Beyond her legal practice, Ms. Eisner is a devoted mother of two. Her experience as a parent brings empathy, patience, and perspective to her work with clients."
+}

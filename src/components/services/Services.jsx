@@ -123,7 +123,7 @@ const Services = () => {
     >
       <div className="container">
         <div className={`section-header ${isVisible ? 'header-animate' : ''}`}>
-          <h2>Practice Areas</h2>
+          <h2 className="services-title">Practice Areas</h2>
         </div>
         <div className="practice-areas-simple-list">
           {sortedServices.map((service, index) => (

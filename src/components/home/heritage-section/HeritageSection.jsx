@@ -1,4 +1,5 @@
 import './HeritageSection.css';
+import { services, offices } from '../../../data/firmData';
 
 const HeritageSection = ({ yearsSinceFounding }) => {
   return (
@@ -26,11 +27,11 @@ const HeritageSection = ({ yearsSinceFounding }) => {
                 <div className="stat-label">Years in Practice</div>
               </div>
               <div className="heritage-stat">
-                <div className="stat-number">4</div>
+                <div className="stat-number">{offices.length}</div>
                 <div className="stat-label">Office Locations</div>
               </div>
               <div className="heritage-stat">
-                <div className="stat-number">12</div>
+                <div className="stat-number">{services.length}</div>
                 <div className="stat-label">Practice Areas</div>
               </div>
             </div>

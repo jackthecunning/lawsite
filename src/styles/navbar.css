@@ -7,7 +7,7 @@
     backdrop-filter: blur(10px);
     z-index: 1000;
     box-shadow: 0 2px 20px rgba(26, 54, 93, 0.3);
-    transform: translateY(-100%);
+    transform: translateY(0);
     transition: var(--transition-base);
 }
 
@@ -20,7 +20,8 @@
 
 .nav-container {
     width: 100%;
-    padding: 0 20px;
+    max-width: 100%;
+    padding: 0 clamp(10px, 2vw, 20px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,7 +44,7 @@
 
 .nav-logo h2 {
     font-family: 'Crimson Text', serif;
-    font-size: 1.8rem;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
     font-weight: 600;
     color: #ffffff;
     margin-bottom: -5px;
@@ -57,7 +58,7 @@
 }
 
 .nav-logo p {
-    font-size: 0.9rem;
+    font-size: clamp(0.7rem, 1.5vw, 0.9rem);
     color: rgba(255, 255, 255, 0.8);
     font-style: italic;
     transition: color 0.3s ease;
@@ -71,16 +72,18 @@
 
 .nav-menu {
     display: flex;
-    gap: 30px;
+    gap: clamp(15px, 2vw, 30px);
     white-space: nowrap;
     margin-left: 40px;
+    flex-wrap: nowrap;
+    overflow: visible;
 }
 
 .nav-link {
     text-decoration: none;
     color: #ffffff;
     font-family: 'Bodoni 72 Smallcaps', 'Bodoni 72', 'Bodoni MT', 'Bodoni', 'Didot', serif;
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
     font-weight: 500;
     text-transform: uppercase;
     transition: color 0.3s ease;
@@ -185,7 +188,7 @@
 .bar {
     width: 25px;
     height: 3px;
-    background-color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.1);
     margin: 3px 0;
     transition: 0.3s;
 }

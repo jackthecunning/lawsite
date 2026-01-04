@@ -375,7 +375,7 @@
     margin-bottom: 30px;
 }
 
-.attorney-bio h4,
+.team-bio h4,
 .attorney-credentials h4,
 .attorney-contact-detailed h4 {
     font-family: 'Crimson Text', serif;
@@ -386,11 +386,11 @@
     padding-bottom: 5px;
 }
 
-.attorney-bio h4:first-of-type {
+.team-bio h4:first-of-type {
     margin-top: 0;
 }
 
-.attorney-bio p {
+.team-bio p {
     color: #555;
     line-height: 1.7;
     margin-bottom: 15px;

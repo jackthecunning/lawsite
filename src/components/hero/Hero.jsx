@@ -1,5 +1,6 @@
+import './Hero.css';
+
 import { useState, useEffect } from 'react';
-import { firmInfo } from '../../data/firmData';
 import BannerImage from '../banner-image';
 
 const Hero = () => {
@@ -70,11 +71,6 @@ const Hero = () => {
             </p>
             <p className="legal-excellence">of Legal Excellence</p>
           </div>
-        </div>
-        <div className="hero-buttons">
-          {/* <button onClick={scrollToServices} className="btn btn-secondary">
-            Our Services
-          </button> */}
         </div>
 
       </div>

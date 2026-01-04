@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { offices } from '../../data/firmData';
 import './QuickAccess.css';
 
 const QuickAccess = ({ quickAccessVisible }) => {
@@ -38,7 +39,7 @@ const QuickAccess = ({ quickAccessVisible }) => {
                 <i className="fas fa-map-marker-alt"></i>
                 </div>
                 <h3>Office Locations</h3>
-                <p>Philadelphia • Pittsburgh • New York • London</p>
+                <p>{offices.map(office => office.name).join(' • ')}</p>
                 <span className="card-arrow">→</span>
             </Link>
 

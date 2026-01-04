@@ -1,0 +1,32 @@
+.team-detail-info {
+  background: white;
+  padding: 0 30px 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.team-bio h3 {
+  font-family: 'Crimson Text', serif;
+  color: #1a365d;
+  font-size: 1.8rem;
+  margin: 30px 0 20px 0;
+  font-weight: 600;
+}
+
+.team-bio p {
+  color: #666;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-detail-info {
+    padding: 30px 20px;
+  }
+
+  .team-bio h3 {
+    font-size: 1.5rem;
+  }
+}

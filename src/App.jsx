@@ -4,7 +4,7 @@ import Footer from './components/footer';
 import ScrollToTop from './components/scroll-to-top';
 import Home from './pages/home';
 import Team from './pages/team';
-import AttorneyDetail from './pages/attorney-detail';
+import TeamDetail from './pages/team-detail';
 import PracticeAreas from './pages/practice-areas';
 import PracticeAreaDetail from './pages/practice-area-detail';
 import Careers from './pages/careers';
@@ -14,6 +14,7 @@ import History from './pages/history/History';
 import Offices from './pages/offices';
 import OfficeDetail from './pages/office-detail';
 import Diversity from './pages/diversity/Diversity';
+import Women from './pages/women/Women';
 import './App.css';
 
 function App() {
@@ -25,13 +26,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/team" element={<Team />} />
-          <Route path="/attorney/:id" element={<AttorneyDetail />} />
+          <Route path="/attorney/:id" element={<TeamDetail />} />
           <Route path="/practice-areas" element={<PracticeAreas />} />
           <Route path="/practice-areas/:area" element={<PracticeAreaDetail />} />
           <Route path="/history" element={<History />} />
           <Route path="/offices" element={<Offices />} />
           <Route path="/offices/:id" element={<OfficeDetail />} />
           <Route path="/diversity" element={<Diversity />} />
+          <Route path="/women" element={<Women />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/news" element={<News />} />
           <Route path="/news/:id" element={<NewsDetail />} />
