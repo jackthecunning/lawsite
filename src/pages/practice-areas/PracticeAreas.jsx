@@ -1,37 +1,55 @@
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { services } from '../../data/firmData';
-import PracticeAreasHero from '../../components/practice-areas/practice-areas-hero';
-import PracticeAreaCard from '../../components/practice-areas/practice-area-card';
-import PracticeAreasCTA from '../../components/practice-areas/practice-areas-cta';
+import {
+  PracticeSidebar,
+  PracticeHeader,
+  PracticeOverview,
+  PracticeDetails
+} from '../../components/practice-areas';
 import './PracticeAreas.css';
 
 const PracticeAreas = () => {
+  const [searchParams] = useSearchParams();
+  const [selectedArea, setSelectedArea] = useState(null);
+
+  useEffect(() => {
+    const areaId = searchParams.get('area');
+    if (areaId) {
+      const id = parseInt(areaId, 10);
+      if (services.find(s => s.id === id)) {
+        setSelectedArea(id);
+      }
+    }
+  }, [searchParams]);
+
+  const selectedService = selectedArea
+    ? services.find(s => s.id === selectedArea)
+    : null;
+
   return (
-    <>
-      <PracticeAreasHero />
+    <section className="practice-areas-content">
+      <div className="container">
+        <div className="practice-layout">
+          <PracticeSidebar
+            services={services}
+            selectedArea={selectedArea}
+            setSelectedArea={setSelectedArea}
+          />
 
-      {/* Practice Areas Overview */}
-      <section className="practice-areas-overview">
-        <div className="container">
-          <div className="section-header">
-            <h2>Legal Excellence Across Multiple Disciplines</h2>
-            <p>
-              With over 104 years of combined experience, Swartz Campbell provides comprehensive
-              legal representation across a diverse range of practice areas. Our team of skilled
-              attorneys is dedicated to delivering results-driven solutions for individuals,
-              families, and businesses.
-            </p>
-          </div>
-
-          <div className="practice-areas-grid">
-            {services.map((service) => (
-              <PracticeAreaCard key={service.id} service={service} />
-            ))}
-          </div>
+          <main className="practice-main">
+            {selectedService ? (
+              <>
+                <PracticeHeader selectedService={selectedService} />
+                <PracticeDetails selectedService={selectedService} />
+              </>
+            ) : (
+              <PracticeOverview />
+            )}
+          </main>
         </div>
-      </section>
-
-      <PracticeAreasCTA />
-    </>
+      </div>
+    </section>
   );
 };
 

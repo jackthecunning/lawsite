@@ -1,0 +1,39 @@
+{
+  "title": "Our History",
+  "subtitle": "A Century of Excellence in Legal Defense",
+  "sections": [
+    {
+      "title": "Growth and Evolution: The Early Partnerships",
+      "content": [
+        "In 1921, C. Donald Swartz and William T. Campbell—two young and ambitious attorneys who had worked together as law clerks—decided to start their own practice. The newly-established firm, Swartz Campbell, offered specialized defense services focused on insurance-related matters to clients in the Philadelphia area.",
+        "The small firm grew in size and reputation as the attorneys' skill and dedication gained wider recognition within the legal community. With the addition of Ward Henry—an respected solo practitioner—Swartz, Campbell & Henry continued to thrive. After Henry's retirement, a bright and energetic trial lawyer, Lynn L. Detweiler, joined the team. Swartz, Campbell & Detweiler would soon become one of the pre-eminent insurance defense firms in Philadelphia."
+      ],
+      "image": {
+        "src": "images/content/gender-diversity.jpg",
+        "alt": "Swartz Campbell Expansion"
+      }
+    },
+    {
+      "title": "Expanding Expertise: Adapting to a Changing Legal Landscape",
+      "content": [
+        "As the 20th century progressed, the legal environment became increasingly complex, marked by the establishment of new, specialized areas of litigation. In response, Swartz Campbell expanded its practice to meet these evolving client needs, developing teams to address workers compensations, products liability, and medical malpractice matters. Later, a dedicated motor vehicle and transportation department was established, as well as a professional liability group. Our attorneys became renowned statewide for their experience and expertise in these critical new practice areas.",
+        "Then, in response to the surge of litigation in the U.S. in the 1990s, Swartz Campbell broadened its reach to Pittsburgh, New Jersey, Ohio, and Delaware. This expansion proved essential in meeting the needs of its clients—particularly major insurers and national corporations—who required consistent, high-quality legal defense across multiple jurisdictions."
+      ],
+      "image": {
+        "src": "images/content/gender-diversity.jpg",
+        "alt": "Swartz Campbell Expansion"
+      }
+    },
+    {
+      "title": "The Modern Firm: Dedication in the 21st Century",
+      "content": [
+        "Today, the firm provides comprehensive legal services and strategic counseling to insurers and self-insureds throughout the U.S in a wide range of practice areas, from bad fatih to toxic torts. Our attorneys are frequently entrusted with leading complex matters involving first impression, and many landmark decisions shaping Pennsylvania law trace their origin to the carefully crafted briefs and compelling courtroom arguments presented by Swartz Campbell lawyers. Leveraging our deep experience, cutting-edge technology, innovative defense strategies, and good old fashioned hard work, we consistently deliver positive results for our clients.",
+        "Swartz Campbell continues to expand and thrive in the 21st century, all while preserving the personal touch that has defined the firm since its inception. With a reputation built on excellence and diligence, the firm maintains the respect and admiration of judges, juries, clients, and opponents alike. We are dedicated to meeting all our clients' needs and committed to working tirelessly to achieve the best possible outcome in every matter we handle. Over a century later, the firm remains a trusted partner and fierce advocate for our clients, carrying the legacy of its founders into the future."
+      ],
+      "image": {
+        "src": "images/content/gender-diversity.jpg",
+        "alt": "Swartz Campbell Expansion"
+      }
+    }
+  ]
+}

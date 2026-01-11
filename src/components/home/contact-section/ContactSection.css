@@ -87,28 +87,34 @@
     transition: all 0.3s ease;
 }
 
-.contact-method:hover .method-icon {
+/* .contact-method:hover .method-icon {
     background: #c5a572;
-    color: white;
     transform: scale(1.1);
-}
+} */
+
+/* .contact-method:hover .method-icon i {
+    color: #1a365d;
+} */
 
 .method-details {
     flex: 1;
     min-width: 0;
+    text-align: center;
 }
 
 .method-details h4 {
     font-family: 'Crimson Text', serif;
     font-size: 1.4rem;
-    margin-bottom: 8px;
+    margin: 0 0 8px 0;
     color: #1a365d;
     font-weight: 600;
+    display: block;
 }
 
-.method-details p {
-    margin-bottom: 5px;
+.contact-method .method-details p {
+    margin: 0 0 5px 0;
     color: #666;
+    display: block;
 }
 
 .method-details a {
@@ -118,6 +124,7 @@
     transition: color 0.3s ease;
     position: relative;
     word-break: break-all;
+    display: inline-block;
 }
 
 .method-details a::after {
@@ -191,7 +198,6 @@
 
 .office-link:hover {
     background: #1a365d;
-    color: white;
     border-color: #c5a572;
     transform: translateX(8px);
 }
@@ -200,14 +206,20 @@
     color: #c5a572;
     font-size: 1.1rem;
     transition: color 0.3s ease;
+    margin-left: 8px;
 }
 
 .office-link:hover i:first-child {
-    color: white;
+    color: #c5a572;
 }
 
 .office-link span {
     flex-grow: 1;
+}
+
+.office-link:hover span {
+    /* color: #c5a572; */
+    color: white;
 }
 
 .office-link i:last-child {
@@ -238,6 +250,10 @@
 
     .contact-method {
         flex-direction: column;
+        text-align: center;
+    }
+
+    .method-details {
         text-align: center;
     }
 

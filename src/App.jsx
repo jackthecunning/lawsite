@@ -6,7 +6,6 @@ import Home from './pages/home';
 import Team from './pages/team';
 import TeamDetail from './pages/team-detail';
 import PracticeAreas from './pages/practice-areas';
-import PracticeAreaDetail from './pages/practice-area-detail';
 import Careers from './pages/careers';
 import News from './pages/news';
 import NewsDetail from './pages/news-detail';
@@ -28,7 +27,6 @@ function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/attorney/:id" element={<TeamDetail />} />
           <Route path="/practice-areas" element={<PracticeAreas />} />
-          <Route path="/practice-areas/:area" element={<PracticeAreaDetail />} />
           <Route path="/history" element={<History />} />
           <Route path="/offices" element={<Offices />} />
           <Route path="/offices/:id" element={<OfficeDetail />} />

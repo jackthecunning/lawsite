@@ -1,66 +1,129 @@
+import { useState, useEffect } from 'react';
+import { loadHistory } from '../../utils/historyLoader';
+import ContentImage from '../../components/content-image';
 import './history.css';
-import TimelineItem from '../../components/history/timeline-item';
 
 const History = () => {
+  const [historyData, setHistoryData] = useState(null);
+
+  useEffect(() => {
+    const fetchHistory = async () => {
+      const data = await loadHistory();
+      setHistoryData(data);
+    };
+    fetchHistory();
+  }, []);
+
+  useEffect(() => {
+    const positionImages = () => {
+      const imageWrappers = document.querySelectorAll('.history-image-wrapper');
+      imageWrappers.forEach((wrapper) => {
+        const sectionIndex = wrapper.getAttribute('data-section');
+        const section = document.querySelector(`.history-section[data-section="${sectionIndex}"]`);
+        if (section) {
+          const image = wrapper.querySelector('.content-image-container');
+
+          if (image) {
+            // Force reflow to ensure accurate measurements
+            void section.offsetHeight;
+
+            // Find the title (if exists) and all paragraphs
+            const title = section.querySelector('h3');
+            const paragraphs = section.querySelectorAll('p');
+
+            if (paragraphs.length > 0) {
+              const containerRect = section.closest('.history-container').getBoundingClientRect();
+              const imageHeight = image.offsetHeight;
+              const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+              const containerTop = containerRect.top + scrollTop;
+
+              // Get the top of the content (either title or first paragraph)
+              const firstElement = title || paragraphs[0];
+              const lastParagraph = paragraphs[paragraphs.length - 1];
+
+              const firstRect = firstElement.getBoundingClientRect();
+              const lastRect = lastParagraph.getBoundingClientRect();
+
+              // Calculate the full content area from top element to last paragraph
+              const contentTopRelative = firstRect.top + scrollTop - containerTop;
+              const contentBottomRelative = lastRect.bottom + scrollTop - containerTop;
+              const contentHeight = contentBottomRelative - contentTopRelative;
+
+              // Center the image on the full content height
+              const contentCenterRelative = contentTopRelative + (contentHeight / 2);
+              const topOffset = contentCenterRelative - (imageHeight / 2);
+
+              wrapper.style.top = `${topOffset}px`;
+
+              // Calculate margin based on how far the image extends past the content
+              const imageBottom = topOffset + imageHeight;
+              const imageOverhang = Math.max(0, imageBottom - contentBottomRelative);
+              const requiredMargin = Math.max(70, imageOverhang + 50);
+
+              section.style.marginBottom = `${requiredMargin}px`;
+            }
+          }
+        }
+      });
+    };
+
+    if (historyData) {
+      setTimeout(positionImages, 200);
+      window.addEventListener('resize', positionImages);
+      return () => window.removeEventListener('resize', positionImages);
+    }
+  }, [historyData]);
+
+  if (!historyData || !historyData.sections) {
+    return null;
+  }
+
+  const renderSection = (section, index) => {
+    const content = Array.isArray(section.content) ? section.content : [section.content];
+    const hasImage = section.image;
+    const isEven = index % 2 === 0;
+
+    return (
+      <div key={index} className={`history-section ${hasImage ? 'has-image' : ''} ${isEven ? 'image-right' : 'image-left'}`} data-section={index}>
+        {section.title && <h3>{section.title}</h3>}
+        <div className="section-content-wrapper">
+          <div className="section-text">
+            {content.map((paragraph, pIndex) => (
+              <p key={pIndex}>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <>
-      {/* Hero Section */}
       <section className="page-hero">
         <div className="hero-overlay"></div>
         <div className="container">
-          <h1>Our History</h1>
-          <p>Over a Century of Legal Excellence</p>
+          <h1>{historyData.title || 'Our History'}</h1>
+          <p>{historyData.subtitle || 'A Century of Excellence in Legal Defense'}</p>
         </div>
       </section>
 
-      {/* History Content */}
       <section className="content-section section-light">
-        <div className="container">
-          <div className="content-wrapper">
-            <h2>A Legacy of Service Since 1921</h2>
-            <p>
-              Swartz Campbell has been serving clients with integrity and dedication for over a century.
-              Founded in 1921, our firm has grown from a small practice to one of the region's most
-              respected law firms.
-            </p>
-            <p>
-              Throughout our history, we have remained committed to providing exceptional legal
-              representation while maintaining the personal touch that has defined our practice
-              since the beginning.
-            </p>
-
-            <div className="timeline">
-              <TimelineItem
-                year="1921"
-                title="Firm Founded"
-                description="Swartz Campbell established in Philadelphia, Pennsylvania. This is when our history with fighter jets first began."
-              />
-
-              <TimelineItem
-                year="1950s"
-                title="Expansion"
-                description="Opened additional offices to better serve our growing client base"
-              />
-
-              <TimelineItem
-                year="1980s"
-                title="Practice Area Growth"
-                description="Expanded into new practice areas including corporate law and intellectual property"
-              />
-
-              <TimelineItem
-                year="2000s"
-                title="Modern Era"
-                description="Embraced technology while maintaining our commitment to personal service"
-              />
-
-              <TimelineItem
-                year="Today"
-                title="Continuing Excellence"
-                description="Over 100 years of trusted legal counsel and advocacy"
-              />
-            </div>
+        <div className="container history-container">
+          <div className="content-wrapper history-content">
+            {historyData.sections.map((section, index) => renderSection(section, index))}
           </div>
+          {historyData.sections.map((section, index) => {
+            if (!section.image) return null;
+            const isEven = index % 2 === 0;
+            return (
+              <div key={`img-${index}`} className={`history-image-wrapper ${isEven ? 'image-right' : 'image-left'}`} data-section={index}>
+                <ContentImage
+                  src={typeof section.image === 'string' ? `/images/content/${section.image}` : section.image.src}
+                  alt={typeof section.image === 'string' ? (section.title || 'Historical image') : section.image.alt}
+                />
+              </div>
+            );
+          })}
         </div>
       </section>
     </>

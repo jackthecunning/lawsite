@@ -1,0 +1,67 @@
+/* Practice Details */
+.practice-details {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.practice-section {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.practice-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, #cda33f 0%, #d4af37 50%, #cda33f 100%);
+    border-radius: 15px 0 0 15px;
+}
+
+.practice-section h3 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: #1a365d;
+    margin: 0 0 20px 0;
+}
+
+.practice-section p {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.practice-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .practice-section {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .practice-section h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .practice-section {
+        padding: 25px 20px;
+    }
+
+    .practice-section h3 {
+        font-size: 1.3rem;
+    }
+}

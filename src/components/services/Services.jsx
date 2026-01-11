@@ -129,7 +129,7 @@ const Services = () => {
           {sortedServices.map((service, index) => (
             <Link
               key={service.id}
-              to={`/practice-areas/${service.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
+              to={`/practice-areas?area=${service.id}`}
               className={`practice-area-name ${itemsVisible.includes(index) ? 'item-visible' : ''}`}
             >
               <i className={service.icon}></i>
