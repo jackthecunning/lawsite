@@ -1,52 +1,228 @@
-/* Diversity Page Styles */
+/* Diversity Page - Modern Redesign */
 
-.content-section-diversity {
-    padding: 100px 0;
+.diversity-main {
+    background: #ffffff;
+    padding: 140px 0 100px 0;
 }
 
-.section-light {
-    background: #f8f9fa;
-}
-
-.content-wrapper {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.content-wrapper > h2 {
-    font-size: 2.5rem;
-    color: #1a365d;
-    margin-bottom: 30px;
+/* Intro Section */
+.diversity-intro {
+    max-width: 900px;
+    margin: 0 auto 100px;
     text-align: center;
 }
 
-.content-wrapper > p {
+.diversity-intro h2 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    color: #0f2847;
+    margin-bottom: 50px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    position: relative;
+    display: inline-block;
+}
+
+.diversity-intro h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #cda33f 0%, #d4af37 100%);
+}
+
+.intro-content {
+    margin-top: 60px;
+}
+
+.intro-lead {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: #1a365d;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.intro-content p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #4a5568;
+}
+
+/* Pillars Section */
+.pillars-section {
+    margin-bottom: 80px;
+}
+
+.pillars-heading {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: #0f2847;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.pillar-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-left: 5px solid #cda33f;
+    padding: 50px 40px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.pillar-card:hover {
+    background: #ffffff;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    transform: translateX(5px);
+}
+
+.pillar-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #1a365d 0%, #2d5a8f 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: all 0.2s ease;
+}
+
+.pillar-card:hover .pillar-icon {
+    background: linear-gradient(135deg, #cda33f 0%, #d4af37 100%);
+    transform: scale(1.1);
+}
+
+.pillar-icon i {
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.pillar-card h4 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: #0f2847;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.pillar-card p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #555;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.diversity-sections {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    margin: 60px 0;
+    color: #4a5568;
+    margin: 0;
 }
 
 /* Responsive */
+@media (max-width: 968px) {
+    .diversity-main {
+        padding: 80px 0;
+    }
+
+    .diversity-intro {
+        margin-bottom: 80px;
+    }
+
+    .pillars-grid {
+        gap: 35px;
+    }
+}
+
 @media (max-width: 768px) {
-    .content-section-diversity {
+    .diversity-main {
         padding: 60px 0;
     }
 
-    .content-wrapper > h2 {
-        font-size: 2rem;
+    .diversity-intro h2 {
+        font-size: 2.8rem;
+        margin-bottom: 40px;
     }
 
-    .diversity-sections {
+    .diversity-intro h2::after {
+        width: 80px;
+        height: 3px;
+    }
+
+    .intro-content {
+        margin-top: 50px;
+    }
+
+    .intro-lead {
+        font-size: 1.25rem;
+    }
+
+    .intro-content p {
+        font-size: 1.08rem;
+    }
+
+    .pillars-heading {
+        font-size: 2.2rem;
+        margin-bottom: 50px;
+    }
+
+    .pillars-grid {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+
+    .pillar-card {
+        padding: 40px 35px;
+    }
+
+    .pillar-card h4 {
+        font-size: 1.6rem;
+    }
+
+    .pillar-card p {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .diversity-main {
+        padding: 50px 0;
+    }
+
+    .diversity-intro h2 {
+        font-size: 2.2rem;
+    }
+
+    .intro-lead {
+        font-size: 1.15rem;
+    }
+
+    .intro-content p {
+        font-size: 1.05rem;
+    }
+
+    .pillars-heading {
+        font-size: 1.9rem;
+    }
+
+    .pillar-card {
+        padding: 35px 30px;
+    }
+
+    .pillar-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .pillar-icon i {
+        font-size: 1.7rem;
+    }
+
+    .pillar-card h4 {
+        font-size: 1.4rem;
     }
 }

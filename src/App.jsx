@@ -14,6 +14,7 @@ import Offices from './pages/offices';
 import OfficeDetail from './pages/office-detail';
 import Diversity from './pages/diversity/Diversity';
 import Women from './pages/women/Women';
+import Admin from './pages/admin/Admin';
 import './App.css';
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="/careers" element={<Careers />} />
           <Route path="/news" element={<News />} />
           <Route path="/news/:id" element={<NewsDetail />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </main>
       <Footer />

@@ -1,50 +1,130 @@
 /* DiversityCard Component Styles */
 
 .diversity-section {
-    background: white;
-    padding: 40px 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+    padding: 50px 40px;
+    border-radius: 16px;
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.04);
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(205, 163, 63, 0.1);
+}
+
+.diversity-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #cda33f 0%, #d4af37 100%);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.diversity-section:hover::before {
+    transform: scaleX(1);
 }
 
 .diversity-section:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-12px);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.12),
+        0 8px 24px rgba(0, 0, 0, 0.08);
+    border-color: rgba(205, 163, 63, 0.2);
 }
 
 .diversity-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 25px;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 30px;
     background: linear-gradient(135deg, #1a365d 0%, #2d5a8f 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(26, 54, 93, 0.2);
+}
+
+.diversity-icon::after {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(205, 163, 63, 0.2) 0%, rgba(212, 175, 131, 0.1) 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 .diversity-section:hover .diversity-icon {
-    transform: scale(1.1);
-    background: linear-gradient(135deg, #c5a572 0%, #d4b883 100%);
+    transform: scale(1.15) rotate(5deg);
+    background: linear-gradient(135deg, #cda33f 0%, #d4af37 100%);
+    box-shadow: 0 12px 30px rgba(205, 163, 63, 0.3);
+}
+
+.diversity-section:hover .diversity-icon::after {
+    opacity: 1;
 }
 
 .diversity-icon i {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: white;
+    transition: transform 0.4s ease;
+}
+
+.diversity-section:hover .diversity-icon i {
+    transform: scale(1.1);
 }
 
 .diversity-section h3 {
-    font-size: 1.5rem;
-    color: #1a365d;
-    margin-bottom: 15px;
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: #0f2847;
+    margin-bottom: 18px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
 }
 
 .diversity-section p {
-    color: #666;
-    line-height: 1.7;
+    color: #4a5568;
+    line-height: 1.9;
     margin: 0;
+    font-size: 1.05rem;
 }
 
+@media (max-width: 768px) {
+    .diversity-section {
+        padding: 40px 35px;
+    }
+
+    .diversity-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 25px;
+    }
+
+    .diversity-icon i {
+        font-size: 2rem;
+    }
+
+    .diversity-section h3 {
+        font-size: 1.4rem;
+    }
+
+    .diversity-section p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .diversity-section {
+        padding: 35px 30px;
+    }
+}
