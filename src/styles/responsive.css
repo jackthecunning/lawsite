@@ -43,106 +43,26 @@
         text-shadow: none !important;
     }
 
-    .hero h1 {
-        font-size: 2.5rem;
-    }
+    /* ...existing code... */
 
-    .firm-name-main {
-        font-size: 2.8rem !important;
-        letter-spacing: 1px;
-    }
+    /* ...existing code... */
 
-    .anniversary-text {
-        font-size: 1.4rem !important;
-        flex-direction: row;
-        gap: 8px;
-        flex-wrap: nowrap;
-    }
-
-    /* .years-number {
-        font-size: 2rem !important;
-    } */
-
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .attorneys-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-form {
-        padding: 30px 20px;
-    }
-
-    .attorney-profile {
-        grid-template-columns: 1fr;
-        margin-bottom: 40px;
-    }
-
-    .attorney-image img {
-        height: 300px;
-    }
-
-    .attorney-details {
-        padding: 30px 20px;
-    }
-
-    .team-hero {
-        min-height: 40vh;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
+    /* ...existing code... */
 }
 
 @media (max-width: 480px) {
-    .hero {
-        padding: 100px 0 60px;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .firm-name-main {
-        font-size: 2.2rem !important;
-        letter-spacing: 0.5px;
-    }
-
-    .firm-name-main::after {
-        width: 60px;
-        height: 2px;
-    }
+    /* ...existing code... */
 
     .team-title-underlined::after {
         width: 60px;
         height: 2px;
     }
 
-    .anniversary-text {
-        font-size: 1.2rem !important;
-    }
+    /* ...existing code... */
 
-    /* .years-number {
-        font-size: 1.6rem !important;
-    } */
+    /* ...existing code... */
 
-    .hero p {
-        font-size: 1rem;
-    }
+    /* ...existing code... */
 
     .section-header h2 {
         font-size: 2rem;
@@ -153,9 +73,6 @@
         margin: 0 10px;
     }
 
-    .hero-stats {
-        flex-direction: column;
-        gap: 30px;
-    }
+    /* ...existing code... */
 }
 /* #endregion */

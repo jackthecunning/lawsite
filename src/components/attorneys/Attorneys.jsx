@@ -2,7 +2,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import { loadAllAttorneyProfiles } from '../../utils/attorneyLoader';
-import AttorneyCarousel from './AttorneyCarousel';
+import AttorneyCarousel from '../AttorneyCarousel/AttorneyCarousel';
 import './Attorneys.css';
 // #endregion
 
@@ -72,6 +72,14 @@ const Attorneys = () => {
     setIsExpanding(true);
     navigate('/team', { state: { fromHomepage: true } });
   };
+  <div className="attorneys-full-team-cta">
+    <button
+      className="full-team-btn"
+      onClick={() => navigate('/team')}
+    >
+      Meet Our Full Team
+    </button>
+  </div>
   // #endregion
 
   if (loading) {
@@ -97,7 +105,7 @@ const Attorneys = () => {
       className={`attorneys ${isExpanding ? 'expanding' : ''} ${isVisible ? 'animate-in' : ''}`}
     >
       <div className="container">
-        <div className={`section-header ${isVisible ? 'header-animate' : ''}`}>
+          <div className={`attorney-section-header ${isVisible ? 'header-animate' : ''}`}>
           <h2>Our Legal Team</h2>
           <p>Experienced Professionals Dedicated to Your Success</p>
         </div>

@@ -14,7 +14,7 @@ const TeamSearch = ({
     <div className="search-section">
       <div className="search-container">
         <div className="search-input-wrapper">
-          <i className="fas fa-search search-icon"></i>
+          {/* <i className="fas fa-search search-icon"></i> */}
           <input
             type="text"
             placeholder="Search attorneys by name, specialization, or title..."

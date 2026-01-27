@@ -1,3 +1,4 @@
+import './Footer.css';
 import { firmInfo, services } from '../../data/firmData';
 
 const Footer = () => {

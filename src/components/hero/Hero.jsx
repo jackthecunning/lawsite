@@ -65,8 +65,8 @@ const Hero = () => {
           </h1>
           <div className="anniversary-wrapper">
             <p className="anniversary-text">
-              <span className="celebrating">Celebrating</span>
-              <span className="years-number">{getYearsSinceFounding()}</span>
+              <span className="celebrating">Celebrating </span>
+              <span className="years-number">{getYearsSinceFounding()} </span>
               <span className="years-label">Years</span>
             </p>
             <p className="legal-excellence">of Legal Excellence</p>

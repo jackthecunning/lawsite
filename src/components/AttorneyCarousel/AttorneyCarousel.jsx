@@ -1,27 +1,36 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import AttorneyImage from '../attorney-image';
+import AttorneyCarouselCard from '../AttorneyCarouselCard/AttorneyCarouselCard';
+import './AttorneyCarousel.css';
 
-const AttorneyCarousel = ({ attorneys, isVisible }) => {
+const AttorneyCarousel = ({ attorneys }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [cardsToShow, setCardsToShow] = useState(3);
 
   const totalCards = attorneys.length;
 
-  // Update cards to show based on screen size
-  useEffect(() => {
-    const updateCardsToShow = () => {
-      if (window.innerWidth <= 768) {
-        setCardsToShow(1); // Mobile: 1 card
-      } else {
-        setCardsToShow(3); // Desktop/Tablet: 3 cards
-      }
-    };
 
+  // Dynamically set cardsToShow based on container width and card width
+  useEffect(() => {
+    function updateCardsToShow() {
+      const container = document.querySelector('.attorneys-carousel-container');
+      const card = document.querySelector('.attorney-carousel-card');
+      const track = document.querySelector('.attorneys-carousel-track');
+      if (container && card && track) {
+        // Get computed gap from CSS
+        const trackStyles = window.getComputedStyle(track);
+        const gap = parseInt(trackStyles.gap) || 0;
+        const cardWidth = card.offsetWidth;
+        const containerWidth = container.offsetWidth;
+        // Calculate how many cards fit
+        const possible = Math.floor((containerWidth + gap) / (cardWidth + gap));
+        setCardsToShow(Math.max(1, possible));
+      } else {
+        setCardsToShow(1);
+      }
+    }
     updateCardsToShow();
     window.addEventListener('resize', updateCardsToShow);
-
     return () => window.removeEventListener('resize', updateCardsToShow);
   }, []);
 
@@ -55,8 +64,15 @@ const AttorneyCarousel = ({ attorneys, isVisible }) => {
   };
 
   const getCarouselTransform = () => {
-    const cardWidth = 320;
-    const gap = 30;
+    const card = document.querySelector('.attorney-carousel-card');
+    const track = document.querySelector('.attorneys-carousel-track');
+    let cardWidth = 340;
+    let gap = 30;
+    if (card && track) {
+      cardWidth = card.offsetWidth;
+      const trackStyles = window.getComputedStyle(track);
+      gap = parseInt(trackStyles.gap) || 0;
+    }
     const slideDistance = cardWidth + gap;
     const translateX = -(currentIndex * slideDistance);
     return `translateX(${translateX}px)`;
@@ -81,24 +97,7 @@ const AttorneyCarousel = ({ attorneys, isVisible }) => {
             style={{ transform: getCarouselTransform() }}
           >
             {attorneys.map((attorney) => (
-              <Link
-                key={attorney.id}
-                to={`/attorney/${attorney.slug}`}
-                className="team-card-link"
-              >
-                <div className="team-card">
-                  <div className="team-card-image">
-                    <AttorneyImage
-                      src={attorney.image}
-                      alt={attorney.name}
-                    />
-                  </div>
-                  <div className="team-card-info">
-                    <h3>{attorney.name}</h3>
-                    <p className="title">{attorney.title}</p>
-                  </div>
-                </div>
-              </Link>
+              <AttorneyCarouselCard key={attorney.id} attorney={attorney} />
             ))}
           </div>
         </div>

@@ -7,51 +7,37 @@ const QuickAccess = ({ quickAccessVisible }) => {
     <section className="home-quick-access">
         <div className="container">
             <div className={`quick-access-grid ${quickAccessVisible ? 'visible' : ''}`}>
-            <Link to="/team" className="quick-access-card primary-card">
-                <div className="card-icon">
-                <i className="fas fa-users"></i>
-                </div>
-                <h3>Our Team</h3>
-                <p>Find contact information for our attorneys and associates</p>
-                <span className="card-arrow">→</span>
-            </Link>
+                <Link to="/history" className="quick-access-card primary-card spill-up">
+                    <div className="card-icon">
+                        <i className="fas fa-landmark"></i>
+                    </div>
+                    <h3>History</h3>
+                    <p>Explore our rich history and legacy.</p>
+                </Link>
 
-            {/* <Link to="/careers" className="quick-access-card accent-card">
-                <div className="card-icon">
-                <i className="fas fa-briefcase"></i>
-                </div>
-                <h3>Join Our Team</h3>
-                <p>Explore career opportunities at Swartz Campbell</p>
-                <span className="card-arrow">→</span>
-            </Link> */}
+                <Link to="/offices" className="quick-access-card spill-up">
+                    <div className="card-icon">
+                        <i className="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Office Locations</h3>
+                    <p>Find an office near you and some other filler</p>
+                </Link>
 
-            <Link to="/practice-areas" className="quick-access-card">
-                <div className="card-icon">
-                <i className="fas fa-gavel"></i>
-                </div>
-                <h3>Practice Areas</h3>
-                <p>View our areas of legal expertise</p>
-                <span className="card-arrow">→</span>
-            </Link>
+                <Link to="/news" className="quick-access-card spill-up">
+                    <div className="card-icon">
+                        <i className="fas fa-globe"></i>
+                    </div>
+                    <h3>News & Blog</h3>
+                    <p>Read our latest news, articles, and blog posts.</p>
+                </Link>
 
-            <Link to="/offices" className="quick-access-card">
-                <div className="card-icon">
-                <i className="fas fa-map-marker-alt"></i>
-                </div>
-                <h3>Office Locations</h3>
-                <p>{offices.map(office => office.name).join(' • ')}</p>
-                <span className="card-arrow">→</span>
-            </Link>
-
-            <Link to="/history" className="quick-access-card">
-                <div className="card-icon">
-                <i className="fas fa-landmark"></i>
-                </div>
-                <h3>History</h3>
-                <p>Explore our rich history as we build an even brighter future. But something less dumb</p>
-                <span className="card-arrow">→</span>
-            </Link>
-
+                <Link to="/testimonials" className="quick-access-card spill-up">
+                    <div className="card-icon">
+                        <i className="fas fa-star"></i>
+                    </div>
+                    <h3>Testimonials</h3>
+                    <p>See what our clients say about us.</p>
+                </Link>
             </div>
         </div>
     </section>

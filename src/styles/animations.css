@@ -32,31 +32,6 @@
     }
 }
 
-.team-cards-grid.fade-out {
-    animation: fadeOut 0.3s ease forwards;
-}
-
-.team-cards-grid.fade-in {
-    opacity: 1;
-}
-
-/* Default state: cards are hidden during transitions (only on Team page) */
-.team-overview .team-cards-grid .team-card {
-    opacity: 0;
-    transform: translateY(30px) scale(0.9);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Show cards when not transitioning (only on Team page) */
-.team-overview .team-cards-grid:not(.fade-out):not(.fade-in):not(.entering-from-home) .team-card {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-}
-
-/* Animate cards during fade-in (only on Team page) */
-.team-overview .team-cards-grid.fade-in .team-card {
-    animation: slideInStagger 0.6s ease forwards;
-}
 
 /* Staggered slide in animation */
 @keyframes staggeredSlideIn {

@@ -76,128 +76,6 @@
 }
 /* #endregion */
 
-/* #region Attorney Image Component Styles */
-.attorney-image-wrapper {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-}
-
-.attorney-image-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
-}
-
-/* Default attorney image styling */
-.attorney-default-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Hover effect for default images */
-.attorney-image-wrapper:hover .attorney-default-image {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-}
-/* #endregion */
-
-/* #region Attorney Carousel Base Styles */
-.attorneys-carousel {
-    position: relative;
-    overflow: hidden;
-    padding: 0 60px;
-}
-
-.attorneys-carousel-container {
-    overflow: hidden;
-    width: 100%;
-}
-
-.attorneys-carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    gap: 25px;
-}
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: white;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: #1a365d;
-    transition: all 0.3s ease;
-}
-
-.carousel-button:hover {
-    background: #c5a572;
-    color: white;
-    box-shadow: 0 6px 20px rgba(197, 165, 114, 0.3);
-}
-
-.carousel-button.prev {
-    left: 0;
-}
-
-.carousel-button.next {
-    right: 0;
-}
-
-.carousel-button:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-}
-
-.carousel-button:disabled:hover {
-    background: white;
-    color: #1a365d;
-}
-
-.carousel-indicators {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 30px;
-}
-
-.carousel-indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #ddd;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    padding: 0;
-}
-
-.carousel-indicator.active {
-    background: #c5a572;
-    width: 30px;
-    border-radius: 6px;
-}
-
-.carousel-indicator:hover {
-    background: #c5a572;
-    opacity: 0.7;
-}
-/* #endregion */
 
 /* #region CTA Sections */
 .cta-section {
@@ -214,59 +92,15 @@
 /* #endregion */
 
 /* #region Progress Indicators for All Sections */
-.attorneys::before,
-.home-news::before,
-.services::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #c5a572 0%, #1a365d 100%);
-    width: 0%;
-    z-index: 100;
-    transition: width 0.3s ease;
-}
-
-.attorneys::before,
-.home-news::before {
-    top: 0;
-}
-
-.services::after {
-    bottom: 0;
-}
-
-.attorneys.animate-in::before,
-.home-news.animate-in::before,
-.services.animate-in::after {
-    animation: scrollProgress 1.5s ease-out 0.3s forwards;
-}
+/* Moved section-specific progress indicator styles to their respective component CSS files. */
 /* #endregion */
 
 /* #region Connecting Elements */
-.attorneys::after {
-    content: '';
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, #c5a572 0%, #1a365d 100%);
-    border-radius: 2px;
-    opacity: 0;
-    transition: all 0.6s ease 0.5s;
-}
-
-.attorneys.animate-in::after {
-    opacity: 1;
-    top: -20px;
-}
+/* Moved section-specific connecting element styles to their respective component CSS files. */
 /* #endregion */
 
 /* #region Team Overview Styles */
-.team-overview {
+/* .team-overview {
     padding: 100px 0;
     background-color: #f8f9fa;
 }
@@ -280,12 +114,12 @@
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 30px;
     margin-bottom: 60px;
-}
+} */
 
 /* All cards fade in with dynamic JavaScript-based stagger effect */
-.team-cards-grid.animate .team-card {
+/* .team-cards-grid.animate .team-card {
     animation: slideInStagger 0.6s ease forwards;
-}
+} */
 
 /* Responsive breakpoints handled by JavaScript - no hardcoded delays needed */
 

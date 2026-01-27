@@ -144,8 +144,18 @@ const Navigation = () => {
     <nav className={`navbar ${isScrolled || !isHomePage ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <Link to="/" className="nav-logo" onClick={handleLogoClick}>
-          <h2>{firmInfo.name}</h2>
-          <p>{firmInfo.tagline}</p>
+          {/* <h2>SWARTZ</h2>
+          <h2>&nbsp;&nbsp;&nbsp;CAMPBELL <span style={{ fontWeight: 400, fontSize: '0.4em', letterSpacing: '0.05em' }}>LLC</span></h2>
+          <div class="line-container"></div> */}
+          <h2 className="nav-gradient-text">
+            SWARTZ
+          </h2>
+          <h2 style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', margin: 0 }}>
+            <span className="nav-gradient-text campbell-text">&nbsp;&nbsp;&nbsp;CAMPBELL<span className="nav-llc"> LLC</span></span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '0.5em' }}>
+              <span className="line-container"></span><span className="nav-since">Since 1921</span>
+            </span>
+          </h2>
         </Link>
 
         <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`} id="nav-menu">

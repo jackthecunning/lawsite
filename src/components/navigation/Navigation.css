@@ -1,18 +1,102 @@
+/* Gradient text for nav logo */
+.nav-gradient-text {
+    background: linear-gradient(90deg, #1a365d 0%, var(--color-primary) 110%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* text-fill-color: transparent; */
+}
+.nav-gradient-text.campbell-text {
+    background: linear-gradient(90deg, #1a365d 0%, var(--color-primary) 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* text-fill-color: transparent; */
+}
+/* Make "Since 1921" in nav logo very small */
+/* #region Dropdown Menu */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-dropdown .nav-link i {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-dropdown:hover .nav-link i {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px 0;
+    margin-top: 0;
+    padding-top: 15px;
+    z-index: 1000;
+}
+
+.nav-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f8f9fa;
+    color: var(--color-primary);
+    padding-left: 25px;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+/* .bar {
+    width: 25px;
+    height: 3px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 3px 0;
+    transition: 0.3s;
+} */
+/* #endregion */
 /* #region Navigation */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(26, 54, 93, 0.7);
+    background: rgba(var(--color-secondary-rgb), 0.85);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    box-shadow: 0 2px 20px rgba(26, 54, 93, 0.3);
+    box-shadow: rgba(var(--color-secondary-rgb), 0.3);
     transform: translateY(0);
     transition: var(--transition-base);
 }
 
 .navbar.scrolled {
-    background: rgba(26, 54, 93, 0.85);
+    background:  rgba(var(--color-secondary-rgb), 0.85);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 20px rgba(26, 54, 93, 0.5);
     transform: translateY(0);
@@ -36,6 +120,7 @@
     white-space: nowrap;
     opacity: 1;
     transition: opacity 0.3s ease;
+    text-decoration: none;
 }
 
 .navbar.scrolled .nav-logo {
@@ -44,25 +129,29 @@
 
 .nav-logo h2 {
     font-family: 'Crimson Text', serif;
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-size: clamp(0.8rem, 3vw, 1.5rem);
     font-weight: 600;
-    color: #ffffff;
-    margin-bottom: -5px;
+    color: var(--color-primary);
+    margin-bottom: -16px;
     transition: color 0.3s ease;
     text-shadow: none;
+    opacity: 0.9;
+    text-decoration: none;
 }
 
 .navbar.scrolled .nav-logo h2 {
-    color: #ffffff;
+    color: var(--color-primary);
     text-shadow: none;
 }
 
 .nav-logo p {
-    font-size: clamp(0.7rem, 1.5vw, 0.9rem);
-    color: rgba(255, 255, 255, 0.8);
+    font-size: clamp(0.2rem, 1.5vw, 0.9rem);
+    /* color: rgba(255, 255, 255, 0.8); */
+    color: rgba(var(--color-primary-rgb), 0.85);
     font-style: italic;
     transition: color 0.3s ease;
     text-shadow: none;
+    opacity: 0.9;
 }
 
 .navbar.scrolled .nav-logo p {
@@ -81,7 +170,7 @@
 
 .nav-link {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--color-primary);
     font-family: 'Bodoni 72 Smallcaps', 'Bodoni 72', 'Bodoni MT', 'Bodoni', 'Didot', serif;
     font-size: clamp(1rem, 2vw, 1.5rem);
     font-weight: 500;
@@ -90,10 +179,11 @@
     position: relative;
     white-space: nowrap;
     text-shadow: none;
+    opacity: 0.9;
 }
 
 .navbar.scrolled .nav-link {
-    color: #ffffff;
+    color: var(--color-primary);
     text-shadow: none;
 }
 
@@ -109,20 +199,6 @@
     color: #c5a572;
 }
 
-.nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: #c5a572;
-    transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
 /* #endregion */
 
 /* #region Dropdown Menu */
@@ -193,3 +269,35 @@
     transition: 0.3s;
 }
 /* #endregion */
+.line-container {
+  display: block;
+  height: 2px;
+  width: 60px; /* or 100% for full underline */
+  background: var(--color-primary);
+  width: calc(8ch + 1.5ch);
+  margin-left: calc(1.35ch);
+  margin-top: -12px;
+  /* 3ch = width of 3 characters */
+  /* Adjust 3ch to match your font/spacing if needed */
+  /* background: linear-gradient(90deg, #1a365d 0%, var(--color-primary) 85%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; */
+}
+
+.nav-llc {
+  font-size: 0.52em;
+  margin-left: 0.25em;
+
+}
+
+.nav-since {
+    font-size: 0.3em;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: #111;
+    margin-left: 0.0em;
+    vertical-align: middle;
+    margin-top: -10px;
+    margin-left: -10px;
+}
