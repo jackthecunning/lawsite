@@ -1,17 +1,41 @@
 {
   "name": "Allison Texter",
-  "title": "Associate Attorney",
-  "practiceAreas": ["Healthcare Law & Medical Privacy"],
+  "title": "Partner",
+  "practiceAreas": ["Asbestos", "Insurance Litigation", "General Liability"],
   "image": "images/attorneys/Texter-Allison-023-683x1024.jpg",
-  "email": "atexter@swartzcampbell.com",
-  "phone": "(555) 123-4587",
-  "office": "Philadelphia",
-  "credentials": [
-    "J.D., Drexel University Thomas R. Kline School of Law, 2019",
-    "B.S., Health Sciences, Drexel University, 2016",
-    "Licensed in Pennsylvania",
-    "Certified in Healthcare Privacy and Security",
-    "Member, American Health Lawyers Association"
+
+  "email": "",
+
+  "phone": "",
+
+  "office": "Wilmington",
+   "barAdmissions": [
+    {
+      "year": 1996,
+      "jurisdiction": "Delaware"
+    },
+    {
+      "year": 2024,
+      "jurisdiction": "Pennsylvania"
+    }
   ],
-  "bio": "Allison Texter is a healthcare attorney who specializes in healthcare privacy law, regulatory compliance, and healthcare business transactions. With a background in health sciences and specialized certification in healthcare privacy and security, Texter provides comprehensive legal counsel to healthcare providers, health systems, and healthcare technology companies. Her practice focuses on HIPAA compliance, health information technology law, and healthcare data security matters. Texter regularly advises clients on privacy policies, business associate agreements, and breach response protocols. She has extensive experience with healthcare mergers and acquisitions, physician practice transactions, and healthcare joint ventures. Texter also handles regulatory compliance matters including Medicare and Medicaid reimbursement issues, Stark Law compliance, and Anti-Kickback Statute matters. Her health sciences background provides valuable insight into clinical operations and helps her develop practical compliance solutions that work in real-world healthcare settings. Texter stays current with rapidly evolving healthcare technology regulations, including telemedicine compliance, digital health applications, and artificial intelligence in healthcare. She is an active member of the American Health Lawyers Association and regularly attends healthcare law conferences to stay abreast of industry developments and regulatory changes affecting healthcare providers."
+  "courtAdmissions": [
+    "1997 United States District Court of Delaware",
+    "1997 United States Court of Appeals- Third Circuit"
+  ],
+  "education": [
+    {
+      "year": 1992,
+      "institution": "Columbia College of Columbia University",
+      "location": "New York, NY",
+      "degree": "B.A. in Economics"
+    },
+    {
+      "year": 1996,
+      "institution": "Widener University School of Law",
+      "location": "Philadelphia, PA",
+      "degree": "J.D."
+    }
+  ],
+  "bio": "Allison Texter is a partner and equity member in the firm’s Wilmington office, concentrating her practice on products liability, insurance defense, and general liability matters. She has represented corporations, insureds, and individuals in a variety of matters, including asbestos litigation, pharmaceutical claims, medical device defects, construction defects, premises liability, business licensing matters, and automotive and trucking accidents. She is an experienced trial attorney as well as a trained mediator by the Superior Court of the State of Delaware. Ms. Texter graduated from Columbia College of Columbia University with a B.A. in Economics. She received her J.D. from the Widener University School of Law, where she was a member of the Moe Levine Trial Advocacy Honor Society and the Moot Court Honor Society. Prior to joining Swartz Campbell, she served as a Deputy Attorney General for the Delaware Department of Justice, prosecuting serious felony matters including homicides and sex offenses. During her tenure in the Criminal Division, Mr. Texter was appointed Assistant Unit Head of the Misdemeanor Trial Unit and Unit Head of the Sex Crimes Unit. Later, she worked in the DOV Civil Division defending state agencies in civil litigation. This unique combination of high-level criminal prosecution and civil defense experience provides her with a comprehensive perspective and formidable skill set in handling sophisticated legal challenges."
 }

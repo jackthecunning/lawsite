@@ -25,6 +25,15 @@ const AttorneyContact = ({ attorney, onContactClick }) => {
                 {attorney.phone}
               </a>
             </div>
+            {attorney.fax && (
+              <div className="contact-method">
+                <i className="fas fa-fax"></i>
+                <h4>Fax</h4>
+                <a href={`fax:${attorney.fax}`} className="btn btn-outline">
+                  {attorney.fax}
+                </a>
+              </div>
+            )}
             <div className="contact-method">
               <i className="fas fa-envelope"></i>
               <h4>Send Email</h4>

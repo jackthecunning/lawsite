@@ -175,6 +175,7 @@ const Navigation = () => {
               <Link to="/offices" onClick={closeMenu}>Offices</Link>
               <Link to="/diversity" onClick={closeMenu}>Diversity</Link>
               <Link to="/women" onClick={closeMenu}>The Women of Swartz Campbell</Link>
+              <Link to="/testimonials" onClick={closeMenu}>Testimonials</Link>
             </div>
           </div>
           <Link

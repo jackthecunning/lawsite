@@ -9,11 +9,13 @@ import PracticeAreas from './pages/practice-areas';
 import Careers from './pages/careers';
 import News from './pages/news';
 import NewsDetail from './pages/news-detail';
+
 import History from './pages/history/History';
 import Offices from './pages/offices';
 import OfficeDetail from './pages/office-detail';
 import Diversity from './pages/diversity/Diversity';
 import Women from './pages/women/Women';
+import Testimonials from './pages/testimonials/Testimonials';
 import Admin from './pages/admin/Admin';
 import './App.css';
 
@@ -37,6 +39,7 @@ function App() {
           <Route path="/news" element={<News />} />
           <Route path="/news/:id" element={<NewsDetail />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/testimonials" element={<Testimonials />} />
         </Routes>
       </main>
       <Footer />

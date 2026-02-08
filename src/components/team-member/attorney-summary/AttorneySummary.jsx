@@ -30,6 +30,12 @@ const AttorneySummary = ({ attorney }) => {
           <i className="fas fa-phone"></i>
           <a href={`tel:${attorney.phone}`}>{attorney.phone}</a>
         </p>
+        {attorney.fax && (
+          <p>
+            <i className="fas fa-fax"></i>
+            <a href={`fax:${attorney.fax}`}>{attorney.fax}</a>
+          </p>
+        )}
         <p>
           <i className="fas fa-map-marker-alt"></i>
           {attorney.offices ? attorney.offices.join(', ') : attorney.office} Office{attorney.offices && attorney.offices.length > 1 ? 's' : ''}

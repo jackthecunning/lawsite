@@ -183,3 +183,5 @@ public/images/banner/*.webp
 # Keep README files in image directories
 !public/images/attorneys/README.md
 !public/images/banner/README.md
+
+tmp/*

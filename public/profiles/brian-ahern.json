@@ -1,17 +1,44 @@
 {
   "name": "Brian Ahern",
-  "title": "Senior Associate",
-  "practiceAreas": ["Insurance Defense & Litigation"],
+  "title": "Partner",
+  "practiceAreas": ["Product Liability",
+    "Asbestos",
+    "Civil Litigation",
+    "Personal Injury",
+    "Toxic Tort Litigation",
+    "Litigation"
+  ],
   "image": "images/attorneys/Ahern-Brian.jpg",
   "email": "bahern@swartzcampbell.com",
-  "phone": "(555) 123-4568",
+  "phone": "215-299-4252",
+  "fax": "215-299-4301",
   "office": "Philadelphia",
-  "credentials": [
-    "J.D., Fordham University School of Law, 2009",
-    "B.A., Political Science, Boston College, 2006",
-    "Licensed in Pennsylvania and New York",
-    "Member, Defense Research Institute",
-    "Board Member, Insurance Defense Association"
+  "barAdmissions": [
+    {
+      "year": 2000,
+      "jurisdiction": "Delaware"
+    },
+    {
+      "year": 2016,
+      "jurisdiction": "Pennsylvania"
+    }
   ],
-  "bio": "Brian Ahern is a skilled litigator who represents insurance companies, businesses, and individuals in a wide range of civil litigation matters. As a Senior Associate at Swartz Campbell, Brian has extensive experience defending clients in personal injury claims, professional liability suits, and commercial disputes. His practice focuses on insurance defense work, where he provides cost-effective and strategic representation to insurers and their insureds. Brian has successfully tried numerous cases to verdict and has a strong track record of achieving favorable settlements for his clients. He is experienced in all phases of litigation, from initial case evaluation through trial and appeal. Brian's analytical approach and thorough case preparation have earned him recognition among insurance industry professionals and fellow attorneys. He regularly handles complex multi-party litigation and has particular expertise in construction defect claims, premises liability, and product liability cases."
+  "courtAdmissions": [
+    "US District Court of Delaware"
+  ],
+  "education": [
+    {
+      "year": 2000,
+      "institution": "Widener School of Law",
+      "location": "Wilmington, DE",
+      "degree": "J.D."
+    },
+    {
+      "year": 1996,
+      "institution": "University of Delaware",
+      "location": "Newark, DE",
+      "degree": "B.A."
+    }
+  ],
+  "bio": "'Brain Ahern is a partner in the Mass Tort Litigation Group in the firm’s Philadelphia and Wilmington offices, concentrating his practice on toxic torts, products liability, and premise liability. He has been in practice for over twenty years and has over ten years of experience defending toxic tort, general liability, personal injury, and sexual abuse claims. He handles matters throughout the litigation process—from presuit investigation and discovery to motion practice and trial preparation—and has conducted trials in both Pennsylvania and Delaware courts.\nBrian earned a B.A. in Political Science from the University of Delaware and a J.D. from the Weidner University School of Law. Prior to joining civil practice, he served as a Deputy Attorney General in the Delaware Department of Justice. In this role, he prosecuted serious felony cases like white collar crimes and violent offenses—gaining invaluable experience handling high-stakes, high-pressure matters.\nBrian is admitted to practice in Delaware, Pennsylvania, and the District Court for the District of Delaware.'"
 }
