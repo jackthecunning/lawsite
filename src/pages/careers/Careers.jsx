@@ -1,51 +1,77 @@
 import './Careers.css';
 import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Careers = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [jobs, setJobs] = useState([]);
+  const [jobUrls, setJobUrls] = useState(null);
+  const [expandedJobSlug, setExpandedJobSlug] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
-  const openPositions = [
-    {
-      id: 1,
-      title: "Associate Attorney - Corporate Law",
-      department: "Corporate Law",
-      location: "Philadelphia, PA",
-      type: "Full-time",
-      experience: "2-5 years",
-      description: "We are seeking a motivated associate attorney to join our corporate law practice. The ideal candidate will have experience in mergers and acquisitions, corporate governance, and securities law."
-    },
-    {
-      id: 2,
-      title: "Family Law Attorney",
-      department: "Family Law",
-      location: "New York, NY",
-      type: "Full-time",
-      experience: "3-7 years",
-      description: "Join our family law team to help families navigate complex legal matters including divorce, custody, and estate planning. Mediation experience preferred."
-    },
-    {
-      id: 3,
-      title: "Legal Assistant",
-      department: "General Practice",
-      location: "Philadelphia, PA",
-      type: "Full-time",
-      experience: "1-3 years",
-      description: "Support our legal team with case preparation, client communication, and administrative tasks. Paralegal certification preferred but not required."
-    },
-    {
-      id: 4,
-      title: "Summer Associate Program",
-      department: "All Departments",
-      location: "All Offices",
-      type: "Internship",
-      experience: "Law School Student",
-      description: "12-week summer program for law students to gain hands-on experience across multiple practice areas. Mentorship and networking opportunities included."
-    }
-  ];
 
-  const scrollToContact = () => {
-    window.location.href = '/#contact';
+  useEffect(() => {
+    // Load job data and URLs
+    const loadJobData = async () => {
+      try {
+        const [professionalLiability, generalLiability, urls] = await Promise.all([
+          fetch('/content/careers/professional-liability.json').then(res => res.json()),
+          fetch('/content/careers/general-liability.json').then(res => res.json()),
+          fetch('/content/careers/job-urls.json').then(res => res.json())
+        ]);
+
+        setJobs([professionalLiability, generalLiability]);
+        setJobUrls(urls);
+      } catch (error) {
+        console.error('Error loading job data:', error);
+      }
+    };
+
+    loadJobData();
+  }, []);
+
+  // Filter jobs based on search term
+  const filteredJobs = jobs.filter(job =>
+    job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    job.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    job.location.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const toggleJob = (slug) => {
+    setExpandedJobSlug(expandedJobSlug === slug ? null : slug);
+  };
+
+  const getJobUrl = (slug) => {
+    if (!jobUrls) return jobUrls?.defaultUrl || 'https://www.indeed.com/cmp/Swartz-Campbell-LLC/jobs';
+
+    const jobUrl = jobUrls.jobs[slug];
+
+    // Check if URL exists, is not empty, and is a valid URL format
+    if (jobUrl && jobUrl.trim() !== '' && isValidUrl(jobUrl)) {
+      return jobUrl;
+    }
+
+    return jobUrls.defaultUrl;
+  };
+
+  const isValidUrl = (string) => {
+    try {
+      const url = new URL(string);
+      return url.protocol === 'http:' || url.protocol === 'https:';
+    } catch (_) {
+      return false;
+    }
+  };
+
+  const handleApplyClick = (e, slug) => {
+    const url = getJobUrl(slug);
+
+    // If the URL fails to open or navigate, fallback to default
+    // This creates a safety net for broken/removed job postings
+    if (url === '#' || !url) {
+      e.preventDefault();
+      window.open(jobUrls?.defaultUrl || 'https://www.indeed.com/cmp/Swartz-Campbell-LLC/jobs', '_blank');
+    }
   };
 
   const handleTeamTransition = (e) => {
@@ -64,18 +90,18 @@ const Careers = () => {
       {/* Careers Hero Section */}
       <section className="careers-hero">
         <div className="hero-background">
-          <div className="hero-slide active" style={{ backgroundImage: "url('/images/banner/philly_2.png')" }}></div>
+          <div className="hero-slide active" style={{ backgroundImage: "url('/images/banner/Cleveland.jpeg')" }}></div>
         </div>
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <h1>Join Our Team</h1>
-          <p>Build Your Career with Swartz Campbell</p>
-          <p>Discover opportunities to grow and make a difference in the legal profession</p>
+          {/* <p>Build Your Career with Swartz Campbell</p>
+          <p>Discover opportunities to grow and make a difference in the legal profession</p> */}
         </div>
       </section>
 
       {/* Why Work Here Section */}
-      <section className="why-work-here">
+      {/* <section className="why-work-here">
         <div className="container">
           <div className="section-header">
             <h2>Why Choose Swartz Campbell?</h2>
@@ -132,7 +158,7 @@ const Careers = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Open Positions Section */}
       <section className="open-positions">
@@ -142,41 +168,181 @@ const Careers = () => {
             <p>Explore our open positions and find the perfect fit for your legal career</p>
           </div>
 
-          <div className="positions-list">
-            {openPositions.map((position) => (
-              <div key={position.id} className="position-card">
-                <div className="position-header">
-                  <h3>{position.title}</h3>
-                  <div className="position-tags">
-                    <span className="tag department">{position.department}</span>
-                    <span className="tag type">{position.type}</span>
-                  </div>
-                </div>
-
-                <div className="position-details">
-                  <div className="detail-item">
-                    <i className="fas fa-map-marker-alt"></i>
-                    <span>{position.location}</span>
-                  </div>
-                  <div className="detail-item">
-                    <i className="fas fa-clock"></i>
-                    <span>{position.experience} experience</span>
-                  </div>
-                </div>
-
-                <p className="position-description">{position.description}</p>
-
-                <div className="position-actions">
-                  <button onClick={scrollToContact} className="btn btn-primary">
-                    Apply Now
-                  </button>
-                  <button className="btn btn-secondary">
-                    Learn More
-                  </button>
-                </div>
-              </div>
-            ))}
+          {/* Search Bar */}
+          <div className="jobs-search-container">
+            <div className="jobs-search">
+              <i className="fas fa-search"></i>
+              <input
+                type="text"
+                placeholder="Search by title, location, or keywords..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+              {searchTerm && (
+                <button
+                  className="clear-search"
+                  onClick={() => setSearchTerm('')}
+                  aria-label="Clear search"
+                >
+                  <i className="fas fa-times"></i>
+                </button>
+              )}
+            </div>
+            <div className="jobs-count">
+              {filteredJobs.length} {filteredJobs.length === 1 ? 'Position' : 'Positions'} Available
+            </div>
           </div>
+
+          {jobs.length === 0 ? (
+            <div className="no-positions">
+              <p>Loading current opportunities...</p>
+            </div>
+          ) : filteredJobs.length === 0 ? (
+            <div className="no-results">
+              <i className="fas fa-search"></i>
+              <p>No positions match your search</p>
+              <button className="btn-link" onClick={() => setSearchTerm('')}>
+                Clear search
+              </button>
+            </div>
+          ) : (
+            <div className="jobs-accordion">
+              {filteredJobs.map((job) => (
+                <div key={job.slug} className={`accordion-item ${expandedJobSlug === job.slug ? 'expanded' : ''}`}>
+                  <button
+                    className="accordion-header"
+                    onClick={() => toggleJob(job.slug)}
+                  >
+                    <div className="accordion-header-content">
+                      <div className="accordion-title-section">
+                        <h3>{job.title}</h3>
+                        <div className="accordion-meta">
+                          <span className="meta-item">
+                            <i className="fas fa-map-marker-alt"></i>
+                            {job.location}
+                          </span>
+                          <span className="meta-item">
+                            <i className="fas fa-briefcase"></i>
+                            {job.jobType}
+                          </span>
+                          <span className="meta-item salary">
+                            <i className="fas fa-dollar-sign"></i>
+                            {job.salary}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="accordion-icon">
+                        <i className={`fas fa-chevron-${expandedJobSlug === job.slug ? 'up' : 'down'}`}></i>
+                      </div>
+                    </div>
+                  </button>
+
+                  <div className="accordion-content">
+                    <div className="accordion-content-inner">
+                      {job.introduction && (
+                        <div className="job-introduction">
+                          {job.introduction.map((paragraph, index) => (
+                            <p key={index}>{paragraph}</p>
+                          ))}
+                        </div>
+                      )}
+
+                      <div className="job-description">
+                        <h4>About the Position</h4>
+                        <p>{job.description}</p>
+                      </div>
+
+                      {job.idealCandidate && (
+                        <div className="job-section">
+                          <h4>Ideal Candidate</h4>
+                          <p>{job.idealCandidate}</p>
+                        </div>
+                      )}
+
+                      {job.requirements && (
+                        <div className="job-section">
+                          <h4>Requirements</h4>
+                          <ul>
+                            {job.requirements.map((req, index) => (
+                              <li key={index}>{req}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {job.experience && (
+                        <div className="job-section">
+                          <h4>Experience</h4>
+                          <ul>
+                            {job.experience.map((exp, index) => (
+                              <li key={index}>{exp}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {job.responsibilities && (
+                        <div className="job-section">
+                          <h4>Key Responsibilities</h4>
+                          <ul>
+                            {job.responsibilities.map((resp, index) => (
+                              <li key={index}>{resp}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {job.benefits && (
+                        <div className="job-section">
+                          <h4>Benefits</h4>
+                          <ul className="benefits-list">
+                            {job.benefits.map((benefit, index) => (
+                              <li key={index}>{benefit}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {job.workArrangement && (
+                        <div className="job-section">
+                          <h4>Work Arrangement</h4>
+                          <p>{job.workArrangement}</p>
+                        </div>
+                      )}
+
+                      {job.eeoc && (
+                        <div className="job-section eeoc">
+                          <p className="eeoc-statement">{job.eeoc}</p>
+                        </div>
+                      )}
+
+                      <div className="position-actions">
+                        <a
+                          href={getJobUrl(job.slug)}
+                          onClick={(e) => handleApplyClick(e, job.slug)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-primary"
+                        >
+                          Apply on Indeed
+                          <i className="fas fa-external-link-alt"></i>
+                        </a>
+                        {job.contactEmail && (
+                          <a
+                            href={`mailto:${job.contactEmail}`}
+                            className="btn btn-secondary"
+                          >
+                            Email Resume
+                            <i className="fas fa-envelope"></i>
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -231,9 +397,14 @@ const Careers = () => {
             <h2>Ready to Join Our Team?</h2>
             <p>Take the next step in your legal career with Swartz Campbell</p>
             <div className="cta-buttons">
-              <button onClick={scrollToContact} className="btn btn-primary">
-                Contact Our HR Team
-              </button>
+              <a
+                href={jobUrls?.defaultUrl || 'https://www.indeed.com/cmp/Swartz-Campbell-LLC/jobs'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+              >
+                View All Open Roles
+              </a>
               <button onClick={handleTeamTransition} className="btn btn-secondary">
                 Meet Our Team
               </button>

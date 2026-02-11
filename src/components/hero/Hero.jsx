@@ -5,12 +5,18 @@ import BannerImage from '../banner-image';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [slides, setSlides] = useState([]);
 
-  const slides = [
-    'images/banner/philly_1.png',
-    'images/banner/philly_2.png',
-    'images/banner/philly_3.png'
-  ];
+  // Dynamically load all banner images
+  useEffect(() => {
+    const imageModules = import.meta.glob('/public/images/banner/*.{jpg,jpeg,png,webp,gif}', { eager: true, as: 'url' });
+    const imagePaths = Object.keys(imageModules)
+      .filter(path => !path.endsWith('README.md')) // Exclude README
+      .map(path => path.replace('/public/', ''))
+      .sort(); // Sort alphabetically for consistent order
+
+    setSlides(imagePaths);
+  }, []);
 
   // Calculate years since founding (1921)
   const getYearsSinceFounding = () => {
@@ -20,6 +26,8 @@ const Hero = () => {
   };
 
   useEffect(() => {
+    if (slides.length === 0) return;
+
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 8000);
@@ -44,18 +52,28 @@ const Hero = () => {
   return (
     <section id="home" className="hero">
       <div className="hero-background">
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
-          >
+        {slides.length > 0 ? (
+          slides.map((slide, index) => (
+            <div
+              key={index}
+              className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
+            >
+              <BannerImage
+                src={slide}
+                alt={`Law Firm Banner ${index + 1}`}
+                className="hero-banner-image"
+              />
+            </div>
+          ))
+        ) : (
+          <div className="hero-slide active">
             <BannerImage
-              src={slide}
-              alt={`Philadelphia Law Firm Banner ${index + 1}`}
+              src="images/defaults/default-banner.svg"
+              alt="Law Firm Banner"
               className="hero-banner-image"
             />
           </div>
-        ))}
+        )}
       </div>
       <div className="hero-overlay"></div>
       <div className="hero-content">

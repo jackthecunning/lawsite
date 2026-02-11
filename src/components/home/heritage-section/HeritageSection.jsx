@@ -10,7 +10,7 @@ const HeritageSection = ({ yearsSinceFounding }) => {
             <div className="heritage-badge">
               <span className="badge-year">Est. 1921</span>
             </div>
-            <h2>A Century of Legal Excellence & Jets</h2>
+            <h2>A Century of Legal Excellence</h2>
             <p className="lead-text">
               For over {yearsSinceFounding} years, Swartz Campbell has been a cornerstone
               of the legal community, serving clients with unwavering dedication and expertise.
@@ -20,7 +20,6 @@ const HeritageSection = ({ yearsSinceFounding }) => {
               our professional relationships. We are trusted by individuals, businesses, and
               fellow legal professionals throughout the region and beyond.
             </p>
-            <p>Obviously, the jets explain themselves.</p>
             <div className="heritage-stats">
               <div className="heritage-stat">
                 <div className="stat-number">{yearsSinceFounding}+</div>
@@ -38,7 +37,7 @@ const HeritageSection = ({ yearsSinceFounding }) => {
           </div>
           <div className="heritage-image">
             <div className="image-frame">
-              <img src="/images/fighter-jet.jpg" alt="Fighter Jet" />
+              <img src="/images/home/heritage.jpeg" alt="Legal Heritage" />
             </div>
           </div>
         </div>
