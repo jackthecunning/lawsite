@@ -18,7 +18,7 @@ const PersonalLife = ({ attorney }) => {
         <div className="personal-section-wrapper">
           <div className="section-header">
             <h2>
-              <i className="fas fa-heart"></i>
+              <i className="fas fa-home"></i>
               Outside the Office
             </h2>
           </div>

@@ -1,24 +1,11 @@
 /* Careers Page Styles */
 
-/* .careers-hero {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  margin-top: 80px;
-  width: 100%;
-  object-fit: cover;
-  background-position: center center;
-  height: clamp(240px, 35vh, 420px);
-} */
 .careers-hero {
   position: relative;
   margin-top: 80px;
   width: 100%;
   height: clamp(340px, 50vh, 420px);
   overflow: hidden;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,55 +20,21 @@
 .hero-slide {
   position: absolute;
   inset: 0;
-
   background-size: cover;
   background-position: center 25%;
   background-repeat: no-repeat;
 }
 
-/* .careers-hero .hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-} */
-
-/* .careers-hero .hero-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: 100% auto;
-  background-position: center 20%;
-  background-repeat: no-repeat;
-} */
-
-/* .careers-hero .hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(26, 54, 93, 0.85) 0%, rgba(45, 90, 143, 0.75) 100%);
-  z-index: 1;
-} */
-
 .careers-hero .hero-content {
-  /* position: relative; */
   z-index: 2;
   color: white;
   text-align: center;
-  /* max-width: 800px; */
   padding: 0 20px;
 }
 
 .careers-hero .hero-content h1 {
   font-size: 4rem;
   font-weight: 700;
-  /* margin-bottom: 15px; */
   color: white;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.3);
 }
@@ -556,8 +509,8 @@
   flex-wrap: wrap;
 }
 
-/* Location Filter Styles */
-.location-filter {
+/* Careers Location Filter Styles */
+.open-positions .location-filter {
   margin: 40px 0;
   text-align: center;
   padding: 30px;
@@ -565,13 +518,13 @@
   border-radius: 10px;
 }
 
-.location-filter h3 {
+.open-positions .location-filter h3 {
   margin-bottom: 20px;
   color: #1a365d;
   font-size: 1.25rem;
 }
 
-.filter-buttons {
+.open-positions .filter-buttons {
   display: flex;
   justify-content: center;
   gap: 15px;
@@ -579,7 +532,7 @@
   flex-wrap: wrap;
 }
 
-.filter-btn {
+.open-positions .filter-btn {
   padding: 10px 20px;
   border: 2px solid #c5a572;
   background-color: transparent;
@@ -591,19 +544,19 @@
   min-width: 120px;
 }
 
-.filter-btn:hover {
+.open-positions .filter-btn:hover {
   background-color: #c5a572;
   color: white;
   transform: translateY(-2px);
 }
 
-.filter-btn.active {
+.open-positions .filter-btn.active {
   background-color: #c5a572;
   color: white;
   box-shadow: 0 4px 8px rgba(197, 165, 114, 0.3);
 }
 
-.filter-results {
+.open-positions .filter-results {
   color: #64748b;
   font-style: italic;
   font-size: 0.95rem;
@@ -683,12 +636,12 @@
     align-items: center;
   }
 
-  .filter-buttons {
+  .open-positions .filter-buttons {
     flex-direction: column;
     align-items: center;
   }
 
-  .filter-btn {
+  .open-positions .filter-btn {
     width: 100%;
     max-width: 200px;
   }
@@ -806,11 +759,4 @@
 
 .position-actions a i {
   font-size: 0.875rem;
-}
-
-.no-positions {
-  text-align: center;
-  padding: 60px 20px;
-  color: #64748b;
-  font-size: 1.1rem;
 }

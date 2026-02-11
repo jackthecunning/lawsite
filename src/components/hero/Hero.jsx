@@ -9,13 +9,20 @@ const Hero = () => {
 
   // Dynamically load all banner images
   useEffect(() => {
-    const imageModules = import.meta.glob('/public/images/banner/*.{jpg,jpeg,png,webp,gif}', { eager: true, as: 'url' });
-    const imagePaths = Object.keys(imageModules)
-      .filter(path => !path.endsWith('README.md')) // Exclude README
-      .map(path => path.replace('/public/', ''))
-      .sort(); // Sort alphabetically for consistent order
+    // List banner images from public folder
+    const bannerImages = [
+      '/images/banner/Baltimore.jpeg',
+      '/images/banner/Cleveland.jpeg',
+      '/images/banner/NewYork.jpg',
+      '/images/banner/Philly.png',
+      '/images/banner/philly_1.png',
+      '/images/banner/philly_2.png',
+      '/images/banner/philly_3.png',
+      '/images/banner/Pittsburg.jpg',
+      '/images/banner/Wilmington.jpeg'
+    ];
 
-    setSlides(imagePaths);
+    setSlides(bannerImages);
   }, []);
 
   // Calculate years since founding (1921)

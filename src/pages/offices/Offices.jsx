@@ -3,6 +3,13 @@ import { offices } from '../../data/firmData';
 import './Offices.css';
 
 const Offices = () => {
+  // Helper function to get banner image URL
+  const getBannerImageUrl = (path) => {
+    if (!path) return null;
+    // If it's already a full path starting with /, use it directly
+    return path;
+  };
+
   return (
     <>
       {/* Full-Screen Offices Grid */}
@@ -18,7 +25,13 @@ const Offices = () => {
               key={index}
               to={`/offices/${office.id}`}
               className="office-tile"
+              style={{
+                backgroundImage: office.bannerImage
+                  ? `url(${office.bannerImage})`
+                  : 'none'
+              }}
             >
+              <div className="office-tile-overlay"></div>
               <div className="office-tile-content">
                 <div className="office-tile-header">
                   <h2>{office.name}</h2>

@@ -156,7 +156,8 @@ export const offices = [
     phone: '(215) 564-5190',
     fax: '(215) 564-5191',
     email: 'jmccarron@swartzcampbell.com',
-    hours: 'Monday - Friday: 9:00 AM - 5:00 PM'
+    hours: 'Monday - Friday: 9:00 AM - 5:00 PM',
+    bannerImage: '/images/banner/Philly.png'
   },
   {
     id: 'pittsburgh',
@@ -168,7 +169,8 @@ export const offices = [
     phone: '(412) 232-9800',
     fax: '(412) 232-9801',
     email: 'largento@swartzcampbell.com',
-    hours: 'Monday - Friday: 9:00 AM - 5:00 PM'
+    hours: 'Monday - Friday: 9:00 AM - 5:00 PM',
+    bannerImage: '/images/banner/Pittsburg.jpg'
   },
   {
     id: 'newyork',
@@ -180,7 +182,8 @@ export const offices = [
     phone: '(212) 555-7300',
     fax: '(212) 555-7301',
     email: 'nyoffice@swartzcampbell.com',
-    hours: 'Monday - Friday: 9:00 AM - 6:00 PM'
+    hours: 'Monday - Friday: 9:00 AM - 6:00 PM',
+    bannerImage: '/images/banner/NewYork.jpg'
   },
   {
     id: 'mountlaurel',
@@ -192,7 +195,8 @@ export const offices = [
     phone: '(856) 234-5600',
     fax: '(856) 234-5601',
     email: 'mloffice@swartzcampbell.com',
-    hours: 'Monday - Friday: 9:00 AM - 5:00 PM'
+    hours: 'Monday - Friday: 9:00 AM - 5:00 PM',
+    bannerImage: '/images/fighter-jet.jpg'
   },
   {
     id: 'baltimore',
@@ -204,7 +208,8 @@ export const offices = [
     phone: '(410) 555-8900',
     fax: '(410) 555-8901',
     email: 'baltimore@swartzcampbell.com',
-    hours: 'Monday - Friday: 9:00 AM - 5:00 PM'
+    hours: 'Monday - Friday: 9:00 AM - 5:00 PM',
+    bannerImage: '/images/banner/Baltimore.jpeg'
   },
   {
     id: 'cleveland',
@@ -216,7 +221,8 @@ export const offices = [
     phone: '(216) 555-7200',
     fax: '(216) 555-7201',
     email: 'cleveland@swartzcampbell.com',
-    hours: 'Monday - Friday: 9:00 AM - 5:00 PM'
+    hours: 'Monday - Friday: 9:00 AM - 5:00 PM',
+    bannerImage: '/images/banner/Cleveland.jpeg'
   }
 ];
 
