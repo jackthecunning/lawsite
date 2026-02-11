@@ -26,8 +26,9 @@ export const getAttorneyImageUrl = (attorneyImage) => {
 export const getBannerImageUrl = (bannerImage) => {
   // If the path already includes the folder structure, use as-is
   if (bannerImage.startsWith('images/') || bannerImage.startsWith('/images/')) {
-    // If it starts with /, it's already a full path from public folder
-    return bannerImage.startsWith('/') ? bannerImage : getImageUrl(bannerImage);
+    // Strip leading slash if present and use getImageUrl to properly handle S3 URLs
+    const cleanPath = bannerImage.startsWith('/') ? bannerImage.substring(1) : bannerImage;
+    return getImageUrl(cleanPath);
   }
 
   // Otherwise, prepend the banner folder path
