@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { firmInfo } from '../../data/firmData';
+import ContactForm from '../contact-form';
 import './Navigation.css';
 // #endregion
 
@@ -9,6 +10,7 @@ const Navigation = () => {
   // #region State & Hooks
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   // #endregion
@@ -84,42 +86,12 @@ const Navigation = () => {
   const handleContactClick = (e) => {
     e.preventDefault();
     closeMenu();
-
-    // If not on homepage, navigate to homepage first
-    if (location.pathname !== '/') {
-      navigate('/', { state: { scrollToContact: true } });
-    } else {
-      // If already on homepage, just scroll to contact section
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
+    setIsContactFormOpen(true);
   };
 
   // Close mobile menu when route changes
   useEffect(() => {
     setIsMenuOpen(false);
-  }, [location]);
-
-  // Handle scrolling to contact section after navigation
-  useEffect(() => {
-    if (location.pathname === '/' && location.state?.scrollToContact) {
-      // Wait for the page to render
-      setTimeout(() => {
-        const contactSection = document.getElementById('contact');
-        if (contactSection) {
-          const navbarHeight = 80; // Height of the navbar
-          const elementPosition = contactSection.getBoundingClientRect().top + window.pageYOffset;
-          const offsetPosition = elementPosition - navbarHeight;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }
-      }, 100);
-    }
   }, [location]);
 
   // Handle scroll to change navbar background
@@ -141,7 +113,8 @@ const Navigation = () => {
   const isHomePage = location.pathname === '/';
 
   return (
-    <nav className={`navbar ${isScrolled || !isHomePage ? 'scrolled' : ''}`}>
+    <>
+      <nav className={`navbar ${isScrolled || !isHomePage ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <Link to="/" className="nav-logo" onClick={handleLogoClick}>
           {/* <h2>SWARTZ</h2>
@@ -222,6 +195,12 @@ const Navigation = () => {
         </div>
       </div>
     </nav>
+
+    <ContactForm
+      isOpen={isContactFormOpen}
+      onClose={() => setIsContactFormOpen(false)}
+    />
+  </>
   );
   // #endregion
 };

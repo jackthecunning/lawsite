@@ -2,42 +2,116 @@
 
 .offices-fullscreen {
     min-height: 100vh;
-    padding: 100px 40px 40px;
-    background: linear-gradient(#f7f5ef 0%, #fcf2e1 100%);
+    padding: 100px 40px 60px;
+    background: linear-gradient(135deg, #f9f7f3 0%, #fcf2e1 50%, #f0e8d8 100%);
     display: flex;
     flex-direction: column;
-    padding-bottom: 150px;
-    padding-top: 120px;
+    padding-bottom: 80px;
+    padding-top: 140px;
+    position: relative;
+    overflow: hidden;
+}
+
+.offices-fullscreen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 400px;
+    background: radial-gradient(ellipse at top, rgba(197, 165, 114, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.offices-fullscreen::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 300px;
+    background: linear-gradient(to top, rgba(26, 54, 93, 0.03) 0%, transparent 100%);
+    pointer-events: none;
 }
 
 .offices-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-accent-line {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #1a365d 0%, #c5a572 100%);
+    margin: 0 auto 25px;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(197, 165, 114, 0.3);
 }
 
 .offices-header h1 {
     font-family: 'Crimson Text', serif;
-    font-size: 3.5rem;
+    font-size: 4rem;
     color: #1a365d;
-    margin: 0 0 15px 0;
+    margin: 0 0 20px 0;
     font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .offices-header p {
-    font-size: 1.2rem;
-    color: #666;
-    margin: 0;
+    font-size: 1.3rem;
+    color: #555;
+    margin: 0 0 35px 0;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.header-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #1a365d;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.stat-item i {
+    color: #c5a572;
+    font-size: 1.1rem;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 24px;
+    background: linear-gradient(to bottom, transparent, rgba(26, 54, 93, 0.3), transparent);
 }
 
 .offices-grid-fullscreen {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 30px;
+    gap: 35px;
     flex: 1;
-    max-width: 1600px;
+    max-width: 1650px;
     margin: 0 auto;
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 /* Office Tile Styling */
@@ -205,15 +279,27 @@
 
 @media (max-width: 1024px) {
     .offices-fullscreen {
-        padding: 80px 30px 30px;
+        padding: 100px 30px 50px;
+    }
+
+    .offices-header {
+        margin-bottom: 50px;
     }
 
     .offices-header h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
+    }
+
+    .offices-header p {
+        font-size: 1.15rem;
+    }
+
+    .header-stats {
+        gap: 20px;
     }
 
     .offices-grid-fullscreen {
-        gap: 20px;
+        gap: 25px;
     }
 
     .office-tile-header h2 {
@@ -223,16 +309,43 @@
 
 @media (max-width: 768px) {
     .offices-fullscreen {
-        padding: 100px 20px 20px;
+        padding: 90px 20px 40px;
         min-height: auto;
     }
 
+    .offices-header {
+        margin-bottom: 40px;
+    }
+
     .offices-header h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .offices-header p {
+        font-size: 1.05rem;
+        margin-bottom: 25px;
+    }
+
+    .header-accent-line {
+        width: 60px;
+        margin-bottom: 20px;
+    }
+
+    .header-stats {
+        gap: 15px;
+        margin-top: 25px;
+    }
+
+    .stat-item {
+        font-size: 0.85rem;
+    }
+
+    .stat-item i {
         font-size: 1rem;
+    }
+
+    .stat-divider {
+        height: 20px;
     }
 
     .offices-grid-fullscreen {

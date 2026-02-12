@@ -5,6 +5,7 @@ import TeamSearch from '../../components/team/team-search';
 import LocationFilter from '../../components/team/location-filter';
 import TeamCard from '../../components/team/team-card';
 import TeamCTA from '../../components/team/team-cta';
+import ContactForm from '../../components/contact-form';
 import './Team.css';
 
 const Team = () => {
@@ -27,6 +28,7 @@ const Team = () => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [animationClass, setAnimationClass] = useState('fade-in');
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const location = useLocation();
 
   // Handle homepage transition
@@ -201,7 +203,7 @@ const Team = () => {
   }, []);
 
   const scrollToContact = () => {
-    window.location.href = '/#contact';
+    setIsContactFormOpen(true);
   };
 
   if (loading && !isTransitioning) {
@@ -256,6 +258,11 @@ const Team = () => {
       </section>
 
       <TeamCTA onContactClick={scrollToContact} isTransitioning={isTransitioning} />
+
+      <ContactForm
+        isOpen={isContactFormOpen}
+        onClose={() => setIsContactFormOpen(false)}
+      />
     </>
   );
 };

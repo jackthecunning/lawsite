@@ -15,7 +15,6 @@ const Hero = () => {
       '/images/banner/Cleveland.jpeg',
       '/images/banner/NewYork.jpg',
       '/images/banner/Philly.png',
-      '/images/banner/philly_1.png',
       '/images/banner/philly_2.png',
       '/images/banner/philly_3.png',
       '/images/banner/Pittsburg.jpg',

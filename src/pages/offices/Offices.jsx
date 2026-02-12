@@ -1,22 +1,18 @@
 import { Link } from 'react-router-dom';
 import { offices } from '../../data/firmData';
+import { getBannerImageUrl } from '../../utils/imageUtils';
 import './Offices.css';
 
 const Offices = () => {
-  // Helper function to get banner image URL
-  const getBannerImageUrl = (path) => {
-    if (!path) return null;
-    // If it's already a full path starting with /, use it directly
-    return path;
-  };
 
   return (
     <>
       {/* Full-Screen Offices Grid */}
       <section className="offices-fullscreen">
         <div className="offices-header">
+          <div className="header-accent-line"></div>
           <h1>Our Offices</h1>
-          <p>Six locations across the Northeast & Midwest</p>
+          {/* <p>Six strategic locations serving clients across the Northeast & Midwest</p> */}
         </div>
 
         <div className="offices-grid-fullscreen">
@@ -27,7 +23,7 @@ const Offices = () => {
               className="office-tile"
               style={{
                 backgroundImage: office.bannerImage
-                  ? `url(${office.bannerImage})`
+                  ? `url(${getBannerImageUrl(office.bannerImage)})`
                   : 'none'
               }}
             >
