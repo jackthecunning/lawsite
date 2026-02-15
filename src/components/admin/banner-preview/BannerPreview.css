@@ -330,6 +330,8 @@
   justify-content: center;
   overflow: hidden;
   max-height: 800px;
+  container-type: inline-size;
+  container-name: preview;
 }
 
 .preview-hero {
@@ -495,6 +497,63 @@
   color: #92400e;
   display: block;
   margin-bottom: 0.25rem;
+}
+
+/* Container Queries for Responsive Text in Previews */
+/* These make the text behave the same as it would at actual screen sizes */
+
+@container preview (max-width: 768px) {
+  .preview-hero .legal-excellence {
+    font-size: 1.4rem;
+  }
+  .preview-hero .anniversary-wrapper {
+    font-size: 1.4rem;
+  }
+  .preview-hero .hero h1 {
+    font-size: 2.5rem;
+  }
+  .preview-hero .firm-name-main {
+    font-size: 2.8rem !important;
+    letter-spacing: 1px;
+  }
+  .preview-hero .anniversary-text {
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: nowrap;
+    font-size: 1.4rem !important;
+  }
+}
+
+@container preview (max-width: 480px) {
+  .preview-hero .legal-excellence {
+    font-size: 1.2rem;
+  }
+  .preview-hero .anniversary-wrapper {
+    font-size: 1.2rem;
+  }
+  .preview-hero .hero {
+    padding: 100px 0 60px;
+  }
+  .preview-hero .hero h1 {
+    font-size: 2rem;
+  }
+  .preview-hero .firm-name-main {
+    font-size: 2.2rem !important;
+    letter-spacing: 0.5px;
+  }
+  .preview-hero .firm-name-main::after {
+    width: 60px;
+    height: 2px;
+  }
+  .preview-hero .anniversary-text {
+    font-size: 1.2rem !important;
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+  .preview-hero .hero p {
+    font-size: 1rem;
+  }
 }
 
 /* Responsive Design */

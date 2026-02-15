@@ -3,6 +3,7 @@ import { loadHistory } from '../../utils/historyLoader';
 import ContentImage from '../../components/content-image';
 import BannerImage from '../../components/banner-image';
 import './history.css';
+import philly2Banner from '/images/banner/philly_2.png';
 
 const History = () => {
   const [historyData, setHistoryData] = useState(null);
@@ -23,7 +24,7 @@ const History = () => {
     <>
       <section className="page-hero history-hero">
         <BannerImage
-          src="images/banner/philly_2.png"
+          src={philly2Banner}
           alt="Philadelphia Skyline"
           className="hero-banner-image"
         />

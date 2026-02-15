@@ -1,3 +1,10 @@
+// Import news images
+import appellateCase from '/images/news/appellate-case.jpg';
+import environmentalVictory from '/images/news/environmental-victory.jpg';
+import medicalSettlement from '/images/news/medical-settlement.jpg';
+import municipalCase from '/images/news/municipal-case.jpg';
+import newAttorney from '/images/news/new-attorney.jpg';
+
 export const newsArticles = [
   {
     id: 1,
@@ -6,7 +13,7 @@ export const newsArticles = [
     date: "2024-10-15",
     author: "John Swartz",
     category: "Appellate Law",
-    image: "images/news/appellate-case.jpg",
+    image: appellateCase,
     articleFile: "appellate-advocacy.txt",
     featured: true
   },
@@ -17,7 +24,7 @@ export const newsArticles = [
     date: "2024-09-28",
     author: "Sarah Campbell",
     category: "Environmental Law",
-    image: "images/news/environmental-victory.jpg",
+    image: environmentalVictory,
     articleFile: "blue-green-initiative.txt",
     featured: true
   },
@@ -28,7 +35,7 @@ export const newsArticles = [
     date: "2024-09-10",
     author: "Michael Torres",
     category: "Medical Malpractice",
-    image: "images/news/medical-settlement.jpg",
+    image: medicalSettlement,
     articleFile: "lemons-meguerian-settlement.txt",
     featured: false
   },
@@ -39,7 +46,7 @@ export const newsArticles = [
     date: "2024-08-22",
     author: "Jennifer Martinez",
     category: "Constitutional Law",
-    image: "images/news/federal-appeal.jpg",
+    image: appellateCase,
     articleFile: "goodwin-appeal.txt",
     featured: false
   },
@@ -50,7 +57,7 @@ export const newsArticles = [
     date: "2024-08-05",
     author: "David Thompson",
     category: "Municipal Law",
-    image: "images/news/municipal-case.jpg",
+    image: municipalCase,
     articleFile: "pencoyd-development.txt",
     featured: false
   },
@@ -61,7 +68,7 @@ export const newsArticles = [
     date: "2024-07-18",
     author: "Robert Chen",
     category: "Personal Injury",
-    image: "images/news/personal-injury-victory.jpg",
+    image: medicalSettlement,
     articleFile: "guerin-article.txt",
     featured: false
   },
@@ -72,7 +79,7 @@ export const newsArticles = [
     date: "2024-06-15",
     author: "Firm Administration",
     category: "Firm News",
-    image: "images/news/new-attorney.jpg",
+    image: newAttorney,
     articleFile: "jeff-mccarron-joins-firm.txt",
     featured: false
   }

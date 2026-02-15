@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './Women.css';
 import DiversityPageHero from '../../components/diversity/page-hero';
 import { getImageUrl } from '../../utils/imageUtils';
+import phillyBanner from '/images/banner/Philly.png';
 
 const Women = () => {
   const [womenContent, setWomenContent] = useState(null);
@@ -17,7 +18,7 @@ const Women = () => {
     <>
       <DiversityPageHero
         title="THE WOMEN OF SWARTZ CAMPBELL"
-        bannerImage="images/banner/philly_1.png"
+        bannerImage={phillyBanner}
       />
 
       <section className="content-section-women section-light">

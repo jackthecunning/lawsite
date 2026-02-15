@@ -1,5 +1,6 @@
 import './HeritageSection.css';
 import { services, offices } from '../../../data/firmData';
+import heritageImage from '/images/home/heritage.jpeg';
 
 const HeritageSection = ({ yearsSinceFounding }) => {
   return (
@@ -37,7 +38,7 @@ const HeritageSection = ({ yearsSinceFounding }) => {
           </div>
           <div className="heritage-image">
             <div className="image-frame">
-              <img src="/images/home/heritage.jpeg" alt="Legal Heritage" />
+              <img src={heritageImage} alt="Legal Heritage" />
             </div>
           </div>
         </div>

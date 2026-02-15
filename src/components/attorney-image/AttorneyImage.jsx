@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { getAttorneyImageUrl } from '../../utils/imageUtils';
+import defaultAttorney from '/images/defaults/default-attorney.svg';
 
 const AttorneyImage = ({
   src,
@@ -22,8 +23,8 @@ const AttorneyImage = ({
 
   // Use default image if there's an error or no src provided
   const imageSrc = imageError || !src
-    ? '/images/defaults/default-attorney.svg'
-    : getAttorneyImageUrl(src);
+    ? defaultAttorney
+    : (typeof src === 'string' ? getAttorneyImageUrl(src) : src);
 
   return (
     <div className={`attorney-image-container ${className}`} style={style}>
