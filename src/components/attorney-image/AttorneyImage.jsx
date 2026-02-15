@@ -5,7 +5,8 @@ const AttorneyImage = ({
   src,
   alt,
   className = '',
-  style = {}
+  style = {},
+  priority = false
 }) => {
   const [imageError, setImageError] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -36,6 +37,7 @@ const AttorneyImage = ({
         alt={alt || 'Attorney'}
         onError={handleImageError}
         onLoad={handleImageLoad}
+        loading={priority ? 'eager' : 'lazy'}
         style={{
           display: loading ? 'none' : 'block',
           width: '100%',

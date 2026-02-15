@@ -1,4 +1,5 @@
 import './TeamCTA.css';
+import { Link } from 'react-router-dom';
 
 const TeamCTA = ({ onContactClick, isTransitioning }) => {
   return (
@@ -8,12 +9,9 @@ const TeamCTA = ({ onContactClick, isTransitioning }) => {
           <h2>Ready to Work with Our Team?</h2>
           <p>Contact us today and let us put our experience to work for you.</p>
           <div className="cta-buttons">
-            <button onClick={onContactClick} className="btn btn-primary">
-              Contact Us
-            </button>
-            <a href="tel:555-123-4567" className="btn btn-secondary">
-              Call Now
-            </a>
+            <Link to="/careers" className="btn btn-primary">
+              See Open Jobs
+            </Link>
           </div>
         </div>
       </div>

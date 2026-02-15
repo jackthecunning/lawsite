@@ -57,14 +57,23 @@
 	justify-content: center;
 	width: 40px;
 	height: 40px;
-	background-color: var(--color-secondary);
+	background-color: #ffffff;
 	border-radius: 50%;
 	transition: all 0.3s ease;
+}
+
+.social-links a i {
+	color: #1a365d;
+	font-size: 18px;
 }
 
 .social-links a:hover {
 	background-color: var(--color-primary);
 	transform: translateY(-2px);
+}
+
+.social-links a:hover i {
+	color: #ffffff;
 }
 
 .footer-bottom {

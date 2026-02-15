@@ -196,7 +196,7 @@ export const offices = [
     fax: '(856) 234-5601',
     email: 'mloffice@swartzcampbell.com',
     hours: 'Monday - Friday: 9:00 AM - 5:00 PM',
-    bannerImage: '/images/fighter-jet.jpg'
+    bannerImage: '/images/defaults/fighter-jet.jpg'
   },
   {
     id: 'baltimore',

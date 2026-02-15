@@ -13,11 +13,11 @@ const ContactSection = () => {
         <div className="container">
           <div className="contact-hero">
             <div className="contact-hero-content">
-              <div className="hero-badge">
+              {/* <div className="hero-badge">
                 <i className="fas fa-phone-alt"></i>
                 <span>Get in Touch</span>
-              </div>
-              <h2>Ready to Discuss Your Legal Needs?</h2>
+              </div> */}
+              <h2>Let's Get in Touch</h2>
               <p className="lead-text">
                 Our experienced attorneys are here to provide the guidance and representation you need.
                 Contact us today for a consultation.
@@ -53,7 +53,7 @@ const ContactSection = () => {
               </div>
             </div>
 
-            <div className="contact-hero-features">
+            {/* <div className="contact-hero-features">
               <Link to="/offices" className="feature-card">
                 <div className="feature-icon">
                   <i className="fas fa-map-marked-alt"></i>
@@ -86,7 +86,7 @@ const ContactSection = () => {
                   <i className="fas fa-arrow-right"></i>
                 </div>
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

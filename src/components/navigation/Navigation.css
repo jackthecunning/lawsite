@@ -92,14 +92,18 @@
     z-index: 1000;
     box-shadow: rgba(var(--color-secondary-rgb), 0.3);
     transform: translateY(0);
-    transition: var(--transition-base);
+    transition: transform 0.3s ease, background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.navbar.hidden,
+.navbar.hidden.scrolled {
+    transform: translateY(-100%) !important;
 }
 
 .navbar.scrolled {
     background:  rgba(var(--color-secondary-rgb), 0.85);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 20px rgba(26, 54, 93, 0.5);
-    transform: translateY(0);
 }
 
 .nav-container {

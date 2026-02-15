@@ -10,6 +10,8 @@ const Navigation = () => {
   // #region State & Hooks
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -94,15 +96,32 @@ const Navigation = () => {
     setIsMenuOpen(false);
   }, [location]);
 
-  // Handle scroll to change navbar background
+  // Handle scroll to change navbar background and visibility
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+
+      // Update background based on scroll position
+      setIsScrolled(currentScrollY > 50);
+
+      // Update visibility based on scroll direction
+      if (currentScrollY < 10) {
+        // Always show at the top
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY) {
+        // Scrolling down - show navbar
+        setIsVisible(true);
+      } else {
+        // Scrolling up - hide navbar
+        setIsVisible(false);
+      }
+
+      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const isActive = (path) => {
     if (path === '/' && location.pathname === '/') return true;
@@ -114,7 +133,7 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className={`navbar ${isScrolled || !isHomePage ? 'scrolled' : ''}`}>
+      <nav className={`navbar ${isScrolled || !isHomePage ? 'scrolled' : ''} ${!isVisible ? 'hidden' : ''}`}>
       <div className="nav-container">
         <Link to="/" className="nav-logo" onClick={handleLogoClick}>
           {/* <h2>SWARTZ</h2>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import AttorneyImage from '../attorney-image';
 import './AttorneyCarouselCard.css';
 
-const AttorneyCarouselCard = ({ attorney }) => (
+const AttorneyCarouselCard = ({ attorney, priority = false }) => (
   <Link
     to={`/attorney/${attorney.slug}`}
     className="attorney-carousel-card-link"
@@ -13,6 +13,7 @@ const AttorneyCarouselCard = ({ attorney }) => (
         <AttorneyImage
           src={attorney.image}
           alt={attorney.name}
+          priority={priority}
         />
       </div>
       <div className="attorney-carousel-card-info">

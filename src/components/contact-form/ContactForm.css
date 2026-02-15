@@ -34,17 +34,21 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(197, 165, 114, 0.1);
   z-index: 9999;
   overflow: hidden;
-  animation: slideIn 0.3s ease-out;
+  animation: slideIn 0.15s ease-out;
 }
 
 @keyframes slideIn {
-  from {
+  0% {
     opacity: 0;
-    transform: translate(-50%, -45%);
+    transform: translate(-50%, -60%) scale(0.8);
   }
-  to {
+  50% {
     opacity: 1;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 
@@ -98,10 +102,10 @@
   font-size: 1rem;
   box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
   z-index: 11;
-  animation: slideDown 0.4s ease-out;
+  animation: successSlideDown 0.4s ease-out;
 }
 
-@keyframes slideDown {
+@keyframes successSlideDown {
   from {
     opacity: 0;
     transform: translateX(-50%) translateY(-20px);
@@ -188,7 +192,7 @@
   border-radius: 4px;
   font-size: 1rem;
   font-family: inherit;
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
   background: white;
 }
 
@@ -221,7 +225,7 @@
   font-weight: 700;
   letter-spacing: 1px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   margin-top: 10px;
 }
 
@@ -251,7 +255,7 @@
   font-size: 0.95rem;
   letter-spacing: 0.5px;
   color: #1a365d;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, border-left-color 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
 }
 
@@ -280,11 +284,11 @@
 .office-accordion-content {
   padding: 20px;
   background: #fafafa;
-  animation: slideDown 0.3s ease-out;
+  animation: accordionSlideDown 0.3s ease-out;
   border-left: 4px solid rgba(197, 165, 114, 0.15);
 }
 
-@keyframes slideDown {
+@keyframes accordionSlideDown {
   from {
     opacity: 0;
     max-height: 0;
@@ -331,7 +335,7 @@
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9rem;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .directions-link:hover {

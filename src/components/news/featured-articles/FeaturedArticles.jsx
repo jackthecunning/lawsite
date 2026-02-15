@@ -15,7 +15,7 @@ const FeaturedArticles = ({ articles, formatDate }) => {
             className="featured-article"
           >
             <div className="featured-image">
-              <img src={`/${article.image}`} alt={article.title} />
+              <img src={`/${article.image}`} alt={article.title} loading="lazy" />
               <div className="featured-badge">Featured</div>
             </div>
             <div className="featured-content">

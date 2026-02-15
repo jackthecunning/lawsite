@@ -5,7 +5,8 @@ const BannerImage = ({
   src,
   alt = 'Banner Image',
   className = '',
-  style = {}
+  style = {},
+  priority = true
 }) => {
   const [imageError, setImageError] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -36,6 +37,7 @@ const BannerImage = ({
         alt={alt}
         onError={handleImageError}
         onLoad={handleImageLoad}
+        loading={priority ? 'eager' : 'lazy'}
         style={{
           display: loading ? 'none' : 'block',
           width: '100%',

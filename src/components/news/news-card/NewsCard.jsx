@@ -5,7 +5,7 @@ const NewsCard = ({ article, formatDate }) => {
   return (
     <Link to={`/news/${article.id}`} className="news-card">
       <div className="news-image">
-        <img src={`/${article.image}`} alt={article.title} />
+        <img src={`/${article.image}`} alt={article.title} loading="lazy" />
         <div className="category-badge">{article.category}</div>
       </div>
       <div className="news-content">

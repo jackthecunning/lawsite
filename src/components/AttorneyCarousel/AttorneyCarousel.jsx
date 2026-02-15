@@ -96,8 +96,12 @@ const AttorneyCarousel = ({ attorneys }) => {
             className="attorneys-carousel-track"
             style={{ transform: getCarouselTransform() }}
           >
-            {attorneys.map((attorney) => (
-              <AttorneyCarouselCard key={attorney.id} attorney={attorney} />
+            {attorneys.map((attorney, index) => (
+              <AttorneyCarouselCard
+                key={attorney.id}
+                attorney={attorney}
+                priority={index < cardsToShow}
+              />
             ))}
           </div>
         </div>

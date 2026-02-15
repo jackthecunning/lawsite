@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import AttorneyImage from '../../attorney-image';
 import './TeamCard.css';
 
-const TeamCard = ({ attorney, index }) => {
+const TeamCard = ({ attorney, index, priority = false }) => {
   return (
     <Link
       to={`/attorney/${attorney.slug}`}
@@ -16,6 +16,7 @@ const TeamCard = ({ attorney, index }) => {
           <AttorneyImage
             src={attorney.image}
             alt={attorney.name}
+            priority={priority}
           />
         </div>
         <div className="team-card-info">

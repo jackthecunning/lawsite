@@ -251,7 +251,12 @@ const Team = () => {
 
           <div className={`team-cards-grid ${animationClass}`}>
             {displayedAttorneys.map((attorney, index) => (
-              <TeamCard key={attorney.id} attorney={attorney} index={index} />
+              <TeamCard
+                key={attorney.id}
+                attorney={attorney}
+                index={index}
+                priority={index < 6}
+              />
             ))}
           </div>
         </div>

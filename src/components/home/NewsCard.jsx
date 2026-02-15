@@ -11,7 +11,7 @@ const NewsCard = ({ article, index }) => {
     >
       {isFeatured && article.image && (
         <div className="news-card-image">
-          <img src={article.image} alt={article.title} />
+          <img src={article.image} alt={article.title} loading="lazy" />
         </div>
       )}
 
