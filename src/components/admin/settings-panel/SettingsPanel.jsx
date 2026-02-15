@@ -1,12 +1,17 @@
 import './SettingsPanel.css';
 
-function SettingsPanel({ onEditOffices, onEditPracticeAreas, onEditContent }) {
+function SettingsPanel({ onEditOffices, onEditPracticeAreas, onEditContent, onBannerPreview }) {
   return (
     <div className="panel">
       <div className="panel-header">
         <h2>Site Settings</h2>
       </div>
       <div className="settings-grid">
+        <div className="setting-card">
+          <h3>Banner Preview</h3>
+          <p>Preview how banner images appear across different screen sizes</p>
+          <button className="btn-secondary" onClick={onBannerPreview}>Preview Banners</button>
+        </div>
         <div className="setting-card">
           <h3>Image Management</h3>
           <p>Upload and manage images for attorneys, news, and content</p>

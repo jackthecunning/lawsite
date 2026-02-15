@@ -4,7 +4,7 @@
   position: relative;
   margin-top: 80px;
   width: 100%;
-  height: clamp(340px, 50vh, 420px);
+  height: clamp(450px, 60vh, 550px);
   overflow: hidden;
   display: flex;
   align-items: center;

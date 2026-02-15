@@ -28,6 +28,11 @@
         box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     }
 
+    /* Keep navbar always visible on mobile */
+    .navbar.hidden {
+        transform: translateY(0) !important;
+    }
+
     .navbar .nav-logo h2 {
         color: #1a365d !important;
         text-shadow: none !important;

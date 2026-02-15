@@ -64,6 +64,11 @@ const Attorneys = () => {
   const featuredAttorneys = attorneys.filter(attorney =>
     attorney.title && attorney.title.toLowerCase().includes('partner')
   );
+
+  // Debug logging
+  console.log('Total attorneys:', attorneys.length);
+  console.log('Featured attorneys (partners):', featuredAttorneys.length);
+  console.log('Featured attorneys:', featuredAttorneys);
   // #endregion
 
   // #region Handler Functions

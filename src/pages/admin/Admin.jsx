@@ -5,6 +5,7 @@ import SettingsPanel from '../../components/admin/settings-panel';
 import OfficesPanel from '../../components/admin/offices-panel';
 import PracticeAreasPanel from '../../components/admin/practice-areas-panel';
 import ContentPanel from '../../components/admin/content-panel';
+import BannerPreview from '../../components/admin/banner-preview';
 import EditModal from '../../components/admin/edit-modal';
 import './Admin.css';
 
@@ -251,11 +252,16 @@ function Admin() {
             <ContentPanel
               onBack={() => setActiveSubPanel(null)}
             />
+          ) : activeSubPanel === 'banner-preview' ? (
+            <BannerPreview
+              onBack={() => setActiveSubPanel(null)}
+            />
           ) : (
             <SettingsPanel
               onEditOffices={() => setActiveSubPanel('offices')}
               onEditPracticeAreas={() => setActiveSubPanel('practice-areas')}
               onEditContent={() => setActiveSubPanel('content')}
+              onBannerPreview={() => setActiveSubPanel('banner-preview')}
             />
           )
         )}

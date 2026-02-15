@@ -1,6 +1,7 @@
 import './Careers.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import careersBannerImage from '/images/banner/Cleveland.jpeg';
 
 const Careers = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -90,7 +91,7 @@ const Careers = () => {
       {/* Careers Hero Section */}
       <section className="careers-hero">
         <div className="hero-background">
-          <div className="hero-slide active" style={{ backgroundImage: "url('/images/banner/Cleveland.jpeg')" }}></div>
+          <div className="hero-slide active" style={{ backgroundImage: `url(${careersBannerImage})` }}></div>
         </div>
         <div className="hero-overlay"></div>
         <div className="hero-content">
