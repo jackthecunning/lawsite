@@ -271,6 +271,140 @@
   font-size: 0.95rem;
 }
 
+.position-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.control-group label {
+  color: #1a365d;
+  font-weight: 500;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.control-group label strong {
+  color: #c5a572;
+  margin-left: 0.5rem;
+}
+
+.position-slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #e2e8f0 0%, #c5a572 50%, #e2e8f0 100%);
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.position-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #c5a572;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+
+.position-slider::-webkit-slider-thumb:hover {
+  background: #b39563;
+  transform: scale(1.1);
+}
+
+.position-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #c5a572;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+
+.position-slider::-moz-range-thumb:hover {
+  background: #b39563;
+  transform: scale(1.1);
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+.height-input {
+  padding: 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.height-input:focus {
+  outline: none;
+  border-color: #c5a572;
+  box-shadow: 0 0 0 3px rgba(197, 165, 114, 0.1);
+}
+
+.height-input::placeholder {
+  color: #94a3b8;
+}
+
+.btn-clear-height,
+.btn-reset-position {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: #f1f5f9;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.btn-clear-height:hover,
+.btn-reset-position:hover {
+  background: #e2e8f0;
+  color: #475569;
+  border-color: #94a3b8;
+}
+
+.btn-reset-position {
+  width: 100%;
+  justify-content: center;
+  background: #c5a572;
+  color: white;
+  border-color: #c5a572;
+}
+
+.btn-reset-position:hover {
+  background: #b39563;
+  border-color: #b39563;
+  color: white;
+}
+
 .preview-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -328,10 +462,16 @@
   background: #f1f5f9;
   display: flex;
   justify-content: center;
-  overflow: hidden;
-  max-height: 800px;
+  align-items: flex-start;
+  overflow: auto;
+  max-height: 1000px;
+}
+
+.preview-scale-wrapper {
+  /* Container for viewport simulation */
   container-type: inline-size;
-  container-name: preview;
+  container-name: deviceview;
+  transform-origin: top left;
 }
 
 .preview-hero {
@@ -339,8 +479,37 @@
   border-radius: 8px;
   overflow: hidden !important;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-  width: 100%;
   position: relative;
+}
+
+.preview-hero .hero-background,
+.preview-hero .hero-slide,
+.preview-hero .hero-banner-image {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.preview-hero .hero-slide {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+.preview-careers-hero {
+  margin: 0 !important;
+  border-radius: 8px;
+  overflow: hidden !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.preview-careers-hero .hero-background,
+.preview-careers-hero .hero-slide {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.preview-careers-hero .hero-slide {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
 }
 
 .preview-banner {
@@ -499,60 +668,62 @@
   margin-bottom: 0.25rem;
 }
 
-/* Container Queries for Responsive Text in Previews */
-/* These make the text behave the same as it would at actual screen sizes */
+/* Override viewport-based sizing with container-based sizing for previews */
+/* This makes the text respond to the preview container width instead of browser viewport */
+.preview-hero .firm-name-main {
+  font-size: clamp(3rem, 8.5cqi, 8.5rem);
+}
 
-@container preview (max-width: 768px) {
-  .preview-hero .legal-excellence {
-    font-size: 1.4rem;
+/* Simulate Hero component's media query breakpoints using container queries */
+/* Tablet: Matches @media (max-width: 768px) from Hero.css */
+@container deviceview (max-width: 768px) {
+  .preview-hero .firm-name-main {
+    font-size: 2.8rem;
+    letter-spacing: 1px;
   }
   .preview-hero .anniversary-wrapper {
     font-size: 1.4rem;
   }
-  .preview-hero .hero h1 {
-    font-size: 2.5rem;
-  }
-  .preview-hero .firm-name-main {
-    font-size: 2.8rem !important;
-    letter-spacing: 1px;
+  .preview-hero .legal-excellence {
+    font-size: 1.4rem;
   }
   .preview-hero .anniversary-text {
     flex-direction: row;
     gap: 8px;
     flex-wrap: nowrap;
-    font-size: 1.4rem !important;
+    font-size: 1.4rem;
+  }
+  .preview-hero .hero h1 {
+    font-size: 2.5rem;
   }
 }
 
-@container preview (max-width: 480px) {
-  .preview-hero .legal-excellence {
-    font-size: 1.2rem;
+/* Mobile: Matches @media (max-width: 480px) from Hero.css */
+@container deviceview (max-width: 480px) {
+  .preview-hero .firm-name-main {
+    font-size: 2.2rem;
+    letter-spacing: 0.5px;
   }
   .preview-hero .anniversary-wrapper {
     font-size: 1.2rem;
+  }
+  .preview-hero .legal-excellence {
+    font-size: 1.2rem;
+  }
+  .preview-hero .anniversary-text {
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: nowrap;
+    font-size: 1.2rem;
+  }
+  .preview-hero .hero p {
+    font-size: 1rem;
   }
   .preview-hero .hero {
     padding: 100px 0 60px;
   }
   .preview-hero .hero h1 {
     font-size: 2rem;
-  }
-  .preview-hero .firm-name-main {
-    font-size: 2.2rem !important;
-    letter-spacing: 0.5px;
-  }
-  .preview-hero .firm-name-main::after {
-    width: 60px;
-    height: 2px;
-  }
-  .preview-hero .anniversary-text {
-    font-size: 1.2rem !important;
-    flex-direction: row;
-    gap: 8px;
-    flex-wrap: nowrap;
-  }
-  .preview-hero .hero p {
-    font-size: 1rem;
   }
 }
 

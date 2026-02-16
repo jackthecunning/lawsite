@@ -1,6 +1,8 @@
+
 import { useState } from 'react';
 import { getAttorneyImageUrl } from '../../utils/imageUtils';
 import defaultAttorney from '/images/defaults/default-attorney.svg';
+
 
 const AttorneyImage = ({
   src,
@@ -21,10 +23,19 @@ const AttorneyImage = ({
     setLoading(false);
   };
 
-  // Use default image if there's an error or no src provided
-  const imageSrc = imageError || !src
-    ? defaultAttorney
-    : (typeof src === 'string' ? getAttorneyImageUrl(src) : src);
+
+  // Use public URL for attorney images
+  let imageSrc;
+  if (imageError || !src) {
+    imageSrc = defaultAttorney;
+  } else if (typeof src === 'string') {
+    // If the src already starts with /images/attorneys, use as is, else prepend
+    imageSrc = src.startsWith('/images/attorneys') || src.startsWith('images/attorneys')
+      ? (src.startsWith('/') ? src : '/' + src)
+      : `/images/attorneys/${src}`;
+  } else {
+    imageSrc = defaultAttorney;
+  }
 
   return (
     <div className={`attorney-image-container ${className}`} style={style}>

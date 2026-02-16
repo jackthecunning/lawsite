@@ -1,16 +1,16 @@
-.location-filter {
+.location-filter-mot {
   margin-bottom: 40px;
   text-align: center;
 }
 
-.location-filter h3 {
+.location-filter-mot h3 {
   font-family: 'Crimson Text', serif;
   font-size: 1.3rem;
   color: #1a365d;
   margin-bottom: 20px;
 }
 
-.filter-buttons {
+.filter-buttons-mot {
   display: flex;
   justify-content: center;
   gap: 15px;
@@ -18,31 +18,45 @@
   flex-wrap: wrap;
 }
 
-.filter-btn {
-  padding: 10px 20px;
-  border: 2px solid #c5a572;
-  background-color: transparent;
-  color: #c5a572;
-  border-radius: 25px;
-  font-weight: 600;
+
+.filter-btn-mot {
+  padding: 11px 22px;
+  border: 1.5px solid #e2d6c2;
+  background-color: #faf9f7;
+  color: #3a4a5d;
+  border-radius: 22px;
+  font-weight: 500;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-size: 0.83rem;
+  letter-spacing: 0.01em;
   cursor: pointer;
-  transition: all 0.3s ease;
-  min-width: 120px;
+  /* No transition for instant state change */
+  min-width: 110px;
+  box-shadow: 0 1px 4px rgba(26, 54, 93, 0.04);
+  outline: none;
+  position: relative;
+  z-index: 1;
 }
 
-.filter-btn:hover {
-  background-color: #c5a572;
-  color: white;
-  transform: translateY(-2px);
+
+.filter-btn-mot:hover {
+  background: #f5f3ef;
+  color: #7a6a4d;
+  border-color: #e2d6c2;
+  box-shadow: 0 2px 8px rgba(197, 165, 114, 0.07);
+  transform: none;
 }
 
-.filter-btn.active {
-  background-color: #c5a572;
-  color: white;
-  box-shadow: 0 4px 8px rgba(197, 165, 114, 0.3);
+
+.filter-btn-mot.active-mot {
+  background: #e7e0d0;
+  color: #3a4a5d;
+  border-color: #e2d6c2;
+  box-shadow: 0 2px 8px rgba(197, 165, 114, 0.09);
+  transform: none;
 }
 
-.filter-results {
+.filter-results-mot {
   color: #64748b;
   font-style: italic;
   font-size: 0.95rem;
