@@ -2,8 +2,23 @@ import { Link } from 'react-router-dom';
 import { offices } from '../../data/firmData';
 import { getBannerImageUrl } from '../../utils/imageUtils';
 import './Offices.css';
+import { useEffect } from 'react';
+
+const preloadBannerImages = (offices) => {
+  if (typeof window === 'undefined') return;
+  offices.forEach((office) => {
+    if (office.bannerImage) {
+      const url = getBannerImageUrl(office.bannerImage);
+      const img = new window.Image();
+      img.src = url;
+    }
+  });
+};
 
 const Offices = () => {
+  useEffect(() => {
+    preloadBannerImages(offices);
+  }, []);
 
   return (
     <>

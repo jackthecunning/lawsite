@@ -1,1 +1,25 @@
-/* Office hero styles are inherited from page-hero in about-pages.css */
+/* Office hero styles - extends page-hero with improved text readability */
+
+/* Taller hero banner for office pages */
+/* .office-page-hero {
+    height: 450px;
+} */
+
+/* Darker overlay for office hero banners */
+/* .office-page-hero:has(.page-hero-background) .hero-overlay {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.6) 100%);
+} */
+
+/* Position banner images higher to show more skyline */
+/* .office-page-hero .page-hero-banner-image img {
+    object-position: center 35%;
+} */
+
+/* Text shadows for better contrast */
+/* .office-page-hero h1 {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.office-page-hero p {
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+} */

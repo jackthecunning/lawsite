@@ -1,6 +1,6 @@
 /* #region Services Section */
 .services {
-    padding: 120px 40px 120px 40px;
+    padding: 160px 40px 160px 40px;
     background: linear-gradient(180deg, #f7f5ef 0%, #d9e6f2 15%, #dce9f5 50%, #dce9f5 85%, #f7f5ef 100%);
     position: relative;
     overflow: hidden;
@@ -274,8 +274,7 @@
 
     .practice-areas-simple-list {
         grid-template-columns: 1fr;
-        gap: 14px;
-        margin-top: 40px;
+        gap: 15px;
     }
 
     .practice-area-name {

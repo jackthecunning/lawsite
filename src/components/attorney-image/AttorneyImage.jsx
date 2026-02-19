@@ -49,7 +49,7 @@ const AttorneyImage = ({
         alt={alt || 'Attorney'}
         onError={handleImageError}
         onLoad={handleImageLoad}
-        loading={priority ? 'eager' : 'lazy'}
+        loading="eager"
         style={{
           display: loading ? 'none' : 'block',
           width: '100%',

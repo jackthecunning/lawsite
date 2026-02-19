@@ -168,8 +168,10 @@ const Team = () => {
   const handleLocationChange = (location) => {
     if (location === selectedLocation || isAnimating) return;
 
+    // Set button state immediately for instant color change
+    setSelectedLocation(location);
+
     handleFilterTransition(() => {
-      setSelectedLocation(location);
       setDisplayedAttorneys(getFilteredAttorneys(location, searchQuery));
     });
   };

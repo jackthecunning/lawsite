@@ -2,28 +2,38 @@ import './OfficeContactCard.css';
 
 const OfficeContactCard = ({ office }) => {
   return (
-    <div className="office-card">
+    <div className="office-card redesigned-contact">
       <div className="office-details">
-        <p>
+        <div className="contact-row">
           <i className="fas fa-map-marker-alt"></i>
-          <span>
+          <div className="contact-info">
+            <strong>Address:</strong><br />
             {office.address}<br />
             {office.addressLine2 && <>{office.addressLine2}<br /></>}
             {office.city}
-          </span>
-        </p>
-        <p>
+          </div>
+        </div>
+        <div className="contact-row">
           <i className="fas fa-phone"></i>
-          <a href={`tel:${office.phone.replace(/[^0-9]/g, '')}`}>{office.phone}</a>
-        </p>
-        <p>
+          <div className="contact-info">
+            <strong>Phone:</strong><br />
+            <a href={`tel:${office.phone.replace(/[^0-9]/g, '')}`}>{office.phone}</a>
+          </div>
+        </div>
+        <div className="contact-row">
           <i className="fas fa-envelope"></i>
-          <a href={`mailto:${office.email}`}>{office.email}</a>
-        </p>
-        <p>
+          <div className="contact-info">
+            <strong>Email:</strong><br />
+            <a href={`mailto:${office.email}`}>{office.email}</a>
+          </div>
+        </div>
+        <div className="contact-row">
           <i className="fas fa-clock"></i>
-          <span>{office.hours}</span>
-        </p>
+          <div className="contact-info">
+            <strong>Hours:</strong><br />
+            {office.hours}
+          </div>
+        </div>
       </div>
     </div>
   );
