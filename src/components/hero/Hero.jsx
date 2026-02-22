@@ -4,15 +4,18 @@ import { useState, useEffect } from 'react';
 import BannerImage from '../banner-image';
 
 // Import all banner images
-import baltimoreBanner from '/images/banner/Baltimore.jpeg';
-import clevelandBanner from '/images/banner/Cleveland.jpeg';
-import newYorkBanner from '/images/banner/NewYork.jpg';
-import phillyBanner from '/images/banner/Philly.png';
-import philly2Banner from '/images/banner/philly_2.png';
-import philly3Banner from '/images/banner/philly_3.png';
-import pittsburgBanner from '/images/banner/Pittsburg.jpg';
-import wilmingtonBanner from '/images/banner/Wilmington.jpeg';
-import defaultBanner from '/images/defaults/default-banner.svg';
+import { getImageUrl } from '../../utils/imageUtils';
+const bannerImagePaths = [
+  'images/banner/Baltimore.jpeg',
+  'images/banner/Cleveland.jpeg',
+  'images/banner/NewYork.jpg',
+  'images/banner/Philly.png',
+  'images/banner/philly_2.png',
+  'images/banner/philly_3.png',
+  'images/banner/Pittsburg.jpg',
+  'images/banner/Wilmington.jpeg'
+];
+const defaultBanner = getImageUrl('images/defaults/default-banner.svg');
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -20,18 +23,8 @@ const Hero = () => {
 
   // Dynamically load all banner images
   useEffect(() => {
-    // Use imported banner images
-    const bannerImages = [
-      baltimoreBanner,
-      clevelandBanner,
-      newYorkBanner,
-      phillyBanner,
-      philly2Banner,
-      philly3Banner,
-      pittsburgBanner,
-      wilmingtonBanner
-    ];
-
+    // Use getImageUrl to resolve all banner image paths
+    const bannerImages = bannerImagePaths.map(getImageUrl);
     setSlides(bannerImages);
   }, []);
 

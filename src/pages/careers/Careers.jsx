@@ -1,7 +1,7 @@
 import './Careers.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import careersBannerImage from '/images/banner/Cleveland.jpeg';
+import { getImageUrl } from '../../utils/imageUtils';
 import HeroWide from '../../components/hero-wide';
 
 const Careers = () => {
@@ -90,7 +90,7 @@ const Careers = () => {
   return (
     <div className={`page-container ${isTransitioning ? 'page-transitioning' : ''}`}>
       {/* Careers Hero Section replaced by HeroWide */}
-      <HeroWide backgroundImage={careersBannerImage}>
+      <HeroWide backgroundImage={getImageUrl('images/banner/Cleveland.jpeg')}>
         <h1>Join Our Team</h1>
         {/* <p>Build Your Career with Swartz Campbell</p>
         <p>Discover opportunities to grow and make a difference in the legal profession</p> */}
