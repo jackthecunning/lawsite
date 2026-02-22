@@ -1,4 +1,5 @@
 import AttorneyImage from '../../attorney-image';
+import { getAttorneyImageUrl } from '../../../utils/attorneyImageUtils';
 import './AttorneySummary.css';
 
 const AttorneySummary = ({ attorney }) => {
@@ -6,7 +7,7 @@ const AttorneySummary = ({ attorney }) => {
     <div className="team-detail-sidebar">
       <div className="attorney-image-wrapper uncropped">
         <AttorneyImage
-          src={attorney.image}
+          src={getAttorneyImageUrl(attorney.image)}
           alt={attorney.name}
         />
       </div>

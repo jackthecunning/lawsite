@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { getAttorneyImageUrl } from '../../utils/imageUtils';
+import { getAttorneyImageUrl } from '../../utils/attorneyImageUtils';
 import defaultAttorney from '/images/defaults/default-attorney.svg';
 
 
@@ -24,15 +24,12 @@ const AttorneyImage = ({
   };
 
 
-  // Use public URL for attorney images
+  // Use getAttorneyImageUrl for robust, environment-aware URLs
   let imageSrc;
   if (imageError || !src) {
     imageSrc = defaultAttorney;
   } else if (typeof src === 'string') {
-    // If the src already starts with /images/attorneys, use as is, else prepend
-    imageSrc = src.startsWith('/images/attorneys') || src.startsWith('images/attorneys')
-      ? (src.startsWith('/') ? src : '/' + src)
-      : `/images/attorneys/${src}`;
+    imageSrc = getAttorneyImageUrl(src);
   } else {
     imageSrc = defaultAttorney;
   }
