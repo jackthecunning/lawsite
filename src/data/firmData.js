@@ -1,13 +1,5 @@
-// Import office banner images
-import baltimoreBanner from '/images/banner/Baltimore.jpeg';
-import clevelandBanner from '/images/banner/Cleveland.jpeg';
-import newYorkBanner from '/images/banner/NewYork.jpg';
-import phillyBanner from '/images/banner/Philly.png';
-import philly2Banner from '/images/banner/philly_2.png';
-import phillyBanner3 from '/images/banner/philly_3.png';
-import pittsburgBanner from '/images/banner/Pittsburg.jpg';
-import wilmingtonBanner from '/images/banner/Wilmington.jpeg';
-import fighterJet from '/images/defaults/fighter-jet.jpg';
+import { getBannerImageUrl } from '../utils/imageUtils';
+import { getImageUrl } from '../utils/imageUtils';
 
 export const services = [
   {
@@ -168,7 +160,7 @@ export const offices = [
     fax: '(215) 564-5191',
     email: 'jmccarron@swartzcampbell.com',
     hours: 'Monday - Friday: 9:00 AM - 5:00 PM',
-    bannerImage: phillyBanner
+    bannerImage: getBannerImageUrl('Philly.png')
   },
   {
     id: 'pittsburgh',
@@ -181,7 +173,7 @@ export const offices = [
     fax: '(412) 232-9801',
     email: 'largento@swartzcampbell.com',
     hours: 'Monday - Friday: 9:00 AM - 5:00 PM',
-    bannerImage: pittsburgBanner
+    bannerImage: getBannerImageUrl('Pittsburg.jpg')
   },
   {
     id: 'newyork',
@@ -194,7 +186,7 @@ export const offices = [
     fax: '(212) 555-7301',
     email: 'nyoffice@swartzcampbell.com',
     hours: 'Monday - Friday: 9:00 AM - 6:00 PM',
-    bannerImage: newYorkBanner
+    bannerImage: getBannerImageUrl('NewYork.jpg')
   },
   {
     id: 'mountlaurel',
@@ -207,7 +199,7 @@ export const offices = [
     fax: '(856) 234-5601',
     email: 'mloffice@swartzcampbell.com',
     hours: 'Monday - Friday: 9:00 AM - 5:00 PM',
-    bannerImage: fighterJet
+    bannerImage: getImageUrl('images/defaults/fighter-jet.jpg')
   },
   {
     id: 'baltimore',
@@ -220,7 +212,7 @@ export const offices = [
     fax: '(410) 555-8901',
     email: 'baltimore@swartzcampbell.com',
     hours: 'Monday - Friday: 9:00 AM - 5:00 PM',
-    bannerImage: baltimoreBanner
+    bannerImage: getBannerImageUrl('Baltimore.jpeg')
   },
   {
     id: 'cleveland',
@@ -233,7 +225,7 @@ export const offices = [
     fax: '(216) 555-7201',
     email: 'cleveland@swartzcampbell.com',
     hours: 'Monday - Friday: 9:00 AM - 5:00 PM',
-    bannerImage: clevelandBanner
+    bannerImage: getBannerImageUrl('Cleveland.jpeg')
   }
 ];
 
