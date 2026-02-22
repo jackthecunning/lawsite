@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { getBannerImageUrl } from '../../../utils/imageUtils';
+import { bannerImageManifest } from '../../../data/bannerImageManifest';
 import './BannerPreview.css';
 import '../../hero/Hero.css';
 import '../../../pages/careers/Careers.css';
@@ -16,7 +18,7 @@ const DEFAULT_POSITIONS = {
 };
 
 function BannerPreview({ onBack }) {
-  const [bannerImage, setBannerImage] = useState('/images/banner/default-banner.jpg');
+  const [bannerImage, setBannerImage] = useState(getBannerImageUrl('default-banner.jpg'));
   const [selectedSize, setSelectedSize] = useState('all');
   const [imageUrl, setImageUrl] = useState('');
   const [showGrid, setShowGrid] = useState(true);
@@ -27,16 +29,15 @@ function BannerPreview({ onBack }) {
   const [bgPositionY, setBgPositionY] = useState(DEFAULT_POSITIONS.home.y);
   const [customHeight, setCustomHeight] = useState(''); // Optional height override
 
-  const existingBanners = [
-    { name: 'Baltimore', path: '/images/banner/Baltimore.jpeg' },
-    { name: 'Cleveland', path: '/images/banner/Cleveland.jpeg' },
-    { name: 'New York', path: '/images/banner/NewYork.jpg' },
-    { name: 'Philadelphia', path: '/images/banner/Philly.png' },
-    { name: 'Philadelphia 2', path: '/images/banner/philly_2.png' },
-    { name: 'Philadelphia 3', path: '/images/banner/philly_3.png' },
-    { name: 'Pittsburgh', path: '/images/banner/Pittsburg.jpg' },
-    { name: 'Wilmington', path: '/images/banner/Wilmington.jpeg' },
-  ];
+  // Use the manifest to generate the banner list
+  const existingBanners = bannerImageManifest.map(filename => {
+    const name = filename
+      .replace(/\.[^/.]+$/, '')
+      .replace(/_/g, ' ')
+      .replace(/([a-z])([A-Z])/g, '$1 $2')
+      .replace(/\b\w/g, c => c.toUpperCase());
+    return { name, path: getBannerImageUrl(filename) };
+  });
 
   const screenSizes = [
     {
@@ -98,7 +99,7 @@ function BannerPreview({ onBack }) {
   };
 
   const handleReset = () => {
-    setBannerImage('/images/banner/default-banner.jpg');
+    setBannerImage(getBannerImageUrl('default-banner.jpg'));
     setImageUrl('');
   };
 

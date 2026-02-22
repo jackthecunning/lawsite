@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import './Women.css';
 import HeroWide from '../../components/hero-wide';
-import { getImageUrl } from '../../utils/imageUtils';
+import { getBannerImageUrl, getImageUrl } from '../../utils/imageUtils';
+import { bannerImageManifest } from '../../data/bannerImageManifest';
 
 
 const Women = () => {
@@ -16,7 +17,7 @@ const Women = () => {
 
   return (
     <>
-      <HeroWide backgroundImage={getImageUrl('images/banner/Philly.png')}>
+      <HeroWide backgroundImage={getBannerImageUrl('Philly.png')}>
         <h1>THE WOMEN OF SWARTZ CAMPBELL</h1>
       </HeroWide>
 

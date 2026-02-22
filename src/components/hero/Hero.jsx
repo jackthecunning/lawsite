@@ -4,18 +4,9 @@ import { useState, useEffect } from 'react';
 import BannerImage from '../banner-image';
 
 // Import all banner images
-import { getImageUrl } from '../../utils/imageUtils';
-const bannerImagePaths = [
-  'images/banner/Baltimore.jpeg',
-  'images/banner/Cleveland.jpeg',
-  'images/banner/NewYork.jpg',
-  'images/banner/Philly.png',
-  'images/banner/philly_2.png',
-  'images/banner/philly_3.png',
-  'images/banner/Pittsburg.jpg',
-  'images/banner/Wilmington.jpeg'
-];
-const defaultBanner = getImageUrl('images/defaults/default-banner.svg');
+import { getBannerImageUrl } from '../../utils/imageUtils';
+import { bannerImageManifest } from '../../data/bannerImageManifest';
+const defaultBanner = getBannerImageUrl('default-banner.jpg');
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -23,8 +14,8 @@ const Hero = () => {
 
   // Dynamically load all banner images
   useEffect(() => {
-    // Use getImageUrl to resolve all banner image paths
-    const bannerImages = bannerImagePaths.map(getImageUrl);
+    // Use getBannerImageUrl to resolve all banner image paths from the manifest
+    const bannerImages = bannerImageManifest.map(getBannerImageUrl);
     setSlides(bannerImages);
   }, []);
 
