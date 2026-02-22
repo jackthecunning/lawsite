@@ -1,17 +1,38 @@
 {
-  "name": "P. Joseph Craycraft",
-  "title": "Senior Partner",
-  "practiceAreas": ["Corporate Governance & Mergers"],
-  "image": "images/attorneys/P.-Joseph-Craycraft.jpg",
-  "email": "pcraycraft@swartzcampbell.com",
-  "phone": "(555) 123-4581",
-  "office": "Philadelphia",
-  "credentials": [
-    "J.D., Harvard Law School, 1985",
-    "M.B.A., Harvard Business School, 1985",
-    "B.A., Economics, Princeton University, 1982",
-    "Licensed in Pennsylvania, New York, and Delaware",
-    "Member, American Bar Association M&A Committee"
+  "name": "Joseph Craycraft",
+  "title": "Partner",
+  "practiceAreas": [
+    "Product Liability",
+    "Personal Injury",
+    "Trucking Litigation"
   ],
-  "bio": "P. Joseph Craycraft is a distinguished Senior Partner with over 40 years of experience in corporate law, mergers and acquisitions, and corporate governance. With dual degrees from Harvard Law School and Harvard Business School, Craycraft combines sophisticated legal expertise with deep business acumen to guide clients through complex corporate transactions and governance matters. His practice focuses on representing public and private companies in mergers, acquisitions, divestitures, and joint ventures across various industries. Craycraft has particular expertise in hostile takeovers, proxy contests, and corporate restructurings. He serves as outside general counsel to several public companies, advising boards of directors on fiduciary duties, executive compensation, and securities law compliance. Craycraft is a member of the American Bar Association's M&A Committee and has been recognized as one of the leading corporate attorneys in the region. His extensive experience includes representing companies in transactions valued in excess of billions of dollars and advising on some of the most complex corporate governance issues facing modern corporations. Craycraft is frequently called upon to provide expert testimony in corporate litigation and regularly speaks at conferences on corporate law developments."
+  "image": "images/attorneys/P.-Joseph-Craycraft.jpg",
+  "email": "jcraycraft@swartzcampbell.com",
+  "phone": "(304) 232-2790",
+  "fax": "(304) 232-2659",
+  "office": ["Wheeling"],
+  "barAdmissions": [
+    "1998 West Virginia",
+    "2012 Ohio"
+  ],
+  "courtAdmissions": [
+    "All State and Federal Courts in West Virginia"
+  ],
+  "education": [
+    "1998 West Virginia University, School of Law, Morgantown, WV - J.D.",
+    "1995 West Virginia University, Morgantown, WV - B.A. Accounting"
+  ],
+  "bio": [
+    "Joseph Craycraft is a partner in the firm’s West Virginia office. He has dedicated over twenty years to representing individuals, small business, and Fortune 100 and 500 companies in a wide range of civil litigation—including personal injury, general liability, product liability, insurance coverage, mass tort, trucking litigation, subrogation, workers’ compensation, business and commercial litigation, and breach of contract.",
+    "Mr. Craycraft handles matters throughout West Virginia and Ohio and is admitted to all state and federal courts in West Virginia. He is a member of the West Virginia Bar Association, West Virginia Defense Trial, and the Counsel Defense Research Institute.",
+    "Mr. Craycraft earned a B.A. in Accounting from West Virginia University and a J.D. from the School of Law. He is a lifelong resident of West Virginia and currently lives in Wheeling with his family. Beyond his practice, Mr. Craycraft is committed to public service and supporting higher education, devoting a significant portion of his career to serving as a member and Chairman of the Board of Governors for West Virginia Northern Community College."
+  ],
+  "professionalOrganizations": [
+    "West Virginia Bar Association",
+    "West Virginia Defense Trial",
+    "Counsel Defense Research Institute"
+  ],
+  "volunteerWork": [
+    "Member and Chairman of the Board of Governors for West Virginia Northern Community College"
+  ]
 }

@@ -1,17 +1,56 @@
 {
-  "name": "Jane Lombard",
-  "title": "Associate",
-  "practiceAreas": ["Medical Malpractice Defense"],
+  "name": "Jane A. Lombard",
+  "title": "Partner",
+  "practiceAreas": ["Workers' Compensation"],
   "image": "images/attorneys/Lombard-Jane-78-683x1024.jpg",
   "email": "jlombard@swartzcampbell.com",
-  "phone": "(555) 123-4576",
+  "phone": "(215) 299-4278",
+  "fax": "(215) 299-4301",
   "office": "Philadelphia",
-  "credentials": [
-    "J.D., University of Pittsburgh School of Law, 1999",
-    "B.S., Nursing, University of Pennsylvania, 1994",
-    "Licensed in Pennsylvania, Ohio, and West Virginia",
-    "Former Registered Nurse",
-    "Member, International Association of Defense Counsel"
+  "barAdmissions": ["1987 Pennsylvania"],
+  "courtAdmissions": ["1988 U.S. District Court Eastern District of Pennsylvania"],
+  "education": [
+    "1987 Pennsylvania State University Dickinson School of Law, Carlisle, PA – JD",
+    "1984 LaSalle University, Philadelphia, PA – B.A. Political Science, Cum Laude"
   ],
-  "bio": "Jane Lombard brings a unique perspective to medical malpractice defense, combining her background as a registered nurse with over 25 years of legal experience. As a former healthcare provider, Jane understands medical procedures, standards of care, and the healthcare environment, making her an exceptionally effective advocate for physicians, hospitals, and other healthcare providers facing malpractice claims. Her nursing background allows her to quickly grasp complex medical issues, communicate effectively with healthcare professionals, and identify key defense strategies. Jane's practice focuses exclusively on medical malpractice defense, representing healthcare providers in cases involving surgical complications, diagnostic errors, medication mistakes, and birth injuries. She has successfully defended numerous high-exposure cases and has extensive trial experience in medical malpractice matters. Jane works closely with medical experts to develop compelling defense strategies and is known for her thorough case preparation and persuasive courtroom presentations. Her dual healthcare and legal background makes her a trusted advisor to healthcare institutions on risk management and liability prevention strategies."
+  "bio": [
+    "Jane Lombard is a partner in the firm’s Philadelphia office and department chair of the Worker’s Compensation Group. She focuses her practice on representing Pennsylvania self-insured employers and insurers in workers’ compensation matters, advising employers in the pre-litigation phase and handling all matters before WC Judges and through the Appellate levels. A seasoned trial attorney, she has argued several cases before the Pennsylvania Supreme Court and Pennsylvania Commonwealth Court. She’s been voted a Top rated Workers’ Compensation Attorney in Philadelphia by SuperLawyers since 2005, and has been named among the top 50 female attorneys in Pennsylvania numerous times.",
+    "Beyond her casework, Ms. Lombard enjoys writing and speaking on workers’ compensation topics. She has been a seminar presenter for the Pennsylvania Bar Institute, Pennsylvania Defense Institute, National Business Institute, Lorman, and individual employers and insurers throughout Pennsylvania. She has also published articles on the subject in the Pennsylvania Self-Insurance Association newsletter and the Legal Intelligencer.",
+    "Ms. Lombard graduated cum laude from LaSalle University with a Bachelor’s degree in Political Science. She earned her J.D. from Pennsylvania State University Dickinson School of Law. She is a past co-chair of the Philadelphia Bar Association WC Section and a current member of the Philadelphia Bar Association, Pennsylvania Bar Association, and Pennsylvania Defense Institute."
+  ],
+  "professionalOrganizations": [
+    "Pennsylvania Defense Institute",
+    "Philadelphia Bar Association, Workers' Compensation Section",
+    "Pennsylvania Bar Association, Workers' Compensation Section"
+  ],
+  "awards": [
+    "AV rated by Martindale Hubbell (highest available rating)",
+    "2005-2024 Top rated Workers' Compensation Attorney in Philadelphia – Super Lawyers",
+    "2006-2009, 2011-2012 Top 50: Women Pennsylvania Super Lawyers",
+    "Past Co-Chair of Philadelphia Bar Association, Workers Compensation Section"
+  ],
+  "representativeClients": [
+    "Archdiocese of Philadelphia",
+    "Conagra Foods",
+    "Lowe's Home Improvement",
+    "Main Line Health Systems",
+    "Marriott International",
+    "New Jersey Manufacturers Insurance Company",
+    "Rohm and Haas",
+    "Thomas Jefferson University Hospital",
+    "Visteon"
+  ],
+  "representativeMatters": [
+    "1996 Joyce v. WCAB, 680 A.2d 85 Pennsylvania Supreme Court",
+    "1997 Joyce v. WCAB, 705 A.2d 417 Pennsylvania Supreme Court"
+  ],
+  "presentations": [
+    "1997 Worker's Compensation in Pennsylvania National Business Institute",
+    "1995 Medical Reimbursement Under Act 44 Lorman Association"
+  ],
+  "professionalExperience": [
+    "1988 - Present Swartz Campbell, LLC",
+    "Equity Partner",
+    "Chair Philadelphia Workers Compensation Group"
+  ]
 }

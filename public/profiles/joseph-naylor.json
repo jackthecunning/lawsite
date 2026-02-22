@@ -1,17 +1,56 @@
 {
-  "name": "Joseph Naylor",
-  "title": "Associate Attorney",
-  "practiceAreas": ["Personal Injury & Workers' Compensation"],
+  "name": "Joseph S. Naylor",
+  "title": "Member",
+  "practiceAreas": [
+    "Asbestos",
+    "Corporate Litigation",
+    "Complex Commercial Litigation",
+    "Insurance Law",
+    "Defense Litigation",
+    "Appellate Litigation",
+    "Products Liability"
+  ],
   "image": "images/attorneys/Naylor-Joseph-088-240x300.jpg",
   "email": "jnaylor@swartzcampbell.com",
-  "phone": "(555) 123-4580",
-  "office": "Philadelphia",
-  "credentials": [
-    "J.D., Temple University Beasley School of Law, 2017",
-    "B.S., Kinesiology, Penn State University, 2014",
-    "Licensed in Pennsylvania",
-    "Member, Pennsylvania Association for Justice",
-    "Certified in Workers' Compensation Law"
+  "phone": "(302) 656-5935",
+  "fax": "(302) 656-1434",
+  "office": ["Wilmington"],
+  "barAdmissions": ["1999 Delaware"],
+  "education": [
+    "1999 Widener University School of Law, Wilmington, DE - J.D., Magna Cum Laude",
+    "1996 University of Delaware, Newark, DE - B.A. in History, Magna Cum Laude"
   ],
-  "bio": "Joseph Naylor is a dedicated personal injury and workers' compensation attorney who fights tirelessly for injured workers and accident victims throughout Pennsylvania. With a background in kinesiology, Joseph possesses a unique understanding of human movement, injury mechanisms, and rehabilitation processes that proves invaluable in personal injury cases. His education in kinesiology allows him to work effectively with medical professionals, understand injury causation, and advocate for appropriate medical treatment and compensation for his clients. Joseph's practice focuses on workplace injuries, construction accidents, automotive collisions, and premises liability cases. He is certified in workers' compensation law and has extensive experience navigating the complex Pennsylvania workers' compensation system. Joseph regularly represents injured workers in hearings before workers' compensation judges and appeals to commonwealth court. He is passionate about holding employers and insurance companies accountable for providing proper benefits to injured workers. Joseph's compassionate approach and thorough case preparation have resulted in substantial recoveries for clients facing medical bills, lost wages, and permanent disabilities. He is committed to ensuring that injured individuals receive the full compensation they deserve for their injuries and losses."
+  "bio": [
+    "Joseph Naylor is a member of the Wilmington office, focusing his practice on advising and representing clients in corporate and complex commercial litigation, products liability litigation, bankruptcy, appellate, and insurance-defense matters. For over 25 years, Mr. Naylor has litigated cases before all of Delaware’s state and federal courts, achieving positive resolutions in a vast array of disputes.",
+    "<strong>Products Liability Defense</strong>",
+    "Swartz Campbell’s Wilmington office presently represents over 100 clients in asbestos-related lawsuits—more than any other Delaware firm—and has been trial counsel in most asbestos cases that have gone to trial since the mid-2000s. Mr. Naylor serves as lead Delaware counsel for more than a dozen asbestos clients, including several publicly traded, self-insured Fortune 500 companies who are often the primary targets of these lawsuits. He has argued and won dozens of motions for summary judgment, including several seminal rulings that are regularly cited by the Court and practitioners. He also obtained dismissal for a non-Delaware corporation based on lack of personal jurisdiction, in what has become the seminal post-Daimler opinion in Delaware discussing general-jurisdiction principles in an asbestos case.",
+    "Beyond asbestos, Mr. Naylor has extensive experience defending high-stakes, high-profile product liability and pharmaceutical litigation. He frequently represents Fortune 500 companies, including an international pharmaceutical company named in more than 85,000 cases alleging that Zantac/Ranitidine caused cancer. He also recently worked as part of a multi-state team defending a major chemical company against claims of cancer caused by polyfluoroalkyl substances—often referred to as “forever chemicals.”",
+    "<strong>Insurance Defense</strong>",
+    "Mr. Naylor has handled a variety of matters for insured parties in cases involving serious personal injuries, property damage, construction defects, and corporate/securities litigation. He has successfully defended property owners in premises-liability cases, contractors and vendors in fire/casualty litigation, private and municipal employers in employment litigation, and insurance carriers in coverage disputes with their insureds and other carriers.",
+    "<strong>Appellate Practice</strong>",
+    "Mr. Naylor is a former clerk to the Honorable Joseph T. Walsh of the Supreme Court of Delaware and has an active appellate practice. He has successfully argued multiple asbestos-related appeals to the Supreme Court of Delaware. He was lead Delaware counsel as part of a multi-firm appellate defense team that obtained the reversal of a $2.8 million asbestos verdict, and is also one of only a few attorneys in Delaware history to have argued an asbestos-related appeal to a full en banc panel of the Supreme Court of Delaware. Videos of Mr. Naylor’s arguments in these cases can be found at: https://courts.delaware.gov/supreme/oralarguments.",
+    "In addition to asbestos matters, he has defended a wide variety of clients in appellate proceedings, including:",
+    "<ul><li>An insurance carrier in a coverage dispute with an insured racetrack after a horseracing injury</li><li>The developer of a hotel in a zoning dispute with New Castle County</li><li>A furniture-and-design company in a commercial lease dispute</li><li>A condominium association council in a contract / fiduciary duty dispute</li></ul>",
+    "<strong>Corporate / Commercial / Bankruptcy Litigation</strong>",
+    "Prior to joining Swartz Campbell, Mr. Naylor worked for an Am Law 200 firm specializing in corporate and commercial litigation. He acted as lead counsel in numerous cases involving fights for corporate control, contract disputes, and expedited requests for injunctive relief, particularly in business cases of national and international import. National publications such as the New York Times and the Wall Street Journal have mentioned him by name and cited his cases. He has also represented creditors in the U.S. Bankruptcy Court for the District of Delaware and has handled numerous adversary matters over his career."
+  ],
+  "representativeMatters": [
+    "Gibbs v. Union Carbide, 2020 WL 5798072 (Del. Super. Ct. Sept. 28, 2020)",
+    "Rowland v. Union Carbide, 2019 WL 1787451 (Del. Super. Ct. April 24, 2019)",
+    "Robinson v. Union Carbide, 2019 WL 3822531 (Del. Super. Ct. Aug. 15, 2019)",
+    "Sturgill v. Union Carbide, 2017 WL 6343519 (Del. Super. Ct. Dec. 11, 2017)",
+    "Aveni v. Union Carbide, 2017 WL 5594055 (Del. Super. Ct. Nov. 8, 2017)",
+    "Leathers v. Union Carbide, 2017 WL 5619281 (Del. Super. Ct. Nov. 8, 2017)",
+    "Warner v. Covestro, 2017 WL 3727022 (Del. Super. Ct. Oct. 26, 2017)",
+    "Kivell v. Union Carbide, 2017 WL 3727022 (Del. Super. Ct. Aug. 30, 2017)",
+    "Gordon v. Dana Companies, LLC, 2011 WL 6058302 (Del. Super. Ct. Nov. 16, 2011)",
+    "Anderson v. Dana Companies, LLC, 2015 WL 556434 (Jan. 30, 2015)",
+    "Smyrna Hospitality, LLC v. Petrucon Construction, Inc., 2013 WL 6039287 (Del. Super. 2013)",
+    "Freibott v. Miller, 2012 WL 6850450 (Del. Super. 2012)",
+    "Thompson v. Murata Wiedemann, Inc., 2011 WL 5624374 (Del. Super. 2011)",
+    "AstroPower Securities Litig., 2006 WL 288120 (D. Del. 2006)",
+    "Reed v. Asbestos Corporation Ltd., 155 A.3d 1284 (Del. 2017)",
+    "R.T. Vanderbilt Co. Inc. v. Galliher, 98 A.3d 122 (Del. 2014)",
+    "Plummer v. R.T. Vanderbilt Co., Inc., 49 A.3d 1163 (Del. 2012)"
+  ]
 }

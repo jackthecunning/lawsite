@@ -6,9 +6,15 @@ const AttorneyBioSection = ({ attorney }) => {
       <div className="team-detail-info">
       <div className="team-bio">
         <h3>About {getFirstName(attorney.name)}</h3>
-        {attorney.bio && attorney.bio.split('\n').map((paragraph, index) => (
-          paragraph.trim() && <p key={index}>{paragraph}</p>
-        ))}
+        {attorney.bio && (
+          Array.isArray(attorney.bio)
+            ? attorney.bio.map((paragraph, index) => (
+                paragraph.trim() && <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
+              ))
+            : attorney.bio.split('\n').map((paragraph, index) => (
+                paragraph.trim() && <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
+              ))
+        )}
       </div>
     </div>
   );

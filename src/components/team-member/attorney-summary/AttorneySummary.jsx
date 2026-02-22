@@ -23,6 +23,10 @@ const AttorneySummary = ({ attorney }) => {
           </div>
         )}
         <p>
+          <i className="fas fa-map-marker-alt"></i>
+          {attorney.offices ? attorney.offices.join(', ') : attorney.office} Office{attorney.offices && attorney.offices.length > 1 ? 's' : ''}
+        </p>
+        <p>
           <i className="fas fa-envelope"></i>
           <a href={`mailto:${attorney.email}`}>{attorney.email}</a>
         </p>
@@ -36,10 +40,7 @@ const AttorneySummary = ({ attorney }) => {
             <a href={`fax:${attorney.fax}`}>{attorney.fax}</a>
           </p>
         )}
-        <p>
-          <i className="fas fa-map-marker-alt"></i>
-          {attorney.offices ? attorney.offices.join(', ') : attorney.office} Office{attorney.offices && attorney.offices.length > 1 ? 's' : ''}
-        </p>
+
       </div>
     </div>
   );

@@ -20,6 +20,11 @@
   margin-bottom: 15px;
 }
 
+.team-bio ul{
+  margin-left: 1.2em; /* or adjust as needed */
+  padding-left: 1em;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .team-detail-info {

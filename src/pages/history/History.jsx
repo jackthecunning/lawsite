@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { loadHistory } from '../../utils/historyLoader';
 import ContentImage from '../../components/content-image';
-import BannerImage from '../../components/banner-image';
+import HeroWide from '../../components/hero-wide';
 import './history.css';
-import philly2Banner from '/images/banner/philly_2.png';
+import { getBannerImageUrl } from '../../utils/imageUtils';
+// philly_2.png is now loaded from S3. Update the URL below if needed.
+const philly2Banner = getBannerImageUrl('philly_2.png');
 
 const History = () => {
   const [historyData, setHistoryData] = useState(null);
@@ -22,16 +24,9 @@ const History = () => {
 
   return (
     <>
-      <section className="page-hero history-hero">
-        <BannerImage
-          src={philly2Banner}
-          alt="Philadelphia Skyline"
-          className="hero-banner-image"
-        />
-        <div className="container">
-          <h1>{historyData.title || 'Our History'}</h1>
-        </div>
-      </section>
+      <HeroWide backgroundImage={philly2Banner}>
+        <h1>{historyData.title || 'Our History'}</h1>
+      </HeroWide>
 
       <section className="history-section">
         <div className="container">

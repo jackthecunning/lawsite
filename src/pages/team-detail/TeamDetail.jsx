@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { loadAllAttorneyProfiles } from '../../utils/attorneyLoader';
 import LoadingState from '../../components/ui/loading-state';
 import NotFound from '../../components/ui/not-found';
+
 import AttorneySummary from '../../components/team-member/attorney-summary';
 import AttorneyBioSection from '../../components/team-member/attorney-bio';
 import PersonalLife from '../../components/team-member/personal';
@@ -19,6 +20,7 @@ import OtherCertificationsSection from '../../components/team-member/other-certi
 import MilitaryServiceSection from '../../components/team-member/military-service';
 import AttorneyContact from '../../components/team-member/contact';
 import BackNavigation from '../../components/ui/back-navigation';
+import AttorneyExtraSection from '../../components/team-member/attorney-extra-section';
 
 const TeamDetail = () => {
   const { id } = useParams(); // This is now the slug
@@ -72,16 +74,18 @@ const TeamDetail = () => {
             <div className="team-detail-main">
               <AttorneyBioSection attorney={attorney} />
 
-              <EducationSection education={attorney.education} />
-              <BarAdmissionsSection barAdmissions={attorney.barAdmissions} />
-              <CourtAdmissionsSection courtAdmissions={attorney.courtAdmissions} />
-              <AwardsSection awards={attorney.awards} />
-              <ProfessionalOrganizationsSection professionalOrganizations={attorney.professionalOrganizations} />
+              {/* <EducationSection education={attorney.education} /> */}
+              {/* <BarAdmissionsSection barAdmissions={attorney.barAdmissions} /> */}
+              {/* <CourtAdmissionsSection courtAdmissions={attorney.courtAdmissions} /> */}
+              {/* <AwardsSection awards={attorney.awards} /> */}
+              {/* <ProfessionalOrganizationsSection professionalOrganizations={attorney.professionalOrganizations} /> */}
               <PublicationsSection publications={attorney.publications} />
               <ProBonoSection proBono={attorney.proBono} />
               <CertificationsSection credentials={attorney.credentials} />
               <OtherCertificationsSection certifications={attorney.certifications} />
-              <MilitaryServiceSection military={attorney.military} />
+              {/* <MilitaryServiceSection military={attorney.military} /> */}
+              {/* Render extra sections/cards for any additional JSON keys */}
+              <AttorneyExtraSection attorney={attorney} />
             </div>
           </div>
         </div>

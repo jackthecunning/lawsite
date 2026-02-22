@@ -1,6 +1,6 @@
 {
-  "name": "Daniel Bruch",
-  "title": "Senior Associate",
+  "name": "G. Daniel Bruch, Jr.",
+  "title": "Partner",
   "practiceAreas": [
     "Product Liability",
     "Premise Liability",
@@ -9,8 +9,58 @@
   ],
   "image": "images/attorneys/Bruch-Daniel-017-683x1024.jpg",
   "email": "gdbruch@swartzcampbell.com",
-  "phone": "(555) 123-4565",
-  "office": "Philadelphia",
-
-  "bio": "Daniel Bruch combines cutting-edge technical expertise with sophisticated legal knowledge to protect and enforce intellectual property rights for technology companies, inventors, and entrepreneurs. With degrees in electrical engineering and computer science from MIT and Carnegie Mellon, Daniel possesses the rare combination of deep technical understanding and legal acumen necessary to navigate complex intellectual property matters. As a registered Patent Attorney, he handles patent prosecution, trademark registration, and IP litigation for clients ranging from startups to Fortune 500 companies. Daniel's practice focuses on software patents, hardware innovations, and emerging technologies including artificial intelligence and blockchain. His technical background allows him to quickly grasp complex inventions and communicate effectively with both inventors and judges. He regularly advises clients on IP strategy, licensing agreements, and technology transfer matters."
+  "phone": "(215) 299-4312",
+  "fax": "(215) 299-4301",
+  "offices": ["Philadelphia"],
+  "barAdmissions": [
+    "1976 Pennsylvania"
+  ],
+  "courtAdmissions": [
+    "U.S. District Court Eastern District of Pennsylvania"
+  ],
+  "education": [
+    "1976 Villanova University School of Law, Villanova, PA - J.D.",
+    "1970 Villanova University, Villanova, PA - B.S. With Honors, Major: Economics"
+  ],
+  "bio": [
+    "G. Daniel Bruch is a distinguished member of the Philadelphia Office’s Toxic Tort department, dedicating his practice to the defense of complex claims involving environmental and occupational exposure—including from lead, PCB, benzene, asbestos, silica and pesticides. He has successfully represented dozens of clients—from small, family-owned businesses to major, multinational corporations—in high-stakes toxic tort matters throughout Pennsylvania. With almost five decades of experience, Mr. Bruch brings exceptional judgement and deep institutional knowledge to every case he handles. His career reflects a lifelong commitment to excellence, integrity, and professionalism.",
+    "Mr. Bruch graduated with honors from Villanova University with a degree in Economics. He served in the United States Navy as a Lieutenant Junior Grade from 1970 to 1973, then returned to Villanova University’s School of Law to earn his J.D.",
+    "Mr. Bruch is a member of the Philadelphia, Pennsylvania, and American Bar Associations, as well as the Toxic Tort Committee of the Pennsylvania Defense Institute. Beyond his defense practice, he is often called upon to serve as an arbitrator for the Manville Personal Injury Trust and UNR Asbestos Disease Claim Trust, demonstrating his reputation for fairness and expertise in mass tort settlements and claims administration."
+  ],
+  "professionalOrganizations": [
+    "Philadelphia Bar Association",
+    "Pennsylvania Bar Association",
+    "American Bar Association"
+  ],
+  "representativeClients": [
+    "The Okonite Company",
+    "CompuDyne Corporation",
+    "Theyssen Krupp Budd",
+    "Crane Co.",
+    "Drever Group",
+    "Ericsson, Inc.",
+    "Federal Mogul Asbestos Personal Injury Trust",
+    "J. Lorber Company",
+    "R. T. Vanderbilt Company, Inc.",
+    "Rheem Manufacturing Co., Inc.",
+    "R. J. Walker Supply",
+    "Scapa Dryer Group",
+    "Simpson Timber Co.",
+    "Honeywell International, Inc.",
+    "Sunoco, Inc. (R&M)"
+  ],
+  "representativeMatters": [
+    "Paoli Railroad Yard v. Southeastern Pennsylvania Transportation Authority, 113 F.3d 444 (Federal 1996)",
+    "Robertson, et al v. Allied Signal Inc., 914 F.2d 360 (Federal 1990)",
+    "Manville Personal Injury Trust - Arbitrator, 1995 - Present",
+    "UNR Asbestos Disease Claim Trust, Arbitrator, 1995-Present"
+  ],
+  "awards": [
+    "2005-2021 Top rated Class Action & Mass Torts attorney in Philadelphia, Pennsylvania - SuperLawyers",
+    "2007, 2010 Top 100: Pennsylvania Super Lawyers",
+    "2006-2007, 2010 Top 100: Philadelphia Super Lawyers"
+  ],
+  "military": [
+    "U.S. Navy LTJG, 1970-1973"
+  ]
 }

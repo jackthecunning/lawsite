@@ -1,17 +1,58 @@
 {
   "name": "William F. Conway",
-  "title": "Partner",
-  "practiceAreas": ["Municipal Law & Government Relations"],
   "image": "images/attorneys/William-F.-Conway.jpg",
+  "title": "Partner",
+  "office": "Philadelphia",
+  "phone": "(215) 299-4270",
+  "fax": "(215) 299-4301",
   "email": "wconway@swartzcampbell.com",
-  "phone": "(555) 123-4588",
-  "office": "New York",
-  "credentials": [
-    "J.D., University of Pittsburgh School of Law, 1992",
-    "M.P.A., Public Administration, University of Pittsburgh, 1992",
-    "B.A., Political Science, Allegheny College, 1989",
-    "Licensed in Pennsylvania",
-    "Former Municipal Solicitor"
+  "bio": "William Conway is a partner in the Philadelphia office, specializing in insurance defense, automobile first-party (UIM/UM) claims, and bad faith matters. He is licensed to practice law in Pennsylvania, New York, and Massachusetts.\n\nMr. Conway began his career practicing plaintiff and defense personal injury, general liability, business and commercial law, and insurance defense law in New York, quickly establishing himself as an expert litigator. After only four years in practice, he earned a $3.65 million verdict in the New York Supreme Court, Rensselaer County, in a case involving a one-car rollover accident—the largest personal injury verdict in that county at the time. After moving to Pennsylvania, Mr. Conway joined the Swartz Campbell team, concentrating his practice on complex litigation, business and commercial matters, and class action insurance defense cases. He has handled multimillion dollar litigation associated with multifarious insurance issues in numerous states, including Florida, Texas, California, Arizona, and Delaware. These cases involved extensive discovery-related issues, including compiling, managing, and analyzing millions of pages of documentation. In 2006, he presented to Erie Insurance Selected Issues Involving UM/UIM Claims, Wrongful Death and Survival Actions.\n\nMr. Conway earned a B.S. in Business Management from Ithaca College and a Masters of Business Administration from Clarkson College. Prior to attending law school, he owned and operated his own contracting business in New York. He often donated his professional skills to the community, including helping build a recreational facility at a nursing home for volunteer firemen. In 1994, he graduated from Albany Law School of Union University.",
+  "practiceAreas": [
+    "Business Law",
+    "Class Action",
+    "Construction Law",
+    "Corporate Law",
+    "Insurance Law",
+    "Litigation",
+    "Product Liability",
+    "Personal Injury",
+    "Torts Law"
   ],
-  "bio": "William F. Conway is a seasoned municipal attorney with extensive experience in local government law, public finance, and government relations. With dual degrees in law and public administration and experience as a municipal solicitor, Conway brings deep understanding of municipal operations and legal requirements to his practice. He represents municipalities, municipal authorities, and local government officials in a wide range of legal matters including municipal finance, public works projects, zoning and land use regulation, and employment law. Conway has particular expertise in municipal bond transactions, having served as bond counsel and disclosure counsel for numerous municipal financing transactions totaling hundreds of millions of dollars. His practice includes advising on the Sunshine Act, Right-to-Know Law, and other transparency requirements affecting local governments. Conway regularly represents municipalities in litigation matters, including civil rights claims, employment disputes, and contract disputes. He also provides ongoing counsel to municipal officials on governance issues, ethics compliance, and risk management. Conway's public administration background enables him to understand the practical challenges facing local governments and provide legal advice that supports effective municipal operations while ensuring legal compliance. He frequently speaks at conferences for municipal officials and contributes to publications on municipal law topics."
+  "barAdmissions": [
+    "2001 Massachusetts",
+    "2001 Pennsylvania",
+    "1995 New York"
+  ],
+  "courtAdmissions": [
+    "United States Circuit Court of Appeals for the 1st Circuit, (Massachusetts, Maine, New Hampshire, Rhode Island, Puerto Rico)",
+    "United States Circuit Court of Appeals for the 2nd Circuit (New York, Connecticut and Vermont)",
+    "United States District Court for the Southern District of New York",
+    "United States District Court for the Northern District of New York",
+    "United States District Court for the Eastern District of New York",
+    "United States District Court for the District of Massachusetts",
+    "United States District Court for the Eastern District of Pennsylvania",
+    "United States District Court for the Middle District of Pennsylvania",
+    "Admissions to various Courts around the country Pro Hac Vice"
+  ],
+  "education": [
+    "1994 Albany Law School Union University Albany, NY J.D.",
+    "1987 Clarkson University Potsdam, NY M.B.A. Major: Business Management",
+    "1986 Ithaca College Ithaca, NY B.S. Major: Business Management"
+  ],
+  "organizations": [
+    "Pennsylvania Bar Association",
+    "New York State Bar Association",
+    "American Bar Association",
+    "Pennsylvania Defense Institute"
+  ],
+  "representativeMatters": [
+    "Vander Veer v. Henderson, et. al., 267 A.D.2d 584, 699 N.Y.S.2d 223 (3d Dept. 1999). Successfully represented an 80 year old female plaintiff in a black ice parking lot slip and fall case including winning an appeal.",
+    "Enders v. Boggs v. County of Schoharie, 178 Misc.2d 528, 679 N.Y.S. 561 (Sup. Ct. Rensselaer County, 1998). Represented plaintiff passenger in a one car roll-over resulting in the then largest jury verdict ever in Rensselaer County NY, $3.65 million dollars.",
+    "Enders v. Boggs, New York State Jury Verdict Review & Analysis, Vol. 15, Issue 11, November 1998 – featured article on the multi-million dollar verdict in this case.",
+    "Leonard v. Igoe, et. al., 178 Misc. 2d 385, 678 N.Y.S.2d 842 (Sup. Ct. Albany County 1998). Successfully defended the owner of property adjacent to land locked property purchased by plaintiff in an easement dispute. Plaintiff sought access to his recently purchased land locked property over my client's property.",
+    "Beroutsos v. Six Flags Theme Parks, Inc., et. al., 185 Misc.2d 557, 713 N.Y.S. 2d 640 (Sup. Ct. New York County 2000). Successfully represented a plaintiff who sustained cervical injuries while riding a roller coaster.",
+    "Saratoga Harness Racing, Inc. v. E. Guy Roemer, et. al., 274 A.D.2d 887, 711 N.Y.S. 603 (3d Dep't 2000). Represented Saratoga Harness Racing in an action against its former attorney over billing practices.",
+    "Weather v. North America Recycling Corp., 255 A.D.2d 666; 679 N.Y.S.2d 213; 1998 (3d Dep't 1998). Successfully defended a plaintiff driver on a counter-claim in a motor vehicle accident including an appeal of the decision.",
+    "Lombardi v. Alff, 174 Misc.2d 322, 664 N.Y.S.2d 969 (Sup. Ct. Saratoga County 1996). Successfully defended a plaintiff passenger in a serious injury threshold motion."
+  ]
 }

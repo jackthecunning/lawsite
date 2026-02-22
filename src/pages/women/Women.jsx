@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './Women.css';
-import DiversityPageHero from '../../components/diversity/page-hero';
+import HeroWide from '../../components/hero-wide';
 import { getImageUrl } from '../../utils/imageUtils';
 import phillyBanner from '/images/banner/Philly.png';
 
@@ -16,10 +16,9 @@ const Women = () => {
 
   return (
     <>
-      <DiversityPageHero
-        title="THE WOMEN OF SWARTZ CAMPBELL"
-        bannerImage={phillyBanner}
-      />
+      <HeroWide backgroundImage={phillyBanner}>
+        <h1>THE WOMEN OF SWARTZ CAMPBELL</h1>
+      </HeroWide>
 
       <section className="content-section-women section-light">
         <div className="container">

@@ -6,7 +6,6 @@
 
 .team-detailed {
   padding: 80px 0 40px 0;
-  background-color: #f8f9fa;
 }
 
 .team-detail-content {
@@ -62,22 +61,4 @@
     border-top: 1px solid #ddd;
 }
 
-.attorney-cta {
-    background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
-    color: white;
-    padding: 80px 0;
-    text-align: center;
-}
-
-.attorney-cta .cta-content h2 {
-    font-family: 'Crimson Text', serif;
-    font-size: 2.2rem;
-    margin-bottom: 15px;
-}
-
-.attorney-cta .cta-content p {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    opacity: 0.9;
-}
 /* #endregion */
